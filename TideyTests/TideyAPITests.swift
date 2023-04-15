@@ -14,7 +14,7 @@ final class TideyAPITests: XCTestCase {
     
     override func setUpWithError() throws {
         
-        guard let subscriptionKey = ProcessInfo.processInfo.environment["Ocp-Apim-Subscription-Key"] else {
+        guard let subscriptionKey = ProcessInfo.processInfo.environment["OcpApimSubscriptionKey"] else {
             XCTFail("No subscription key found")
             return
         }

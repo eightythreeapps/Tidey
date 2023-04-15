@@ -27,7 +27,7 @@ public class UKTidalAPIService:UKTidalAPI,Service {
     
     func getSession() -> URLSession {
         
-        guard let subscriptionKey = ProcessInfo.processInfo.environment["Ocp-Apim-Subscription-Key"] else {
+        guard let subscriptionKey = ProcessInfo.processInfo.environment["OcpApimSubscriptionKey"] else {
             return URLSession.shared
         }
             
