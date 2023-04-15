@@ -1,0 +1,1275 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
+		B5BE9F7F29E969D2004398BE /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */; };
+		B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7229E969D2004398BE /* HTTPMethod.swift */; };
+		B5BE9F8129E969D2004398BE /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7329E969D2004398BE /* HTTPScheme.swift */; };
+		B5BE9F8329E969D2004398BE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7729E969D2004398BE /* Event.swift */; };
+		B5BE9F8429E969D2004398BE /* TideStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7829E969D2004398BE /* TideStation.swift */; };
+		B5BE9F8529E969D2004398BE /* Stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7A29E969D2004398BE /* Stringify.swift */; };
+		B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7B29E969D2004398BE /* NetworkService.swift */; };
+		B5BE9F8729E969D2004398BE /* UKTidalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7D29E969D2004398BE /* UKTidalAPIService.swift */; };
+		B5BE9F8C29E969E0004398BE /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8829E969E0004398BE /* Bundle+Utils.swift */; };
+		B5BE9F8D29E969E0004398BE /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */; };
+		B5BE9F8E29E969E0004398BE /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8A29E969E0004398BE /* ViewState.swift */; };
+		B5BE9F8F29E969E0004398BE /* PreviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */; };
+		B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */; };
+		B5BE9F9E29E96AA5004398BE /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */; };
+		B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FA829E96CC3004398BE /* Tidey_WatchApp.swift */; };
+		B5BE9FAB29E96CC3004398BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FAA29E96CC3004398BE /* ContentView.swift */; };
+		B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE9FAC29E96CC5004398BE /* Assets.xcassets */; };
+		B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE9FAF29E96CC5004398BE /* Preview Assets.xcassets */; };
+		B5BE9FBA29E96CC5004398BE /* Tidey_Watch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FB929E96CC5004398BE /* Tidey_Watch_Watch_AppTests.swift */; };
+		B5BE9FC429E96CC5004398BE /* Tidey_Watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FC329E96CC5004398BE /* Tidey_Watch_Watch_AppUITests.swift */; };
+		B5BE9FC629E96CC5004398BE /* Tidey_Watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FC529E96CC5004398BE /* Tidey_Watch_Watch_AppUITestsLaunchTests.swift */; };
+		B5BE9FC929E96CC5004398BE /* Tidey Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5BE9FD429E96CF2004398BE /* TideStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */; };
+		B5BE9FD529E96CF6004398BE /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */; };
+		B5BE9FD629E96CFA004398BE /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */; };
+		B5BE9FD729E96CFA004398BE /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8A29E969E0004398BE /* ViewState.swift */; };
+		B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */; };
+		B5BE9FD929E96D04004398BE /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
+		B5BE9FDA29E96D0C004398BE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7229E969D2004398BE /* HTTPMethod.swift */; };
+		B5BE9FDB29E96D0C004398BE /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */; };
+		B5BE9FDC29E96D0C004398BE /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7329E969D2004398BE /* HTTPScheme.swift */; };
+		B5BE9FDD29E96D11004398BE /* TideStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7829E969D2004398BE /* TideStation.swift */; };
+		B5BE9FDE29E96D11004398BE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7729E969D2004398BE /* Event.swift */; };
+		B5BE9FE029E96D14004398BE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7B29E969D2004398BE /* NetworkService.swift */; };
+		B5BE9FE129E96D14004398BE /* Stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7A29E969D2004398BE /* Stringify.swift */; };
+		B5BE9FE229E96D18004398BE /* UKTidalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7D29E969D2004398BE /* UKTidalAPIService.swift */; };
+		B5BE9FE529E96DDB004398BE /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE9FE429E96DDB004398BE /* GeoJSON */; };
+		B5BE9FE829E96DE9004398BE /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE9FE729E96DE9004398BE /* SwiftDate */; };
+		B5BE9FEB29E96E5A004398BE /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE9FEA29E96E5A004398BE /* GeoJSON */; };
+		B5BE9FED29E96E5A004398BE /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B5BE9FEC29E96E5A004398BE /* SwiftDate */; };
+		B5BE9FEE29E96E88004398BE /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8829E969E0004398BE /* Bundle+Utils.swift */; };
+		B5BE9FF029E9A216004398BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FAA29E96CC3004398BE /* ContentView.swift */; };
+		B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */; };
+		B5BE9FF729E9B0AB004398BE /* TidalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */; };
+		B5BE9FF929E9B945004398BE /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF829E9B945004398BE /* MockService.swift */; };
+		B5BE9FFA29E9B945004398BE /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF829E9B945004398BE /* MockService.swift */; };
+		B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736129E9692A005C87F1 /* TideyApp.swift */; };
+		B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CA736529E9692C005C87F1 /* Assets.xcassets */; };
+		B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CA736829E9692C005C87F1 /* Preview Assets.xcassets */; };
+		B5CA736B29E9692C005C87F1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
+		B5CA736E29E9692C005C87F1 /* Tidey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */; };
+		B5CA737829E9692D005C87F1 /* TideyAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA737729E9692D005C87F1 /* TideyAPITests.swift */; };
+		B5CA738229E9692D005C87F1 /* TideyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA738129E9692D005C87F1 /* TideyUITests.swift */; };
+		B5CA738429E9692D005C87F1 /* TideyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5BE9FB629E96CC5004398BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE9FA529E96CC3004398BE;
+			remoteInfo = "Tidey Watch Watch App";
+		};
+		B5BE9FC029E96CC5004398BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE9FA529E96CC3004398BE;
+			remoteInfo = "Tidey Watch Watch App";
+		};
+		B5BE9FC729E96CC5004398BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE9FA529E96CC3004398BE;
+			remoteInfo = "Tidey Watch Watch App";
+		};
+		B5CA737429E9692D005C87F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5CA735D29E9692A005C87F1;
+			remoteInfo = Tidey;
+		};
+		B5CA737E29E9692D005C87F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5CA735D29E9692A005C87F1;
+			remoteInfo = Tidey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5BE9FCD29E96CC5004398BE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B5BE9FC929E96CC5004398BE /* Tidey Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		B5BE9F7229E969D2004398BE /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		B5BE9F7329E969D2004398BE /* HTTPScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPScheme.swift; sourceTree = "<group>"; };
+		B5BE9F7729E969D2004398BE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B5BE9F7829E969D2004398BE /* TideStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TideStation.swift; sourceTree = "<group>"; };
+		B5BE9F7A29E969D2004398BE /* Stringify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stringify.swift; sourceTree = "<group>"; };
+		B5BE9F7B29E969D2004398BE /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B5BE9F7D29E969D2004398BE /* UKTidalAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UKTidalAPIService.swift; sourceTree = "<group>"; };
+		B5BE9F8829E969E0004398BE /* Bundle+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
+		B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		B5BE9F8A29E969E0004398BE /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewFactory.swift; sourceTree = "<group>"; };
+		B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TideStationListView.swift; sourceTree = "<group>"; };
+		B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
+		B5BE9F9F29E96C34004398BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE9FA829E96CC3004398BE /* Tidey_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_WatchApp.swift; sourceTree = "<group>"; };
+		B5BE9FAA29E96CC3004398BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5BE9FAC29E96CC5004398BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5BE9FAF29E96CC5004398BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5BE9FB529E96CC5004398BE /* Tidey Watch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey Watch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE9FB929E96CC5004398BE /* Tidey_Watch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_Watch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		B5BE9FBF29E96CC5004398BE /* Tidey Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE9FC329E96CC5004398BE /* Tidey_Watch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_Watch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		B5BE9FC529E96CC5004398BE /* Tidey_Watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_Watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5BE9FEF29E99B2E004398BE /* Tidey-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TidalEvent.swift; sourceTree = "<group>"; };
+		B5BE9FF829E9B945004398BE /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		B5CA735E29E9692A005C87F1 /* Tidey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tidey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CA736129E9692A005C87F1 /* TideyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyApp.swift; sourceTree = "<group>"; };
+		B5CA736529E9692C005C87F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5CA736829E9692C005C87F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5CA736A29E9692C005C87F1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B5CA736D29E9692C005C87F1 /* Tidey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tidey.xcdatamodel; sourceTree = "<group>"; };
+		B5CA737329E9692D005C87F1 /* TideyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CA737729E9692D005C87F1 /* TideyAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyAPITests.swift; sourceTree = "<group>"; };
+		B5CA737D29E9692D005C87F1 /* TideyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CA738129E9692D005C87F1 /* TideyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyUITests.swift; sourceTree = "<group>"; };
+		B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5BE9FA329E96CC3004398BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FED29E96E5A004398BE /* SwiftDate in Frameworks */,
+				B5BE9FEB29E96E5A004398BE /* GeoJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FB229E96CC5004398BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FBC29E96CC5004398BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA735B29E9692A005C87F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FE829E96DE9004398BE /* SwiftDate in Frameworks */,
+				B5BE9FE529E96DDB004398BE /* GeoJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA737029E9692D005C87F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA737A29E9692D005C87F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5BE9F6E29E969D2004398BE /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FF429E9B081004398BE /* DTOs */,
+				B5BE9F6F29E969D2004398BE /* URLHelper.swift */,
+				B5BE9F7029E969D2004398BE /* Enums */,
+				B5BE9F7429E969D2004398BE /* Models */,
+				B5BE9F7929E969D2004398BE /* Protocols */,
+				B5BE9F7C29E969D2004398BE /* Services */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		B5BE9F7029E969D2004398BE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */,
+				B5BE9F7229E969D2004398BE /* HTTPMethod.swift */,
+				B5BE9F7329E969D2004398BE /* HTTPScheme.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B5BE9F7429E969D2004398BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F7829E969D2004398BE /* TideStation.swift */,
+				B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5BE9F7929E969D2004398BE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F7A29E969D2004398BE /* Stringify.swift */,
+				B5BE9F7B29E969D2004398BE /* NetworkService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B5BE9F7C29E969D2004398BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F7D29E969D2004398BE /* UKTidalAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5BE9FA029E96C75004398BE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FAA29E96CC3004398BE /* ContentView.swift */,
+				B5BE9F8829E969E0004398BE /* Bundle+Utils.swift */,
+				B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */,
+				B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */,
+				B5BE9F8A29E969E0004398BE /* ViewState.swift */,
+				B5BE9FA129E96C81004398BE /* Views */,
+				B5BE9F6E29E969D2004398BE /* Network Services */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B5BE9FA129E96C81004398BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */,
+				B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5BE9FA729E96CC3004398BE /* Tidey Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FEF29E99B2E004398BE /* Tidey-Watch-Watch-App-Info.plist */,
+				B5BE9FA829E96CC3004398BE /* Tidey_WatchApp.swift */,
+				B5BE9FAC29E96CC5004398BE /* Assets.xcassets */,
+				B5BE9FAE29E96CC5004398BE /* Preview Content */,
+			);
+			path = "Tidey Watch Watch App";
+			sourceTree = "<group>";
+		};
+		B5BE9FAE29E96CC5004398BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FAF29E96CC5004398BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5BE9FB829E96CC5004398BE /* Tidey Watch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FB929E96CC5004398BE /* Tidey_Watch_Watch_AppTests.swift */,
+			);
+			path = "Tidey Watch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		B5BE9FC229E96CC5004398BE /* Tidey Watch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FC329E96CC5004398BE /* Tidey_Watch_Watch_AppUITests.swift */,
+				B5BE9FC529E96CC5004398BE /* Tidey_Watch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "Tidey Watch Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		B5BE9FE929E96E5A004398BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5BE9FF429E9B081004398BE /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F7729E969D2004398BE /* Event.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		B5CA735529E9692A005C87F1 = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FF829E9B945004398BE /* MockService.swift */,
+				B5BE9FA029E96C75004398BE /* Shared */,
+				B5CA736029E9692A005C87F1 /* Tidey */,
+				B5CA737629E9692D005C87F1 /* TideyTests */,
+				B5CA738029E9692D005C87F1 /* TideyUITests */,
+				B5BE9FA729E96CC3004398BE /* Tidey Watch Watch App */,
+				B5BE9FB829E96CC5004398BE /* Tidey Watch Watch AppTests */,
+				B5BE9FC229E96CC5004398BE /* Tidey Watch Watch AppUITests */,
+				B5CA735F29E9692A005C87F1 /* Products */,
+				B5BE9FE929E96E5A004398BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B5CA735F29E9692A005C87F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5CA735E29E9692A005C87F1 /* Tidey.app */,
+				B5CA737329E9692D005C87F1 /* TideyTests.xctest */,
+				B5CA737D29E9692D005C87F1 /* TideyUITests.xctest */,
+				B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */,
+				B5BE9FB529E96CC5004398BE /* Tidey Watch Watch AppTests.xctest */,
+				B5BE9FBF29E96CC5004398BE /* Tidey Watch Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5CA736029E9692A005C87F1 /* Tidey */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F9F29E96C34004398BE /* Info.plist */,
+				B5CA736129E9692A005C87F1 /* TideyApp.swift */,
+				B5CA736529E9692C005C87F1 /* Assets.xcassets */,
+				B5CA736A29E9692C005C87F1 /* Persistence.swift */,
+				B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */,
+				B5CA736729E9692C005C87F1 /* Preview Content */,
+			);
+			path = Tidey;
+			sourceTree = "<group>";
+		};
+		B5CA736729E9692C005C87F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5CA736829E9692C005C87F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5CA737629E9692D005C87F1 /* TideyTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5CA737729E9692D005C87F1 /* TideyAPITests.swift */,
+			);
+			path = TideyTests;
+			sourceTree = "<group>";
+		};
+		B5CA738029E9692D005C87F1 /* TideyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5CA738129E9692D005C87F1 /* TideyUITests.swift */,
+				B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */,
+			);
+			path = TideyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE9FCA29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch App" */;
+			buildPhases = (
+				B5BE9FA229E96CC3004398BE /* Sources */,
+				B5BE9FA329E96CC3004398BE /* Frameworks */,
+				B5BE9FA429E96CC3004398BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tidey Watch Watch App";
+			packageProductDependencies = (
+				B5BE9FEA29E96E5A004398BE /* GeoJSON */,
+				B5BE9FEC29E96E5A004398BE /* SwiftDate */,
+			);
+			productName = "Tidey Watch Watch App";
+			productReference = B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5BE9FB429E96CC5004398BE /* Tidey Watch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE9FCE29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch AppTests" */;
+			buildPhases = (
+				B5BE9FB129E96CC5004398BE /* Sources */,
+				B5BE9FB229E96CC5004398BE /* Frameworks */,
+				B5BE9FB329E96CC5004398BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE9FB729E96CC5004398BE /* PBXTargetDependency */,
+			);
+			name = "Tidey Watch Watch AppTests";
+			productName = "Tidey Watch Watch AppTests";
+			productReference = B5BE9FB529E96CC5004398BE /* Tidey Watch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5BE9FBE29E96CC5004398BE /* Tidey Watch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE9FD129E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch AppUITests" */;
+			buildPhases = (
+				B5BE9FBB29E96CC5004398BE /* Sources */,
+				B5BE9FBC29E96CC5004398BE /* Frameworks */,
+				B5BE9FBD29E96CC5004398BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE9FC129E96CC5004398BE /* PBXTargetDependency */,
+			);
+			name = "Tidey Watch Watch AppUITests";
+			productName = "Tidey Watch Watch AppUITests";
+			productReference = B5BE9FBF29E96CC5004398BE /* Tidey Watch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B5CA735D29E9692A005C87F1 /* Tidey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5CA738729E9692D005C87F1 /* Build configuration list for PBXNativeTarget "Tidey" */;
+			buildPhases = (
+				B5CA735A29E9692A005C87F1 /* Sources */,
+				B5CA735B29E9692A005C87F1 /* Frameworks */,
+				B5CA735C29E9692A005C87F1 /* Resources */,
+				B5BE9FCD29E96CC5004398BE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE9FC829E96CC5004398BE /* PBXTargetDependency */,
+			);
+			name = Tidey;
+			packageProductDependencies = (
+				B5BE9FE429E96DDB004398BE /* GeoJSON */,
+				B5BE9FE729E96DE9004398BE /* SwiftDate */,
+			);
+			productName = Tidey;
+			productReference = B5CA735E29E9692A005C87F1 /* Tidey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5CA737229E9692D005C87F1 /* TideyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5CA738A29E9692D005C87F1 /* Build configuration list for PBXNativeTarget "TideyTests" */;
+			buildPhases = (
+				B5CA736F29E9692D005C87F1 /* Sources */,
+				B5CA737029E9692D005C87F1 /* Frameworks */,
+				B5CA737129E9692D005C87F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5CA737529E9692D005C87F1 /* PBXTargetDependency */,
+			);
+			name = TideyTests;
+			productName = TideyTests;
+			productReference = B5CA737329E9692D005C87F1 /* TideyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5CA737C29E9692D005C87F1 /* TideyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5CA738D29E9692D005C87F1 /* Build configuration list for PBXNativeTarget "TideyUITests" */;
+			buildPhases = (
+				B5CA737929E9692D005C87F1 /* Sources */,
+				B5CA737A29E9692D005C87F1 /* Frameworks */,
+				B5CA737B29E9692D005C87F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5CA737F29E9692D005C87F1 /* PBXTargetDependency */,
+			);
+			name = TideyUITests;
+			productName = TideyUITests;
+			productReference = B5CA737D29E9692D005C87F1 /* TideyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5CA735629E9692A005C87F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					B5BE9FA529E96CC3004398BE = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B5BE9FB429E96CC5004398BE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B5BE9FA529E96CC3004398BE;
+					};
+					B5BE9FBE29E96CC5004398BE = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B5BE9FA529E96CC3004398BE;
+					};
+					B5CA735D29E9692A005C87F1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					B5CA737229E9692D005C87F1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B5CA735D29E9692A005C87F1;
+					};
+					B5CA737C29E9692D005C87F1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B5CA735D29E9692A005C87F1;
+					};
+				};
+			};
+			buildConfigurationList = B5CA735929E9692A005C87F1 /* Build configuration list for PBXProject "Tidey" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5CA735529E9692A005C87F1;
+			packageReferences = (
+				B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */,
+				B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
+			productRefGroup = B5CA735F29E9692A005C87F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5CA735D29E9692A005C87F1 /* Tidey */,
+				B5CA737229E9692D005C87F1 /* TideyTests */,
+				B5CA737C29E9692D005C87F1 /* TideyUITests */,
+				B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */,
+				B5BE9FB429E96CC5004398BE /* Tidey Watch Watch AppTests */,
+				B5BE9FBE29E96CC5004398BE /* Tidey Watch Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5BE9FA429E96CC3004398BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
+				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FB329E96CC5004398BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FBD29E96CC5004398BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA735C29E9692A005C87F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
+				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA737129E9692D005C87F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA737B29E9692D005C87F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5BE9FA229E96CC3004398BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FDD29E96D11004398BE /* TideStation.swift in Sources */,
+				B5BE9FD429E96CF2004398BE /* TideStationListView.swift in Sources */,
+				B5BE9FAB29E96CC3004398BE /* ContentView.swift in Sources */,
+				B5BE9FEE29E96E88004398BE /* Bundle+Utils.swift in Sources */,
+				B5BE9FDC29E96D0C004398BE /* HTTPScheme.swift in Sources */,
+				B5BE9FD729E96CFA004398BE /* ViewState.swift in Sources */,
+				B5BE9FD529E96CF6004398BE /* StationDetailView.swift in Sources */,
+				B5BE9FD629E96CFA004398BE /* ViewModelFactory.swift in Sources */,
+				B5BE9FDB29E96D0C004398BE /* NetworkServiceError.swift in Sources */,
+				B5BE9FF729E9B0AB004398BE /* TidalEvent.swift in Sources */,
+				B5BE9FFA29E9B945004398BE /* MockService.swift in Sources */,
+				B5BE9FDA29E96D0C004398BE /* HTTPMethod.swift in Sources */,
+				B5BE9FE129E96D14004398BE /* Stringify.swift in Sources */,
+				B5BE9FE229E96D18004398BE /* UKTidalAPIService.swift in Sources */,
+				B5BE9FD929E96D04004398BE /* URLHelper.swift in Sources */,
+				B5BE9FE029E96D14004398BE /* NetworkService.swift in Sources */,
+				B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */,
+				B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */,
+				B5BE9FDE29E96D11004398BE /* Event.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FB129E96CC5004398BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FBA29E96CC5004398BE /* Tidey_Watch_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE9FBB29E96CC5004398BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9FC629E96CC5004398BE /* Tidey_Watch_Watch_AppUITestsLaunchTests.swift in Sources */,
+				B5BE9FC429E96CC5004398BE /* Tidey_Watch_Watch_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA735A29E9692A005C87F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE9F8329E969D2004398BE /* Event.swift in Sources */,
+				B5BE9F7F29E969D2004398BE /* NetworkServiceError.swift in Sources */,
+				B5BE9FF929E9B945004398BE /* MockService.swift in Sources */,
+				B5CA736B29E9692C005C87F1 /* Persistence.swift in Sources */,
+				B5BE9F8F29E969E0004398BE /* PreviewFactory.swift in Sources */,
+				B5BE9F8D29E969E0004398BE /* ViewModelFactory.swift in Sources */,
+				B5BE9FF029E9A216004398BE /* ContentView.swift in Sources */,
+				B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */,
+				B5BE9F8E29E969E0004398BE /* ViewState.swift in Sources */,
+				B5BE9F8129E969D2004398BE /* HTTPScheme.swift in Sources */,
+				B5BE9F8529E969D2004398BE /* Stringify.swift in Sources */,
+				B5BE9F9E29E96AA5004398BE /* StationDetailView.swift in Sources */,
+				B5BE9F8729E969D2004398BE /* UKTidalAPIService.swift in Sources */,
+				B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */,
+				B5CA736E29E9692C005C87F1 /* Tidey.xcdatamodeld in Sources */,
+				B5BE9F8429E969D2004398BE /* TideStation.swift in Sources */,
+				B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */,
+				B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */,
+				B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */,
+				B5BE9F8C29E969E0004398BE /* Bundle+Utils.swift in Sources */,
+				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA736F29E9692D005C87F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CA737829E9692D005C87F1 /* TideyAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5CA737929E9692D005C87F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CA738429E9692D005C87F1 /* TideyUITestsLaunchTests.swift in Sources */,
+				B5CA738229E9692D005C87F1 /* TideyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5BE9FB729E96CC5004398BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */;
+			targetProxy = B5BE9FB629E96CC5004398BE /* PBXContainerItemProxy */;
+		};
+		B5BE9FC129E96CC5004398BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */;
+			targetProxy = B5BE9FC029E96CC5004398BE /* PBXContainerItemProxy */;
+		};
+		B5BE9FC829E96CC5004398BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */;
+			targetProxy = B5BE9FC729E96CC5004398BE /* PBXContainerItemProxy */;
+		};
+		B5CA737529E9692D005C87F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5CA735D29E9692A005C87F1 /* Tidey */;
+			targetProxy = B5CA737429E9692D005C87F1 /* PBXContainerItemProxy */;
+		};
+		B5CA737F29E9692D005C87F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5CA735D29E9692A005C87F1 /* Tidey */;
+			targetProxy = B5CA737E29E9692D005C87F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B5BE9FCB29E96CC5004398BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = space.sometinylittle.Tidey;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		B5BE9FCC29E96CC5004398BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = space.sometinylittle.Tidey;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		B5BE9FCF29E96CC5004398BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		B5BE9FD029E96CC5004398BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		B5BE9FD229E96CC5004398BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Tidey Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		B5BE9FD329E96CC5004398BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Tidey Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		B5CA738529E9692D005C87F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				UK_TIDAL_API_BASE_URL = "admiraltyapi.azure-api.net";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		B5CA738629E9692D005C87F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				UK_TIDAL_API_BASE_URL = "admiraltyapi.azure-api.net";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		B5CA738829E9692D005C87F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tidey/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5CA738929E9692D005C87F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tidey/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5CA738B29E9692D005C87F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.TideyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey";
+			};
+			name = Debug;
+		};
+		B5CA738C29E9692D005C87F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.TideyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey";
+			};
+			name = Release;
+		};
+		B5CA738E29E9692D005C87F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.TideyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tidey;
+			};
+			name = Debug;
+		};
+		B5CA738F29E9692D005C87F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.TideyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tidey;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5BE9FCA29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE9FCB29E96CC5004398BE /* Debug */,
+				B5BE9FCC29E96CC5004398BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE9FCE29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE9FCF29E96CC5004398BE /* Debug */,
+				B5BE9FD029E96CC5004398BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE9FD129E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE9FD229E96CC5004398BE /* Debug */,
+				B5BE9FD329E96CC5004398BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CA735929E9692A005C87F1 /* Build configuration list for PBXProject "Tidey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CA738529E9692D005C87F1 /* Debug */,
+				B5CA738629E9692D005C87F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CA738729E9692D005C87F1 /* Build configuration list for PBXNativeTarget "Tidey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CA738829E9692D005C87F1 /* Debug */,
+				B5CA738929E9692D005C87F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CA738A29E9692D005C87F1 /* Build configuration list for PBXNativeTarget "TideyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CA738B29E9692D005C87F1 /* Debug */,
+				B5CA738C29E9692D005C87F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CA738D29E9692D005C87F1 /* Build configuration list for PBXNativeTarget "TideyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CA738E29E9692D005C87F1 /* Debug */,
+				B5CA738F29E9692D005C87F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kiliankoe/GeoJSON";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5BE9FE429E96DDB004398BE /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;
+			productName = GeoJSON;
+		};
+		B5BE9FE729E96DE9004398BE /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		B5BE9FEA29E96E5A004398BE /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;
+			productName = GeoJSON;
+		};
+		B5BE9FEC29E96E5A004398BE /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5CA736D29E9692C005C87F1 /* Tidey.xcdatamodel */,
+			);
+			currentVersion = B5CA736D29E9692C005C87F1 /* Tidey.xcdatamodel */;
+			path = Tidey.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B5CA735629E9692A005C87F1 /* Project object */;
+}
