@@ -54,6 +54,7 @@
 		B5BE9FF729E9B0AB004398BE /* TidalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */; };
 		B5BE9FF929E9B945004398BE /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF829E9B945004398BE /* MockService.swift */; };
 		B5BE9FFA29E9B945004398BE /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF829E9B945004398BE /* MockService.swift */; };
+		B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CA736529E9692C005C87F1 /* Assets.xcassets */; };
 		B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736129E9692A005C87F1 /* TideyApp.swift */; };
 		B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CA736529E9692C005C87F1 /* Assets.xcassets */; };
 		B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CA736829E9692C005C87F1 /* Preview Assets.xcassets */; };
@@ -585,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
+				B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */,
 				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tidey Watch Watch App/Preview Content\"";
@@ -784,6 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tidey Watch Watch App/Preview Content\"";
