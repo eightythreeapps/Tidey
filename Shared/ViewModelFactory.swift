@@ -12,7 +12,7 @@ public class ViewModelFactory {
     static func configuredUKTidalAPIService() -> UKTidalAPIService {
         
         let urlHelper = URLHelper()
-        let subscriptionKey = ProcessInfo.processInfo.environment["Ocp-Apim-Subscription-Key"]
+        let subscriptionKey = ProcessInfo.processInfo.environment["OcpApimSubscriptionKey"]
             
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":subscriptionKey ?? ""]
