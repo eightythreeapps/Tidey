@@ -12,14 +12,17 @@ import SwiftDate
 class TideStationListViewModel:ObservableObject {
     
     private var tideStationAPIService:UKTidalAPI
+    private var configuration:ConfigurationProvider
     
     @Published var stations:[TideStation] = [TideStation]()
     @Published var viewState:ViewState = .loading
     @Published var path:[TideStation] = [TideStation]()
     @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
     
-    init(tideStationAPIService: UKTidalAPI) {
+    init(tideStationAPIService: UKTidalAPI, configuration:ConfigurationProvider) {
         self.tideStationAPIService = tideStationAPIService
+        self.configuration = configuration
+        
     }
     
     func loadData() async {
@@ -42,7 +45,7 @@ class TideStationListViewModel:ObservableObject {
     
     func getStationDetail(stationId:String) async {
         do {
-            let station = try await tideStationAPIService.getStation(stationId: stationId)
+            //let station = try await tideStationAPIService.getStation(stationId: stationId)
         } catch {
             
         }

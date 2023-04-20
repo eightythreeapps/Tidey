@@ -6,9 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseRemoteConfig
 
 public class PreviewFactory {
     
+    static var configurationProvider:ConfigurationProvider = {
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        return ConfigurationProvider(remoteConfig:remoteConfig)
+    }()
+        
     static func configuredTideAPI() -> UKTidalAPI {
         
         let subscriptionKey = ProcessInfo.processInfo.environment["OcpApimSubscriptionKey"]!
@@ -27,14 +37,16 @@ public class PreviewFactory {
     static func makeStationDetailView() -> some View {
         
         return StationDetailView(stationName: "StationName", id: "0001")
-            .environmentObject(TideStationListViewModel(tideStationAPIService: PreviewFactory.configuredTideAPI()))
+            .environmentObject(TideStationListViewModel(tideStationAPIService: PreviewFactory.configuredTideAPI(),
+                                                        configuration: PreviewFactory.configurationProvider))
         
     }
 
     static func makeTideStationListPreview() -> some View {
         
         return TideStationListView()
-            .environmentObject(TideStationListViewModel(tideStationAPIService: PreviewFactory.configuredTideAPI()))
+            .environmentObject(TideStationListViewModel(tideStationAPIService: PreviewFactory.configuredTideAPI(),
+                                                        configuration: PreviewFactory.configurationProvider))
     }
     
 }

@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
+import UIKit
 
 @main
 struct TideyApp: App {
-    let persistenceController = PersistenceController.shared
-
+        
     var body: some Scene {
         WindowGroup {
-           ContentView()
+            ContentView()
         }
     }
 }

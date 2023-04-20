@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B59DC6AC29EFDBB700B90A1E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AB29EFDBB700B90A1E /* FirebaseAnalyticsSwift */; };
+		B59DC6AE29EFDBB700B90A1E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AD29EFDBB700B90A1E /* FirebaseCrashlytics */; };
+		B59DC6B029EFDBB700B90A1E /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AF29EFDBB700B90A1E /* FirebaseRemoteConfigSwift */; };
+		B5BCB4CE29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */; };
+		B5BCB4CF29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */; };
+		B5BCB4D129EFE1D600EAAE05 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCB4D029EFE1D600EAAE05 /* ConfigurationProvider.swift */; };
+		B5BCB4D429EFFB4500EAAE05 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B5BCB4D329EFFB4500EAAE05 /* FirebaseAnalyticsSwift */; };
+		B5BCB4D629EFFB4500EAAE05 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B5BCB4D529EFFB4500EAAE05 /* FirebaseRemoteConfigSwift */; };
+		B5BCB4D829EFFB4F00EAAE05 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B5BCB4D729EFFB4F00EAAE05 /* FirebaseCrashlytics */; };
+		B5BCB4D929EFFEBD00EAAE05 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BCB4D029EFE1D600EAAE05 /* ConfigurationProvider.swift */; };
+		B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
+		B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */; };
 		B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
 		B5BE9F7F29E969D2004398BE /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */; };
 		B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7229E969D2004398BE /* HTTPMethod.swift */; };
@@ -118,6 +130,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5BCB4D029EFE1D600EAAE05 /* ConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProvider.swift; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		B5BE9F7229E969D2004398BE /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -165,6 +179,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BCB4D429EFFB4500EAAE05 /* FirebaseAnalyticsSwift in Frameworks */,
+				B5BCB4D629EFFB4500EAAE05 /* FirebaseRemoteConfigSwift in Frameworks */,
+				B5BCB4D829EFFB4F00EAAE05 /* FirebaseCrashlytics in Frameworks */,
 				B5BE9FED29E96E5A004398BE /* SwiftDate in Frameworks */,
 				B5BE9FEB29E96E5A004398BE /* GeoJSON in Frameworks */,
 			);
@@ -188,6 +205,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59DC6AC29EFDBB700B90A1E /* FirebaseAnalyticsSwift in Frameworks */,
+				B59DC6AE29EFDBB700B90A1E /* FirebaseCrashlytics in Frameworks */,
+				B59DC6B029EFDBB700B90A1E /* FirebaseRemoteConfigSwift in Frameworks */,
 				B5BE9FE829E96DE9004398BE /* SwiftDate in Frameworks */,
 				B5BE9FE529E96DDB004398BE /* GeoJSON in Frameworks */,
 			);
@@ -210,6 +230,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5BCB4DA29F150AA00EAAE05 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */,
+				B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		B5BE9F6E29E969D2004398BE /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,10 +291,9 @@
 		B5BE9FA029E96C75004398BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B5BCB4DA29F150AA00EAAE05 /* Factories */,
 				B5BE9FAA29E96CC3004398BE /* ContentView.swift */,
 				B5BE9F8829E969E0004398BE /* Bundle+Utils.swift */,
-				B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */,
-				B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */,
 				B5BE9F8A29E969E0004398BE /* ViewState.swift */,
 				B5BE9FA129E96C81004398BE /* Views */,
 				B5BE9F6E29E969D2004398BE /* Network Services */,
@@ -337,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				B5BE9FF829E9B945004398BE /* MockService.swift */,
+				B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
 				B5CA737629E9692D005C87F1 /* TideyTests */,
@@ -366,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				B5BE9F9F29E96C34004398BE /* Info.plist */,
+				B5BCB4D029EFE1D600EAAE05 /* ConfigurationProvider.swift */,
 				B5CA736129E9692A005C87F1 /* TideyApp.swift */,
 				B5CA736529E9692C005C87F1 /* Assets.xcassets */,
 				B5CA736A29E9692C005C87F1 /* Persistence.swift */,
@@ -419,6 +449,9 @@
 			packageProductDependencies = (
 				B5BE9FEA29E96E5A004398BE /* GeoJSON */,
 				B5BE9FEC29E96E5A004398BE /* SwiftDate */,
+				B5BCB4D329EFFB4500EAAE05 /* FirebaseAnalyticsSwift */,
+				B5BCB4D529EFFB4500EAAE05 /* FirebaseRemoteConfigSwift */,
+				B5BCB4D729EFFB4F00EAAE05 /* FirebaseCrashlytics */,
 			);
 			productName = "Tidey Watch Watch App";
 			productReference = B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */;
@@ -478,6 +511,9 @@
 			packageProductDependencies = (
 				B5BE9FE429E96DDB004398BE /* GeoJSON */,
 				B5BE9FE729E96DE9004398BE /* SwiftDate */,
+				B59DC6AB29EFDBB700B90A1E /* FirebaseAnalyticsSwift */,
+				B59DC6AD29EFDBB700B90A1E /* FirebaseCrashlytics */,
+				B59DC6AF29EFDBB700B90A1E /* FirebaseRemoteConfigSwift */,
 			);
 			productName = Tidey;
 			productReference = B5CA735E29E9692A005C87F1 /* Tidey.app */;
@@ -565,6 +601,7 @@
 			packageReferences = (
 				B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */,
 				B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B5CA735F29E9692A005C87F1 /* Products */;
 			projectDirPath = "";
@@ -586,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
+				B5BCB4CF29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
 				B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */,
 				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
 			);
@@ -611,6 +649,7 @@
 			files = (
 				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
+				B5BCB4CE29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,9 +677,11 @@
 				B5BE9FDD29E96D11004398BE /* TideStation.swift in Sources */,
 				B5BE9FD429E96CF2004398BE /* TideStationListView.swift in Sources */,
 				B5BE9FAB29E96CC3004398BE /* ContentView.swift in Sources */,
+				B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */,
 				B5BE9FEE29E96E88004398BE /* Bundle+Utils.swift in Sources */,
 				B5BE9FDC29E96D0C004398BE /* HTTPScheme.swift in Sources */,
 				B5BE9FD729E96CFA004398BE /* ViewState.swift in Sources */,
+				B5BCB4D929EFFEBD00EAAE05 /* ConfigurationProvider.swift in Sources */,
 				B5BE9FD529E96CF6004398BE /* StationDetailView.swift in Sources */,
 				B5BE9FD629E96CFA004398BE /* ViewModelFactory.swift in Sources */,
 				B5BE9FDB29E96D0C004398BE /* NetworkServiceError.swift in Sources */,
@@ -654,6 +695,7 @@
 				B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */,
 				B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */,
 				B5BE9FDE29E96D11004398BE /* Event.swift in Sources */,
+				B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +730,7 @@
 				B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */,
 				B5BE9F8E29E969E0004398BE /* ViewState.swift in Sources */,
 				B5BE9F8129E969D2004398BE /* HTTPScheme.swift in Sources */,
+				B5BCB4D129EFE1D600EAAE05 /* ConfigurationProvider.swift in Sources */,
 				B5BE9F8529E969D2004398BE /* Stringify.swift in Sources */,
 				B5BE9F9E29E96AA5004398BE /* StationDetailView.swift in Sources */,
 				B5BE9F8729E969D2004398BE /* UKTidalAPIService.swift in Sources */,
@@ -1223,6 +1266,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kiliankoe/GeoJSON";
@@ -1242,6 +1293,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B59DC6AB29EFDBB700B90A1E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		B59DC6AD29EFDBB700B90A1E /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B59DC6AF29EFDBB700B90A1E /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		B5BCB4D329EFFB4500EAAE05 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		B5BCB4D529EFFB4500EAAE05 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		B5BCB4D729EFFB4F00EAAE05 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B59DC6AA29EFDBB700B90A1E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		B5BE9FE429E96DDB004398BE /* GeoJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;

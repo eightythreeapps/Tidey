@@ -6,11 +6,52 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseRemoteConfig
 
 struct ContentView: View {
+
+    let persistenceController = PersistenceController.shared
+    var viewModelFactory:ViewModelFactory!
+    
+    @ObservedObject var configurationProvider:ConfigurationProvider
+
+    init() {
+        
+        FirebaseApp.configure()
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        self.configurationProvider = ConfigurationProvider(remoteConfig: remoteConfig)
+        self.configurationProvider.fetchConfig()
+        self.viewModelFactory = ViewModelFactory(configuration: self.configurationProvider)
+        
+    }
+    
     var body: some View {
-        TideStationListView()
-            .environmentObject(ViewModelFactory.makeTideStationListViewModel())
+        
+        switch configurationProvider.state {
+        case .notLoaded:
+            Text("Welcome")
+        case .loading:
+            ProgressView()
+        case .loaded:
+            
+            NavigationSplitView {
+                TideStationListView()
+            } detail: {
+                EmptyView()
+            }
+            .environmentObject(viewModelFactory.makeTideStationListViewModel())
+
+        case .error:
+            Text("There was an error loading the config")
+        }
+        
+        
     }
 }
 

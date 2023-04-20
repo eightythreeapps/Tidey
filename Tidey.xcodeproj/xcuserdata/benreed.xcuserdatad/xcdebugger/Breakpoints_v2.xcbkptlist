@@ -3,4 +3,192 @@
    uuid = "690DCE23-B62D-4F67-8678-81C0CB497E7B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Network Services/Protocols/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchData(method:path:queryParams:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 229338b096cb3c85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "884">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 105735a82fc56204"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 75ebc7616047f99b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - ae4c4c493a805818"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 229338b096cb3c47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "724">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 105735a82fc562c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - 75ebc7616047f959"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "1DBC07B4-5EB2-4050-B69D-CC95C5A9F0DC - ae4c4c493a8058da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Tidey.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(method: Tidey.HTTPMethod, path: Swift.String, queryParams: Swift.Optional&lt;Swift.Array&lt;Foundation.URLQueryItem&gt;&gt;, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, Tidey.NetworkServiceError&gt;"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Views/TideStationListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getEventsForStation(stationId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D - e5b039a1f28f673c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Tidey.TideStationListViewModel.getEventsForStation(stationId: Swift.String) async -&gt; ()"
+                  moduleName = "Tidey"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Views/TideStationListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D - 5d6638f9ad8a0cc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Tidey_Watch_Watch_App.TideStationListViewModel.getEventsForStation(stationId: Swift.String) async -&gt; ()"
+                  moduleName = "Tidey Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Views/TideStationListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
