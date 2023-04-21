@@ -16,13 +16,33 @@ struct StationDetailView: View {
     var body: some View {
         
         VStack {
-            Text(stationName)
             List(viewModel.tidalEvents) { event in
-                VStack(alignment: .leading) {
-                    Text(event.getFormttedEventName())
-                    Text(event.getFormattedDate())
-                        .font(.footnote)
+                
+                HStack {
+                    
+                    if event.getType() == .highWater {
+                        Image(systemName: "arrow.up.circle")
+                            .padding(EdgeInsets(top: 0.0,
+                                                leading: 0.0,
+                                                bottom: 0.0,
+                                                trailing: 4.0))
+                    }else{
+                        Image(systemName: "arrow.down.circle")
+                            .padding(EdgeInsets(top: 0.0,
+                                                leading: 0.0,
+                                                bottom: 0.0,
+                                                trailing: 4.0))
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text(event.getFormttedEventName())
+                            .font(.headline)
+                        Text(event.getFormattedDate())
+                            .font(.subheadline)
+                    }
+                    
                 }
+                
             }
         }.onAppear {
             if let id = id {
@@ -31,12 +51,13 @@ struct StationDetailView: View {
                 }
             }
         }
+        .navigationTitle(Text(stationName))
         
     }
 }
 
 struct StationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewFactory.makeStationDetailView()
+        PreviewFactory().makeStationDetailView()
     }
 }

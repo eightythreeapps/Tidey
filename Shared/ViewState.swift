@@ -8,6 +8,7 @@
 import Foundation
 
 enum ViewState {
+    case notLoading
     case loading
     case loaded
     case error

@@ -29,7 +29,7 @@ struct TideStation:Identifiable {
     public func getStationName() -> String {
         
         if let name = feature.properties?.data["Name"]?.value as? String {
-            return name
+            return name.capitalized
         }
         
         return "Unknown"

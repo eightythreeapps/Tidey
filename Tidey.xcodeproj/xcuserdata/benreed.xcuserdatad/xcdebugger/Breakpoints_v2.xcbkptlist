@@ -142,53 +142,5 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shared/Views/TideStationListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getEventsForStation(stationId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D - e5b039a1f28f673c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Tidey.TideStationListViewModel.getEventsForStation(stationId: Swift.String) async -&gt; ()"
-                  moduleName = "Tidey"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Views/TideStationListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "071A2EB4-8F8A-42CE-ABCB-D16F8908161D - 5d6638f9ad8a0cc6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Tidey_Watch_Watch_App.TideStationListViewModel.getEventsForStation(stationId: Swift.String) async -&gt; ()"
-                  moduleName = "Tidey Watch Watch App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Views/TideStationListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

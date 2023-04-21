@@ -12,6 +12,12 @@ import SwiftDate
 
 typealias TidalEvents = [TidalEvent]
 
+enum TideEventType {
+    case highWater
+    case lowWater
+    case unknown
+}
+
 struct TidalEvent:Identifiable {
         
     var id:UUID = UUID()
@@ -29,8 +35,24 @@ struct TidalEvent:Identifiable {
         
     }
     
+    public func getType() -> TideEventType {
+        if event.eventType == "HighWater" {
+            return .highWater
+        } else if event.eventType == "LowWater" {
+            return .lowWater
+        } else {
+            return .unknown
+        }
+    }
+    
     public func getFormttedEventName() -> String {
-        return event.eventType
+        if event.eventType == "HighWater" {
+            return "High Tide"
+        } else if event.eventType == "LowWater" {
+            return "Low Tide"
+        } else {
+            return "Unknown"
+        }
     }
  
 }

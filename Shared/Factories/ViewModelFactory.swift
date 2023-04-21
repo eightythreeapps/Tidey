@@ -16,17 +16,13 @@ public class ViewModelFactory:ObservableObject {
         self.configuration = configuration
     }
     
-    func configuredUKTidalAPIService() -> UKTidalAPIService {
+    func configuredUKTidalAPIService() -> TideDataLoadable {
             
         guard let subscriptionKey = try? self.configuration.configValue(for: .tidalApiSubscriptionKey) else {
             fatalError("Tidal API Subscription Key not found")
         }
         
-        let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":subscriptionKey]
-        
-        let session = URLSession(configuration: config)
-        let tideServiceAPI = UKTidalAPIService(session: session, baseURL: Bundle.main.object(key: .ukTidalApiBaseUrl), urlHelper: URLHelper())
+        let tideServiceAPI = UKTidalAPI.newInstance(apiKey: subscriptionKey)
         
         return tideServiceAPI
         
@@ -34,7 +30,7 @@ public class ViewModelFactory:ObservableObject {
     
     func makeTideStationListViewModel() -> TideStationListViewModel {
         
-        return TideStationListViewModel(tideStationAPIService: self.configuredUKTidalAPIService(), configuration: self.configuration)
+        return TideStationListViewModel(tideStationAPIService: self.configuredUKTidalAPIService())
     }
     
 }

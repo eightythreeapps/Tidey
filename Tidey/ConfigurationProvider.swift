@@ -33,9 +33,23 @@ public class ConfigurationProvider:ObservableObject {
     
     private var remoteConfig:RemoteConfig!
     
-    required init(remoteConfig:RemoteConfig) {
+    init(remoteConfig:RemoteConfig) {
         self.remoteConfig = remoteConfig
     }
+    
+    static let shared: ConfigurationProvider = {
+        
+        FirebaseApp.configure()
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        return ConfigurationProvider(remoteConfig: remoteConfig)
+        
+    }()
+
     
     func fetchConfig() {
         
@@ -49,7 +63,7 @@ public class ConfigurationProvider:ObservableObject {
                 self.state = .loaded
             case .error:
                 self.state = .error
-                print(error?.localizedDescription)
+
             @unknown default:
                 self.state = .error
             }
@@ -69,7 +83,7 @@ public class ConfigurationProvider:ObservableObject {
         
     }
     
-    func decodeValue(data:Data) throws -> String {
+    private func decodeValue(data:Data) throws -> String {
     
         if data.isEmpty {
             throw ConfigurationError.noData

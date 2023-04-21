@@ -8,13 +8,13 @@
 import Foundation
 import GeoJSON
 
-protocol UKTidalAPI {
+protocol TideDataLoadable {
     func getStations() async throws -> [TideStation]
     func getStation(stationId:String) async throws -> TideStation
     func getTidalEvents(stationId:String) async throws -> TidalEvents
 }
 
-public class UKTidalAPIService:UKTidalAPI,Service {
+public class UKTidalAPI:TideDataLoadable, Service {
     var session: URLSession
     var baseUrl: String
     var urlHelper: URLHelper
@@ -25,14 +25,17 @@ public class UKTidalAPIService:UKTidalAPI,Service {
         self.urlHelper = urlHelper
     }
     
-    func getSession() -> URLSession {
+    static func newInstance(apiKey:String) -> TideDataLoadable {
         
         let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key": "8d9e35c11be24d28b06be4d305d64210"]
-        
+        config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":apiKey]
+            
         let session = URLSession(configuration: config)
+        let baseURL = Bundle.main.object(key: .ukTidalApiBaseUrl)
         
-        return session
+        let tideAPIService = UKTidalAPI(session: session, baseURL: baseURL, urlHelper: URLHelper())
+        
+        return tideAPIService
     }
     
     func getStations() async throws -> [TideStation] {

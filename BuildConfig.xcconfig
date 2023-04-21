@@ -1,0 +1,11 @@
+//
+//  BuildConfig.xcconfig
+//  Tidey
+//
+//  Created by Ben Reed on 21/04/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+UK_TIDE_API_SUBSCRIPTION_KEY = "8d9e35c11be24d28b06be4d305d64210"

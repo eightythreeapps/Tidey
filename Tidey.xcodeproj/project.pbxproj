@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
+		B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
+		B52C81FD29F2B7F900965382 /* UKTideStations.json in Resources */ = {isa = PBXBuildFile; fileRef = B52C81FC29F2B7F900965382 /* UKTideStations.json */; };
+		B52C81FE29F2B7F900965382 /* UKTideStations.json in Resources */ = {isa = PBXBuildFile; fileRef = B52C81FC29F2B7F900965382 /* UKTideStations.json */; };
+		B52C820129F2BB7500965382 /* MockTideDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820029F2BB7500965382 /* MockTideDataService.swift */; };
+		B52C820229F2BB7500965382 /* MockTideDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820029F2BB7500965382 /* MockTideDataService.swift */; };
+		B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
+		B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
 		B59DC6AC29EFDBB700B90A1E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AB29EFDBB700B90A1E /* FirebaseAnalyticsSwift */; };
 		B59DC6AE29EFDBB700B90A1E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AD29EFDBB700B90A1E /* FirebaseCrashlytics */; };
 		B59DC6B029EFDBB700B90A1E /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B59DC6AF29EFDBB700B90A1E /* FirebaseRemoteConfigSwift */; };
@@ -130,6 +138,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfig.xcconfig; sourceTree = "<group>"; };
+		B52C81FC29F2B7F900965382 /* UKTideStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStations.json; sourceTree = "<group>"; };
+		B52C820029F2BB7500965382 /* MockTideDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTideDataService.swift; sourceTree = "<group>"; };
+		B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationListViewModel.swift; sourceTree = "<group>"; };
 		B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5BCB4D029EFE1D600EAAE05 /* ConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProvider.swift; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
@@ -230,6 +242,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B52C81FF29F2BB6000965382 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE9FF829E9B945004398BE /* MockService.swift */,
+				B52C820029F2BB7500965382 /* MockTideDataService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		B5BCB4DA29F150AA00EAAE05 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +327,7 @@
 			children = (
 				B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */,
 				B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */,
+				B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,7 +386,8 @@
 		B5CA735529E9692A005C87F1 = {
 			isa = PBXGroup;
 			children = (
-				B5BE9FF829E9B945004398BE /* MockService.swift */,
+				B52C81FF29F2BB6000965382 /* Mocks */,
+				B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */,
 				B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
@@ -408,6 +431,7 @@
 		B5CA736729E9692C005C87F1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B52C81FC29F2B7F900965382 /* UKTideStations.json */,
 				B5CA736829E9692C005C87F1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -623,6 +647,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
+				B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
+				B52C81FE29F2B7F900965382 /* UKTideStations.json in Resources */,
 				B5BCB4CF29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
 				B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */,
 				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
@@ -648,8 +674,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
+				B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
 				B5BCB4CE29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
+				B52C81FD29F2B7F900965382 /* UKTideStations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +709,7 @@
 				B5BE9FEE29E96E88004398BE /* Bundle+Utils.swift in Sources */,
 				B5BE9FDC29E96D0C004398BE /* HTTPScheme.swift in Sources */,
 				B5BE9FD729E96CFA004398BE /* ViewState.swift in Sources */,
+				B52C820229F2BB7500965382 /* MockTideDataService.swift in Sources */,
 				B5BCB4D929EFFEBD00EAAE05 /* ConfigurationProvider.swift in Sources */,
 				B5BE9FD529E96CF6004398BE /* StationDetailView.swift in Sources */,
 				B5BE9FD629E96CFA004398BE /* ViewModelFactory.swift in Sources */,
@@ -692,6 +721,7 @@
 				B5BE9FE229E96D18004398BE /* UKTidalAPIService.swift in Sources */,
 				B5BE9FD929E96D04004398BE /* URLHelper.swift in Sources */,
 				B5BE9FE029E96D14004398BE /* NetworkService.swift in Sources */,
+				B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
 				B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */,
 				B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */,
 				B5BE9FDE29E96D11004398BE /* Event.swift in Sources */,
@@ -727,6 +757,7 @@
 				B5BE9F8F29E969E0004398BE /* PreviewFactory.swift in Sources */,
 				B5BE9F8D29E969E0004398BE /* ViewModelFactory.swift in Sources */,
 				B5BE9FF029E9A216004398BE /* ContentView.swift in Sources */,
+				B52C820129F2BB7500965382 /* MockTideDataService.swift in Sources */,
 				B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */,
 				B5BE9F8E29E969E0004398BE /* ViewState.swift in Sources */,
 				B5BE9F8129E969D2004398BE /* HTTPScheme.swift in Sources */,
@@ -738,6 +769,7 @@
 				B5CA736E29E9692C005C87F1 /* Tidey.xcdatamodeld in Sources */,
 				B5BE9F8429E969D2004398BE /* TideStation.swift in Sources */,
 				B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */,
+				B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
 				B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */,
 				B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */,
 				B5BE9F8C29E969E0004398BE /* Bundle+Utils.swift in Sources */,
@@ -804,6 +836,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tidey Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = ARU7K8KJKJ;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
@@ -814,6 +847,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1068,8 +1102,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tidey/Preview Content\"";
 				DEVELOPMENT_TEAM = ARU7K8KJKJ;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tidey/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tidey;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1081,6 +1117,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = space.sometinylittle.Tidey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1102,6 +1139,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tidey/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tidey;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

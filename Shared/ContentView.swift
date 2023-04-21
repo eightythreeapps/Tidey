@@ -11,24 +11,13 @@ import FirebaseRemoteConfig
 
 struct ContentView: View {
 
-    let persistenceController = PersistenceController.shared
-    var viewModelFactory:ViewModelFactory!
+    @ObservedObject var configurationProvider:ConfigurationProvider = ConfigurationProvider.shared
     
-    @ObservedObject var configurationProvider:ConfigurationProvider
-
+    let persistenceController = PersistenceController.shared
+    var viewModelFactory:ViewModelFactory = ViewModelFactory(configuration: ConfigurationProvider.shared)
+    
     init() {
-        
-        FirebaseApp.configure()
-        
-        let remoteConfig = RemoteConfig.remoteConfig()
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
-        remoteConfig.configSettings = settings
-        
-        self.configurationProvider = ConfigurationProvider(remoteConfig: remoteConfig)
         self.configurationProvider.fetchConfig()
-        self.viewModelFactory = ViewModelFactory(configuration: self.configurationProvider)
-        
     }
     
     var body: some View {
@@ -57,6 +46,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PreviewFactory().makeContentView()
     }
 }
