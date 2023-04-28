@@ -8,13 +8,8 @@
 import Foundation
 import GeoJSON
 
-protocol TideDataLoadable {
-    func getStations() async throws -> [TideStation]
-    func getStation(stationId:String) async throws -> TideStation
-    func getTidalEvents(stationId:String) async throws -> TidalEvents
-}
-
 public class UKTidalAPI:TideDataLoadable, Service {
+    
     var session: URLSession
     var baseUrl: String
     var urlHelper: URLHelper
@@ -24,74 +19,78 @@ public class UKTidalAPI:TideDataLoadable, Service {
         self.baseUrl = baseUrl
         self.urlHelper = urlHelper
     }
-    
-    static func newInstance(apiKey:String) -> TideDataLoadable {
         
+    convenience init(apiKey:String) {
+     
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":apiKey]
             
         let session = URLSession(configuration: config)
-        let baseURL = Bundle.main.object(key: .ukTidalApiBaseUrl)
+        let baseURL = Bundle.main.object(key: .tidalApiBaseUrl)
         
-        let tideAPIService = UKTidalAPI(session: session, baseURL: baseURL, urlHelper: URLHelper())
+        self.init(session: session, baseURL: baseURL, urlHelper: URLHelper())
         
-        return tideAPIService
     }
     
     func getStations() async throws -> [TideStation] {
         
-        let result = await self.fetchData(method: .get, path: "/uktidalapi/api/V1/Stations", responseModel: FeatureCollection.self)
-
-        switch result {
-        case .success(let response):
+        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations") else {
+            throw NetworkServiceError.badUrl
+        }
+    
+        do {
+            let request = URLRequest(url: url)
             
-            let features = response.features
+            let result = try await self.fetchData(request: request, responseModel: FeatureCollection.self)
+            let features = result.features
             var stations = TideStations()
             for feature in features {
                 let tideStation = TideStation(feature: feature)
                 stations.append(tideStation)
             }
             return stations
-            
-        case .failure(let error):
-            
+        } catch {
             throw error
         }
-        
     }
     
     func getStation(stationId:String) async throws -> TideStation {
         
-        let result = await self.fetchData(method: .get, path: "/uktidalapi/api/V1/Stations/\(stationId)", responseModel: Feature.self)
-                
-        switch result {
-        case .success(let response):
-            let tideStation = TideStation(feature: response)
-            return tideStation
-        case .failure(let error):
-            throw error
+        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)") else {
+            throw NetworkServiceError.badUrl
         }
         
+        do {
+            let request = URLRequest(url: url)
+            let result = try await self.fetchData(request: request, responseModel: Feature.self)
+            let tideStation = TideStation(feature: result)
+            return tideStation
+        } catch {
+            throw error
+        }
+    
     }
     
     func getTidalEvents(stationId:String) async throws -> TidalEvents {
+                 
+        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents") else {
+            throw NetworkServiceError.badUrl
+        }
         
-        let result = await self.fetchData(method: .get, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents", responseModel: [Event].self)
-                
-        switch result {
-        case .success(let response):
+        do {
             
+            let request = URLRequest(url: url)
+            let result = try await self.fetchData(request: request, responseModel: [Event].self)
             var tidalEvents = TidalEvents()
             
-            for event in response {
+            for event in result {
                 let tidalEvent = TidalEvent(event: event)
                 tidalEvents.append(tidalEvent)
             }
             
             return tidalEvents
-        case .failure(let error):
+        } catch {
             throw error
         }
-        
     }
 }

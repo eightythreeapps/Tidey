@@ -12,6 +12,9 @@ enum NetworkServiceError: Error {
     case parsingError
     case noResponse
     case unauthorised
-    case httpError(code:Int)
-    case unknownError(error:Error)
+    case serverError
+    case unknownError
+    case forbidden
+    case notFound
+    case tooManyRequests
 }

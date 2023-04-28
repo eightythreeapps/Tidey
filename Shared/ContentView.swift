@@ -6,41 +6,60 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseRemoteConfig
+
+public class ContentViewModel:ObservableObject {
+    
+    @Published var state:LoadingState = .notLoading
+    @Published var tideDataApiKey:String!
+    
+    var configurationProvider:ConfigurationProvider = ConfigurationProvider(configurationSource: LocalConfiguration())
+    
+    init(state: LoadingState = .notLoading) {
+        self.state = state
+    }
+    
+    func fetchConfig() async {
+        
+        let _ = await self.configurationProvider.fetchConfig()
+        do {
+            self.tideDataApiKey = try self.configurationProvider.configValue(forKey: .tidalApiSubscriptionKey)
+            self.state = .loaded
+        } catch {
+            self.state = .error
+        }
+        
+    }
+    
+}
 
 struct ContentView: View {
-
-    @ObservedObject var configurationProvider:ConfigurationProvider = ConfigurationProvider.shared
     
-    let persistenceController = PersistenceController.shared
-    var viewModelFactory:ViewModelFactory = ViewModelFactory(configuration: ConfigurationProvider.shared)
-    
-    init() {
-        self.configurationProvider.fetchConfig()
-    }
+    @StateObject var viewModel = ContentViewModel(state: .loading)
     
     var body: some View {
         
-        switch configurationProvider.state {
-        case .notLoaded:
-            Text("Welcome")
-        case .loading:
-            ProgressView()
-        case .loaded:
-            
-            NavigationSplitView {
-                TideStationListView()
-            } detail: {
-                EmptyView()
+        VStack {
+            switch viewModel.state {
+            case .notLoading:
+                Text("Welcome")
+            case .loading:
+                ProgressView()
+            case .loaded:
+                
+                NavigationSplitView {
+                    TideStationListView()
+                } detail: {
+                    EmptyView()
+                }
+                .environmentObject(TideStationListViewModel(tideStationAPIService: UKTidalAPI(apiKey: viewModel.tideDataApiKey)))
+                
+            case .error:
+                Text("There was an error loading the config")
             }
-            .environmentObject(viewModelFactory.makeTideStationListViewModel())
-
-        case .error:
-            Text("There was an error loading the config")
         }
-        
-        
+        .task(priority: .high) {
+            await viewModel.fetchConfig()
+        }
     }
 }
 

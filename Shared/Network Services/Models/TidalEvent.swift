@@ -18,12 +18,17 @@ enum TideEventType {
     case unknown
 }
 
-struct TidalEvent:Identifiable {
+enum EventDateType {
+    case eventDate
+    case updatedDate
+}
+
+struct TidalEvent:Identifiable, Codable {
         
     var id:UUID = UUID()
     var event:Event
         
-    public func getFormattedDate() -> String {
+    public func getFormattedEventDate() -> String {
     
         let date = self.event.dateTime.toDate(style: .iso(.init(strict: true)), region: .local)
         
@@ -54,6 +59,37 @@ struct TidalEvent:Identifiable {
             return "Unknown"
         }
     }
+    
+    public func getEventDate() -> Date {
+        
+        guard let date = stringToDate(dateString: event.dateTime) else {
+            return Date()
+        }
+        
+        return date
+        
+    }
+    
+    public func getEventHeight() -> Double {
+        
+        if event.eventType == "HighWater" {
+            return 1.0
+        } else if event.eventType == "LowWater" {
+            return 0.0
+        } else {
+            return 0.0
+        }
+        
+    }
  
 }
 
+private extension TidalEvent {
+    
+    func stringToDate(dateString:String) -> Date? {
+        
+        let date = dateString.toDate(style: .iso(.init(strict: true)), region: .local)
+        return date?.date
+    }
+    
+}

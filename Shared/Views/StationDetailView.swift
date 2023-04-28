@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct StationDetailView: View {
     
@@ -16,6 +17,7 @@ struct StationDetailView: View {
     var body: some View {
         
         VStack {
+            
             List(viewModel.tidalEvents) { event in
                 
                 HStack {
@@ -37,7 +39,7 @@ struct StationDetailView: View {
                     VStack(alignment: .leading) {
                         Text(event.getFormttedEventName())
                             .font(.headline)
-                        Text(event.getFormattedDate())
+                        Text(event.getFormattedEventDate())
                             .font(.subheadline)
                     }
                     

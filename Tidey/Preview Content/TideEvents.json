@@ -1,0 +1,9 @@
+[{
+    "EventType": "LowWater",
+    "DateTime": "2023-04-24T02:03:00",
+    "IsApproximateTime": false,
+    "Height": 0.75416508983828623,
+    "IsApproximateHeight": false,
+    "Filtered": false,
+    "Date": "2023-04-24T00:00:00"
+}]

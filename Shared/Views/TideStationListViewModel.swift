@@ -7,12 +7,13 @@
 
 import Foundation
 
+@MainActor
 class TideStationListViewModel:ObservableObject {
     
     private var tideStationAPIService:TideDataLoadable
     
     @Published var stations:[TideStation] = [TideStation]()
-    @Published var viewState:ViewState = .notLoading
+    @Published var viewState:LoadingState = .notLoading
     @Published var path:[TideStation] = [TideStation]()
     @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
     
@@ -20,7 +21,7 @@ class TideStationListViewModel:ObservableObject {
         self.tideStationAPIService = tideStationAPIService
     }
     
-    func setViewState(viewState:ViewState) {
+    func setViewState(viewState:LoadingState) {
         self.viewState = viewState
     }
     

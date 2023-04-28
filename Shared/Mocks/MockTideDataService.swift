@@ -9,15 +9,19 @@ import Foundation
 import GeoJSON
 
 public class MockTideDataService:TideDataLoadable {
+    var session: URLSession
+    var baseUrl: String
+    var urlHelper: URLHelper
+    
+    required init(session: URLSession, baseURL baseUrl: String, urlHelper: URLHelper) {
+        self.session = session
+        self.baseUrl = baseUrl
+        self.urlHelper = urlHelper
+    }
     
     private func getFeatures() -> FeatureCollection? {
         
-        if let tideTimeJSON = Bundle.main.path(forResource: "UKTideStations", ofType: "json"){
-            
-            let data = try! Data(contentsOf: URL(fileURLWithPath: tideTimeJSON), options: .mappedIfSafe)
-            let decodedResponse = try! JSONDecoder().decode(FeatureCollection.self, from: data)
-            return decodedResponse
-        }
+        
         
         return nil
     }
@@ -38,7 +42,6 @@ public class MockTideDataService:TideDataLoadable {
     func getStations() async throws -> [TideStation] {
         
         let stations = getStations(from: getFeatures()!)
-    
         return stations
         
     }
@@ -46,21 +49,25 @@ public class MockTideDataService:TideDataLoadable {
     func getStation(stationId: String) async throws -> TideStation {
         
         let stations = getStations(from: getFeatures()!)
-        return stations.first!
+        
+        if let station = stations.first(where: { $0.getStationId() == stationId }) {
+            return station
+        } else {
+            throw NetworkServiceError.notFound
+        }
         
     }
     
     func getTidalEvents(stationId: String) async throws -> TidalEvents {
+      
+        guard let tideEvents = BundleFactory.bundleFor(classType: self).path(forResource: "TideEvents", ofType: "json") else {
+            throw NetworkServiceError.parsingError
+        }
+
+        let data = try! Data(contentsOf: URL(fileURLWithPath: tideEvents), options: .mappedIfSafe)
+        let decodedResponse = try! JSONDecoder().decode(TidalEvents.self, from: data)
+        return decodedResponse
         
-        return [
-            TidalEvent(event: Event(eventType: "HighWater",
-                                    dateTime: "2023-04-21T04:05:00",
-                                    isApproximateTime: true,
-                                    height: 10.0,
-                                    isApproximateHeight: true,
-                                    filtered: false,
-                                    date: "2023-04-21T00:00:00"))]
     }
-    
     
 }

@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseRemoteConfig
 import GeoJSON
 
 public class PreviewFactory {
@@ -16,15 +14,15 @@ public class PreviewFactory {
         return ContentView()
     }
     
-    func makeStationDetailView() -> some View {
-        return StationDetailView(stationName: "StationName", id: "0001")
-            .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService()))
+    @MainActor func makeStationDetailView() -> some View {
+        return StationDetailView(stationName: "StationName", id: "0011")
+            .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService(session: URLSession.shared, baseURL: "", urlHelper: URLHelper())))
     }
 
-    func makeTideStationListPreview() -> some View {
+    @MainActor func makeTideStationListPreview() -> some View {
         
         return TideStationListView()
-            .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService()))
+            .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService(session: URLSession.shared, baseURL: "", urlHelper: URLHelper())))
     }
     
 }

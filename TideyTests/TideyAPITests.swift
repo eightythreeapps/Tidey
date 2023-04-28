@@ -6,80 +6,156 @@
 //
 
 import XCTest
+import Combine
 @testable import Tidey
 
 final class TideyAPITests: XCTestCase {
 
-    var ukTidalAPIService:UKTidalAPI!
+    var tidalDataSource:TideDataLoadable!
+    var cancellables = Set<AnyCancellable>()
     
     override func setUpWithError() throws {
         
-        guard let subscriptionKey = ProcessInfo.processInfo.environment["OcpApimSubscriptionKey"] else {
-            XCTFail("No subscription key found")
-            return
-        }
-            
-        let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":subscriptionKey]
-        
-        let session = URLSession(configuration: config)
-        XCTAssertNotNil(session.configuration.httpAdditionalHeaders)
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        self.ukTidalAPIService = UKTidalAPIService(session: session,
-                                                   baseURL: Bundle.main.object(key: .ukTidalApiBaseUrl),
-                                                   urlHelper: URLHelper())
-    }
-
-    func testCreateURL() throws {
-        
-        let host = "www.testhost.com"
-        let urlHelper = URLHelper()
-        let requestUrl = urlHelper.requestUrl(host: "www.testhost.com")
-        XCTAssertNotNil(requestUrl)
-        
-        if let componets = URLComponents(string: requestUrl!.absoluteString) {
-            XCTAssertTrue(componets.scheme == HTTPScheme.https.rawValue)
-            XCTAssertTrue(componets.host == host)
-        }else{
-            XCTFail("Components should not be nil")
-        }
     }
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        self.ukTidalAPIService = nil
+        self.tidalDataSource = nil
     }
     
-    func testCallWithNoSubscriptionKey() async throws {
+    func createMockService(ofType type:AnyClass) -> URLSession {
+        URLProtocol.registerClass(type)
+        let mockConfig = URLSessionConfiguration.ephemeral
+    
+        mockConfig.protocolClasses?.insert(type, at: 0)
+        let session = URLSession(configuration: mockConfig)
         
-        self.ukTidalAPIService = UKTidalAPIService(session: URLSession.shared,
-                                                   baseURL: Bundle.main.object(key: .ukTidalApiBaseUrl),
-                                                   urlHelper: URLHelper())
+        return session
+    }
+    
+    func testTooManyRequests() async throws {
+        
+        let session = createMockService(ofType: MockTooManyResponses.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
         
         do {
-            let result = try await self.ukTidalAPIService.getStations()
-        } catch NetworkServiceError.httpError(code: let statusCode) {
-            XCTAssertTrue(statusCode == 401)
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .tooManyRequests, "Error shoud be Too Many Requests")
         }
+        
     }
     
-    func testGetAllStations() async throws {
+    func testNotFound() async throws {
+        
+        let session = createMockService(ofType: MockNotFound.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
         
         do {
-            let result = try await self.ukTidalAPIService.getStations()
-            XCTAssertNotNil(result)
-        } catch {
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .notFound, "Error shoud be Not Found")
+        }
+        
+    }
+    
+    func testNotAuthorised() async throws {
+        
+        let session = createMockService(ofType: MockNotAuthorised.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        
+        do {
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .unauthorised, "Error shoud be Unathorized")
+        }
+        
+    }
+    
+    func testServerError() async throws {
+        
+        let session = createMockService(ofType: MockServerError.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        
+        do {
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .serverError, "Error shoud Server Error")
+        }
+        
+    }
+    
+    func testForbidden() async throws {
+        
+        let session = createMockService(ofType: MockForbidden.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        
+        do {
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .forbidden, "Error shoud Server Error")
+        }
+        
+    }
+    
+    func testSuccessfulTideStationResponse() async throws {
+        
+        let expectation = XCTestExpectation(description: "Tide Station Data should be successfully returned")
+        
+        let session = createMockService(ofType: MockSuccessForTideStations.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        
+        do {
+            let stations = try await tideDataLoadable.getStations()
+            XCTAssertNotNil(stations, "Stations list should be populated")
+            expectation.fulfill()
+        }catch {
             XCTFail("API call should succeed")
+            expectation.fulfill()
+        }
+        
+        await fulfillment(of: [expectation], timeout: 10.0)
+    }
+    
+    func testBadDataInTideStationResponse() async throws {
+        
+        let session = createMockService(ofType: MockBadDataInTideStationList.self)
+        
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        
+        do {
+            let _ = try await tideDataLoadable.getStations()
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .parsingError, "Error be Parsing Error")
         }
         
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSessionHeaders() async throws {
+        
+        let session = URLSession.shared
+        let tideDataLoadable = UKTidalAPI(apiKey: "APIKEY")
+        
+        let headers = tideDataLoadable.session.configuration.httpAdditionalHeaders
+        XCTAssertNotNil(headers, "Additional HTTP headers should not be nil")
+        
+        XCTAssertTrue(headers?.count == 1, "Additional headers shold only contain a single value")
+        
+        let header = tideDataLoadable.session.configuration.httpAdditionalHeaders?.first(where: { $0.key as! String == "Ocp-Apim-Subscription-Key" })
+        XCTAssertNotNil(header, "Subscription Key header should not be nil")
+        XCTAssertTrue(header?.value as! String == "APIKEY")
+    
     }
-
 }
