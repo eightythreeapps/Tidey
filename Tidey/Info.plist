@@ -5,7 +5,7 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>TidalDiscoveryAPISubscriptionKeyPrimary</key>
-	<string>$(UK_TIDE_API_SUBSCRIPTION_KEY)</string>
+	<string>/Users/benreed/Apps/Tidey/Tidey Complication/Info.plist</string>
 	<key>UKTidalAPIBaseURL</key>
 	<string>$(UK_TIDAL_API_BASE_URL)</string>
 </dict>

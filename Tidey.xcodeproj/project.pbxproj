@@ -36,8 +36,6 @@
 		B5A06E0F29F9956A00E82973 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
 		B5A06E1129FAC19300E82973 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
-		B5BCB4CE29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */; };
-		B5BCB4CF29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */; };
 		B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
 		B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */; };
 		B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
@@ -193,7 +191,6 @@
 		B5A06E0D29F9956A00E82973 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
-		B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		B5BE9F7229E969D2004398BE /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -477,7 +474,6 @@
 			isa = PBXGroup;
 			children = (
 				B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */,
-				B5BCB4CD29EFE16C00EAAE05 /* GoogleService-Info.plist */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
 				B5CA737629E9692D005C87F1 /* TideyTests */,
@@ -617,6 +613,7 @@
 				B5CA735B29E9692A005C87F1 /* Frameworks */,
 				B5CA735C29E9692A005C87F1 /* Resources */,
 				B5BE9FCD29E96CC5004398BE /* Embed Watch Content */,
+				B50795D129FC406D00B5A2C9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -739,7 +736,6 @@
 				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
 				B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B52C81FE29F2B7F900965382 /* UKTideStationsBadData.json in Resources */,
-				B5BCB4CF29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
 				B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */,
 				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
 			);
@@ -767,7 +763,6 @@
 				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
 				B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
-				B5BCB4CE29EFE16C00EAAE05 /* GoogleService-Info.plist in Resources */,
 				B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */,
 				B52C81FD29F2B7F900965382 /* UKTideStationsBadData.json in Resources */,
 			);
@@ -788,6 +783,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B50795D129FC406D00B5A2C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nplutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string ${OCP_APIM_SUBSCRIPTION_KEY} ${PROJECT_DIR}/**/Info.plist\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5BE9FA229E96CC3004398BE /* Sources */ = {
