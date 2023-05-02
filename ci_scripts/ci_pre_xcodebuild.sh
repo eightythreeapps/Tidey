@@ -9,5 +9,5 @@ if [ $CI ];
 then
     echo "CI build"
     echo "Updating Tidal API Key from environment"
-    plutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string "$OCP_APIM_SUBSCRIPTION_KEY" $CI_PROJECT_FILE_PATH/**/Info.plist
+    plutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string "$OCP_APIM_SUBSCRIPTION_KEY" $CI_XCODE_PROJECT/**/Info.plist
 fi
