@@ -800,7 +800,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nplutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string ${OCP_APIM_SUBSCRIPTION_KEY} ${PROJECT_DIR}/**/Info.plist\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CI ];\nthen\n    echo \"CI build\"\n    echo \"Updating Tidal API Key from environment\"\n    plutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string \"$OCP_APIM_SUBSCRIPTION_KEY\" ${CI_PROJECT_FILE_PATH}/**/Info.plist\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
