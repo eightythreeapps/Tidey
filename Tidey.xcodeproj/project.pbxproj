@@ -166,6 +166,7 @@
 
 /* Begin PBXFileReference section */
 		B504CD8C29FC095300C1C662 /* UKTideStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStations.json; sourceTree = "<group>"; };
+		B50795D32A015CD800B5A2C9 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProvider.swift; sourceTree = "<group>"; };
 		B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfiguration.swift; sourceTree = "<group>"; };
 		B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
@@ -281,6 +282,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B50795D22A015C8E00B5A2C9 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B50795D32A015CD800B5A2C9 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		B50EDA2D29F8333300F10CE6 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +482,7 @@
 		B5CA735529E9692A005C87F1 = {
 			isa = PBXGroup;
 			children = (
+				B50795D22A015C8E00B5A2C9 /* ci_scripts */,
 				B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
@@ -613,7 +623,6 @@
 				B5CA735B29E9692A005C87F1 /* Frameworks */,
 				B5CA735C29E9692A005C87F1 /* Resources */,
 				B5BE9FCD29E96CC5004398BE /* Embed Watch Content */,
-				B50795D129FC406D00B5A2C9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -783,26 +792,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B50795D129FC406D00B5A2C9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CI ];\nthen\n    echo \"CI build\"\n    echo \"Updating Tidal API Key from environment\"\n    plutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string \"$OCP_APIM_SUBSCRIPTION_KEY\" $CI_PROJECT_FILE_PATH/**/Info.plist\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5BE9FA229E96CC3004398BE /* Sources */ = {
