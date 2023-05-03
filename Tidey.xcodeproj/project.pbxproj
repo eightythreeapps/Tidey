@@ -26,6 +26,42 @@
 		B52C820229F2BB7500965382 /* MockTideDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820029F2BB7500965382 /* MockTideDataService.swift */; };
 		B52C820429F2C92800965382 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820329F2C92800965382 /* ComplicationController.swift */; };
 		B52C822829F2CD2200965382 /* Tidey_Complication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B52C822329F2CD2000965382 /* Tidey_Complication.intentdefinition */; };
+		B55F77E62A026D6D00524CF2 /* Tidey_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */; };
+		B55F77EA2A026D6E00524CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77E92A026D6E00524CF2 /* Assets.xcassets */; };
+		B55F77ED2A026D6E00524CF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77EC2A026D6E00524CF2 /* Preview Assets.xcassets */; };
+		B55F77EF2A026D6E00524CF2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F77EE2A026D6E00524CF2 /* Persistence.swift */; };
+		B55F77F22A026D6E00524CF2 /* Tidey_TV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B55F77F02A026D6E00524CF2 /* Tidey_TV.xcdatamodeld */; };
+		B55F77FC2A026D6E00524CF2 /* Tidey_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F77FB2A026D6E00524CF2 /* Tidey_TVTests.swift */; };
+		B55F78062A026D6E00524CF2 /* Tidey_TVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F78052A026D6E00524CF2 /* Tidey_TVUITests.swift */; };
+		B55F78082A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F78072A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift */; };
+		B55F78122A026D9100524CF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FAA29E96CC3004398BE /* ContentView.swift */; };
+		B55F78142A026DC000524CF2 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF829E9B945004398BE /* MockService.swift */; };
+		B55F78152A026DC300524CF2 /* MockTideDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820029F2BB7500965382 /* MockTideDataService.swift */; };
+		B55F78162A026DC500524CF2 /* BundleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0A29F9654900E82973 /* BundleFactory.swift */; };
+		B55F78182A026DCC00524CF2 /* ConfigurationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */; };
+		B55F78192A026DCC00524CF2 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
+		B55F781A2A026DD000524CF2 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
+		B55F781B2A026DD000524CF2 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */; };
+		B55F781C2A026DD000524CF2 /* RemoteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */; };
+		B55F781D2A026DD000524CF2 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
+		B55F781E2A026DD800524CF2 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */; };
+		B55F781F2A026DD800524CF2 /* PreviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */; };
+		B55F78202A026DE300524CF2 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
+		B55F78212A026DE300524CF2 /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */; };
+		B55F78222A026DE300524CF2 /* TideStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */; };
+		B55F78232A026DEA00524CF2 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
+		B55F78242A026DEA00524CF2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7729E969D2004398BE /* Event.swift */; };
+		B55F78252A026DEE00524CF2 /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7329E969D2004398BE /* HTTPScheme.swift */; };
+		B55F78262A026DEE00524CF2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7229E969D2004398BE /* HTTPMethod.swift */; };
+		B55F78272A026DEE00524CF2 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */; };
+		B55F78282A026DF200524CF2 /* TideStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7829E969D2004398BE /* TideStation.swift */; };
+		B55F78292A026DF200524CF2 /* TidalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */; };
+		B55F782A2A026DF700524CF2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7B29E969D2004398BE /* NetworkService.swift */; };
+		B55F782B2A026DF700524CF2 /* TideDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0729F9622600E82973 /* TideDataLoadable.swift */; };
+		B55F782C2A026DF700524CF2 /* Stringify.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7A29E969D2004398BE /* Stringify.swift */; };
+		B55F782D2A026DFA00524CF2 /* UKTidalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7D29E969D2004398BE /* UKTidalAPI.swift */; };
+		B55F782F2A026E1900524CF2 /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B55F782E2A026E1900524CF2 /* GeoJSON */; };
+		B55F78312A026E1900524CF2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B55F78302A026E1900524CF2 /* SwiftDate */; };
 		B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
 		B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
 		B5A06E0829F9622600E82973 /* TideDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0729F9622600E82973 /* TideDataLoadable.swift */; };
@@ -93,6 +129,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B55F77F82A026D6E00524CF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B55F77E22A026D6D00524CF2;
+			remoteInfo = "Tidey TV";
+		};
+		B55F78022A026D6E00524CF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B55F77E22A026D6D00524CF2;
+			remoteInfo = "Tidey TV";
+		};
 		B5BE9FB629E96CC5004398BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
@@ -185,6 +235,18 @@
 		B52C822329F2CD2000965382 /* Tidey_Complication.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Tidey_Complication.intentdefinition; sourceTree = "<group>"; };
 		B52C822429F2CD2200965382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52C822629F2CD2200965382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55F77E32A026D6D00524CF2 /* Tidey TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVApp.swift; sourceTree = "<group>"; };
+		B55F77E92A026D6E00524CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B55F77EC2A026D6E00524CF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B55F77EE2A026D6E00524CF2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B55F77F12A026D6E00524CF2 /* Tidey_TV.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tidey_TV.xcdatamodel; sourceTree = "<group>"; };
+		B55F77F72A026D6E00524CF2 /* Tidey TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55F77FB2A026D6E00524CF2 /* Tidey_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVTests.swift; sourceTree = "<group>"; };
+		B55F78012A026D6E00524CF2 /* Tidey TVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey TVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55F78052A026D6E00524CF2 /* Tidey_TVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVUITests.swift; sourceTree = "<group>"; };
+		B55F78072A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B55F78322A0270A700524CF2 /* Tidey-TV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-TV-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationListViewModel.swift; sourceTree = "<group>"; };
 		B5A06E0629F9277E00E82973 /* Tidey-Watch-Watch-AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-Watch-Watch-AppTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5A06E0729F9622600E82973 /* TideDataLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideDataLoadable.swift; sourceTree = "<group>"; };
@@ -233,6 +295,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B55F77E02A026D6D00524CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55F78312A026E1900524CF2 /* SwiftDate in Frameworks */,
+				B55F782F2A026E1900524CF2 /* GeoJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77F42A026D6E00524CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77FE2A026D6E00524CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5BE9FA329E96CC3004398BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +426,44 @@
 			path = "Tidey Complication";
 			sourceTree = "<group>";
 		};
+		B55F77E42A026D6D00524CF2 /* Tidey TV */ = {
+			isa = PBXGroup;
+			children = (
+				B55F78322A0270A700524CF2 /* Tidey-TV-Info.plist */,
+				B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */,
+				B55F77E92A026D6E00524CF2 /* Assets.xcassets */,
+				B55F77EE2A026D6E00524CF2 /* Persistence.swift */,
+				B55F77F02A026D6E00524CF2 /* Tidey_TV.xcdatamodeld */,
+				B55F77EB2A026D6E00524CF2 /* Preview Content */,
+			);
+			path = "Tidey TV";
+			sourceTree = "<group>";
+		};
+		B55F77EB2A026D6E00524CF2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B55F77EC2A026D6E00524CF2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B55F77FA2A026D6E00524CF2 /* Tidey TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				B55F77FB2A026D6E00524CF2 /* Tidey_TVTests.swift */,
+			);
+			path = "Tidey TVTests";
+			sourceTree = "<group>";
+		};
+		B55F78042A026D6E00524CF2 /* Tidey TVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B55F78052A026D6E00524CF2 /* Tidey_TVUITests.swift */,
+				B55F78072A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift */,
+			);
+			path = "Tidey TVUITests";
+			sourceTree = "<group>";
+		};
 		B5BCB4DA29F150AA00EAAE05 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,11 +526,11 @@
 		B5BE9FA029E96C75004398BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B5BE9FAA29E96CC3004398BE /* ContentView.swift */,
 				B52C81FF29F2BB6000965382 /* Mocks */,
 				B50EDA3429F833CC00F10CE6 /* Protocols */,
 				B50EDA2D29F8333300F10CE6 /* Configuration */,
 				B5BCB4DA29F150AA00EAAE05 /* Factories */,
-				B5BE9FAA29E96CC3004398BE /* ContentView.swift */,
 				B5BE9FA129E96C81004398BE /* Views */,
 				B5BE9F6E29E969D2004398BE /* Network Services */,
 			);
@@ -493,6 +616,9 @@
 				B5BE9FC229E96CC5004398BE /* Tidey Watch Watch AppUITests */,
 				B52C820A29F2CC2100965382 /* Tidey Watch Extension */,
 				B52C822029F2CD2000965382 /* Tidey Complication */,
+				B55F77E42A026D6D00524CF2 /* Tidey TV */,
+				B55F77FA2A026D6E00524CF2 /* Tidey TVTests */,
+				B55F78042A026D6E00524CF2 /* Tidey TVUITests */,
 				B5CA735F29E9692A005C87F1 /* Products */,
 				B5BE9FE929E96E5A004398BE /* Frameworks */,
 			);
@@ -507,6 +633,9 @@
 				B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */,
 				B5BE9FB529E96CC5004398BE /* Tidey Watch Watch AppTests.xctest */,
 				B5BE9FBF29E96CC5004398BE /* Tidey Watch Watch AppUITests.xctest */,
+				B55F77E32A026D6D00524CF2 /* Tidey TV.app */,
+				B55F77F72A026D6E00524CF2 /* Tidey TVTests.xctest */,
+				B55F78012A026D6E00524CF2 /* Tidey TVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -556,6 +685,63 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B55F77E22A026D6D00524CF2 /* Tidey TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55F780F2A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TV" */;
+			buildPhases = (
+				B55F77DF2A026D6D00524CF2 /* Sources */,
+				B55F77E02A026D6D00524CF2 /* Frameworks */,
+				B55F77E12A026D6D00524CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tidey TV";
+			packageProductDependencies = (
+				B55F782E2A026E1900524CF2 /* GeoJSON */,
+				B55F78302A026E1900524CF2 /* SwiftDate */,
+			);
+			productName = "Tidey TV";
+			productReference = B55F77E32A026D6D00524CF2 /* Tidey TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B55F77F62A026D6E00524CF2 /* Tidey TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55F78102A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TVTests" */;
+			buildPhases = (
+				B55F77F32A026D6E00524CF2 /* Sources */,
+				B55F77F42A026D6E00524CF2 /* Frameworks */,
+				B55F77F52A026D6E00524CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B55F77F92A026D6E00524CF2 /* PBXTargetDependency */,
+			);
+			name = "Tidey TVTests";
+			productName = "Tidey TVTests";
+			productReference = B55F77F72A026D6E00524CF2 /* Tidey TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B55F78002A026D6E00524CF2 /* Tidey TVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B55F78112A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TVUITests" */;
+			buildPhases = (
+				B55F77FD2A026D6E00524CF2 /* Sources */,
+				B55F77FE2A026D6E00524CF2 /* Frameworks */,
+				B55F77FF2A026D6E00524CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B55F78032A026D6E00524CF2 /* PBXTargetDependency */,
+			);
+			name = "Tidey TVUITests";
+			productName = "Tidey TVUITests";
+			productReference = B55F78012A026D6E00524CF2 /* Tidey TVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5BE9FCA29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch App" */;
@@ -686,6 +872,17 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					B55F77E22A026D6D00524CF2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					B55F77F62A026D6E00524CF2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = B55F77E22A026D6D00524CF2;
+					};
+					B55F78002A026D6E00524CF2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = B55F77E22A026D6D00524CF2;
+					};
 					B5BE9FA529E96CC3004398BE = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -733,11 +930,37 @@
 				B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */,
 				B5BE9FB429E96CC5004398BE /* Tidey Watch Watch AppTests */,
 				B5BE9FBE29E96CC5004398BE /* Tidey Watch Watch AppUITests */,
+				B55F77E22A026D6D00524CF2 /* Tidey TV */,
+				B55F77F62A026D6E00524CF2 /* Tidey TVTests */,
+				B55F78002A026D6E00524CF2 /* Tidey TVUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B55F77E12A026D6D00524CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55F77ED2A026D6E00524CF2 /* Preview Assets.xcassets in Resources */,
+				B55F77EA2A026D6E00524CF2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77F52A026D6E00524CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77FF2A026D6E00524CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5BE9FA429E96CC3004398BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -794,6 +1017,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B55F77DF2A026D6D00524CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55F781B2A026DD000524CF2 /* ConfigurationProvider.swift in Sources */,
+				B55F78162A026DC500524CF2 /* BundleFactory.swift in Sources */,
+				B55F782D2A026DFA00524CF2 /* UKTidalAPI.swift in Sources */,
+				B55F77EF2A026D6E00524CF2 /* Persistence.swift in Sources */,
+				B55F78272A026DEE00524CF2 /* NetworkServiceError.swift in Sources */,
+				B55F78192A026DCC00524CF2 /* Loadable.swift in Sources */,
+				B55F78242A026DEA00524CF2 /* Event.swift in Sources */,
+				B55F781C2A026DD000524CF2 /* RemoteConfiguration.swift in Sources */,
+				B55F78152A026DC300524CF2 /* MockTideDataService.swift in Sources */,
+				B55F77F22A026D6E00524CF2 /* Tidey_TV.xcdatamodeld in Sources */,
+				B55F781A2A026DD000524CF2 /* Bundle+Utils.swift in Sources */,
+				B55F78212A026DE300524CF2 /* StationDetailView.swift in Sources */,
+				B55F781D2A026DD000524CF2 /* LocalConfiguration.swift in Sources */,
+				B55F78282A026DF200524CF2 /* TideStation.swift in Sources */,
+				B55F78202A026DE300524CF2 /* TideStationListViewModel.swift in Sources */,
+				B55F78292A026DF200524CF2 /* TidalEvent.swift in Sources */,
+				B55F78122A026D9100524CF2 /* ContentView.swift in Sources */,
+				B55F78182A026DCC00524CF2 /* ConfigurationSource.swift in Sources */,
+				B55F78262A026DEE00524CF2 /* HTTPMethod.swift in Sources */,
+				B55F781F2A026DD800524CF2 /* PreviewFactory.swift in Sources */,
+				B55F78232A026DEA00524CF2 /* URLHelper.swift in Sources */,
+				B55F77E62A026D6D00524CF2 /* Tidey_TVApp.swift in Sources */,
+				B55F78252A026DEE00524CF2 /* HTTPScheme.swift in Sources */,
+				B55F78222A026DE300524CF2 /* TideStationListView.swift in Sources */,
+				B55F782B2A026DF700524CF2 /* TideDataLoadable.swift in Sources */,
+				B55F78142A026DC000524CF2 /* MockService.swift in Sources */,
+				B55F782C2A026DF700524CF2 /* Stringify.swift in Sources */,
+				B55F782A2A026DF700524CF2 /* NetworkService.swift in Sources */,
+				B55F781E2A026DD800524CF2 /* ViewModelFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77F32A026D6E00524CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55F77FC2A026D6E00524CF2 /* Tidey_TVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B55F77FD2A026D6E00524CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B55F78082A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift in Sources */,
+				B55F78062A026D6E00524CF2 /* Tidey_TVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5BE9FA229E96CC3004398BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -906,6 +1182,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B55F77F92A026D6E00524CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B55F77E22A026D6D00524CF2 /* Tidey TV */;
+			targetProxy = B55F77F82A026D6E00524CF2 /* PBXContainerItemProxy */;
+		};
+		B55F78032A026D6E00524CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B55F77E22A026D6D00524CF2 /* Tidey TV */;
+			targetProxy = B55F78022A026D6E00524CF2 /* PBXContainerItemProxy */;
+		};
 		B5BE9FB729E96CC5004398BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5BE9FA529E96CC3004398BE /* Tidey Watch Watch App */;
@@ -934,6 +1220,156 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B55F78092A026D6E00524CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey TV/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey-TV-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		B55F780A2A026D6E00524CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey TV/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey-TV-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
+		B55F780B2A026D6E00524CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		B55F780C2A026D6E00524CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey TV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
+		B55F780D2A026D6E00524CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Tidey TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Debug;
+		};
+		B55F780E2A026D6E00524CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-TVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = "Tidey TV";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
+			};
+			name = Release;
+		};
 		B5BE9FCB29E96CC5004398BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
@@ -1152,6 +1588,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
 				UK_TIDAL_API_BASE_URL = "admiraltyapi.azure-api.net";
 				WATCHOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -1208,6 +1645,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 16.4;
 				UK_TIDAL_API_BASE_URL = "admiraltyapi.azure-api.net";
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 9.1;
@@ -1369,6 +1807,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B55F780F2A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55F78092A026D6E00524CF2 /* Debug */,
+				B55F780A2A026D6E00524CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B55F78102A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55F780B2A026D6E00524CF2 /* Debug */,
+				B55F780C2A026D6E00524CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B55F78112A026D6E00524CF2 /* Build configuration list for PBXNativeTarget "Tidey TVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B55F780D2A026D6E00524CF2 /* Debug */,
+				B55F780E2A026D6E00524CF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5BE9FCA29E96CC5004398BE /* Build configuration list for PBXNativeTarget "Tidey Watch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1454,6 +1919,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B55F782E2A026E1900524CF2 /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;
+			productName = GeoJSON;
+		};
+		B55F78302A026E1900524CF2 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
 		B5BE9FE429E96DDB004398BE /* GeoJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;
@@ -1477,6 +1952,16 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
+		B55F77F02A026D6E00524CF2 /* Tidey_TV.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B55F77F12A026D6E00524CF2 /* Tidey_TV.xcdatamodel */,
+			);
+			currentVersion = B55F77F12A026D6E00524CF2 /* Tidey_TV.xcdatamodel */;
+			path = Tidey_TV.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
