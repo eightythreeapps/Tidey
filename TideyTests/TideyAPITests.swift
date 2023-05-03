@@ -34,7 +34,7 @@ final class TideyAPITests: XCTestCase {
         
         XCTAssert(url?.scheme == HTTPScheme.https.rawValue, "URL scheme should be HTTPS")
         XCTAssert(url?.host() == host, "Host should match input host")
-        XCTAssertNil(url?.pathComponents, "Path components should be nil")
+        XCTAssertTrue(url!.pathComponents.isEmpty, "Path components should be empty")
     }
     
     func testBuildURLWithValidPath() throws {
