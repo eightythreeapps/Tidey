@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		B504CD8D29FC095300C1C662 /* UKTideStations.json in Resources */ = {isa = PBXBuildFile; fileRef = B504CD8C29FC095300C1C662 /* UKTideStations.json */; };
 		B50EDA2F29F8334C00F10CE6 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */; };
-		B50EDA3129F8337B00F10CE6 /* RemoteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */; };
 		B50EDA3329F833B500F10CE6 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
 		B50EDA3629F833E200F10CE6 /* ConfigurationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */; };
 		B50EDA3829F8350000F10CE6 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
 		B50EDA3929F8350000F10CE6 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
 		B50EDA3A29F8382C00F10CE6 /* ConfigurationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */; };
 		B50EDA3B29F8383200F10CE6 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */; };
-		B50EDA3C29F8383400F10CE6 /* RemoteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */; };
 		B50EDA3D29F8383600F10CE6 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
 		B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
 		B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
@@ -42,7 +40,6 @@
 		B55F78192A026DCC00524CF2 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
 		B55F781A2A026DD000524CF2 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
 		B55F781B2A026DD000524CF2 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */; };
-		B55F781C2A026DD000524CF2 /* RemoteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */; };
 		B55F781D2A026DD000524CF2 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
 		B55F781E2A026DD800524CF2 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8929E969E0004398BE /* ViewModelFactory.swift */; };
 		B55F781F2A026DD800524CF2 /* PreviewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F8B29E969E0004398BE /* PreviewFactory.swift */; };
@@ -71,6 +68,7 @@
 		B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
 		B5A06E0F29F9956A00E82973 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
 		B5A06E1129FAC19300E82973 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */; };
+		B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B33DD72A02896A00D55F36 /* UKTideStation.json */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
 		B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
 		B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */; };
@@ -218,7 +216,6 @@
 		B504CD8C29FC095300C1C662 /* UKTideStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStations.json; sourceTree = "<group>"; };
 		B50795D32A015CD800B5A2C9 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProvider.swift; sourceTree = "<group>"; };
-		B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfiguration.swift; sourceTree = "<group>"; };
 		B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationSource.swift; sourceTree = "<group>"; };
 		B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
@@ -253,6 +250,7 @@
 		B5A06E0A29F9654900E82973 /* BundleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFactory.swift; sourceTree = "<group>"; };
 		B5A06E0D29F9956A00E82973 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		B5B33DD72A02896A00D55F36 /* UKTideStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStation.json; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 			children = (
 				B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */,
 				B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */,
-				B50EDA3029F8337B00F10CE6 /* RemoteConfiguration.swift */,
 				B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */,
 			);
 			path = Configuration;
@@ -656,6 +653,7 @@
 		B5CA736729E9692C005C87F1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B5B33DD72A02896A00D55F36 /* UKTideStation.json */,
 				B504CD8C29FC095300C1C662 /* UKTideStations.json */,
 				B5B5162C29F6E413005CBEAB /* TideEvents.json */,
 				B52C81FC29F2B7F900965382 /* UKTideStationsBadData.json */,
@@ -993,6 +991,7 @@
 			files = (
 				B504CD8D29FC095300C1C662 /* UKTideStations.json in Resources */,
 				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
+				B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */,
 				B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
 				B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */,
@@ -1028,7 +1027,6 @@
 				B55F78272A026DEE00524CF2 /* NetworkServiceError.swift in Sources */,
 				B55F78192A026DCC00524CF2 /* Loadable.swift in Sources */,
 				B55F78242A026DEA00524CF2 /* Event.swift in Sources */,
-				B55F781C2A026DD000524CF2 /* RemoteConfiguration.swift in Sources */,
 				B55F78152A026DC300524CF2 /* MockTideDataService.swift in Sources */,
 				B55F77F22A026D6E00524CF2 /* Tidey_TV.xcdatamodeld in Sources */,
 				B55F781A2A026DD000524CF2 /* Bundle+Utils.swift in Sources */,
@@ -1099,7 +1097,6 @@
 				B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
 				B50EDA3929F8350000F10CE6 /* Bundle+Utils.swift in Sources */,
 				B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */,
-				B50EDA3C29F8383400F10CE6 /* RemoteConfiguration.swift in Sources */,
 				B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */,
 				B5BE9FDE29E96D11004398BE /* Event.swift in Sources */,
 				B5A06E0F29F9956A00E82973 /* Loadable.swift in Sources */,
@@ -1156,7 +1153,6 @@
 				B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */,
 				B5A06E0829F9622600E82973 /* TideDataLoadable.swift in Sources */,
 				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
-				B50EDA3129F8337B00F10CE6 /* RemoteConfiguration.swift in Sources */,
 				B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

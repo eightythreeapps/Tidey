@@ -20,54 +20,19 @@ public class MockTideDataService:TideDataLoadable {
     }
     
     private func getFeatures() -> FeatureCollection? {
-        
-        
-        
         return nil
     }
     
-    private func getStations(from collection:FeatureCollection) -> [TideStation] {
-        var stations = TideStations()
-        
-        if let features = self.getFeatures()?.features {
-            for feature in features {
-                let tideStation = TideStation(feature: feature)
-                stations.append(tideStation)
-            }
-        }
-        
-        return stations
-    }
-    
     func getStations() async throws -> [TideStation] {
-        
-        let stations = getStations(from: getFeatures()!)
-        return stations
-        
+        throw NetworkServiceError.badUrl
     }
     
     func getStation(stationId: String) async throws -> TideStation {
-        
-        let stations = getStations(from: getFeatures()!)
-        
-        if let station = stations.first(where: { $0.getStationId() == stationId }) {
-            return station
-        } else {
-            throw NetworkServiceError.notFound
-        }
-        
+        throw NetworkServiceError.badUrl
     }
     
     func getTidalEvents(stationId: String) async throws -> TidalEvents {
-      
-        guard let tideEvents = BundleFactory.bundleFor(classType: self).path(forResource: "TideEvents", ofType: "json") else {
-            throw NetworkServiceError.parsingError
-        }
-
-        let data = try! Data(contentsOf: URL(fileURLWithPath: tideEvents), options: .mappedIfSafe)
-        let decodedResponse = try! JSONDecoder().decode(TidalEvents.self, from: data)
-        return decodedResponse
-        
+        throw NetworkServiceError.badUrl
     }
     
 }

@@ -30,22 +30,26 @@ final class TideyAPITests: XCTestCase {
     
     func testBuildBasicURL() throws {
         
-        let url = self.urlHelper.requestUrl(host: host)
+        let url = try? self.urlHelper.requestUrl(host: host)
         
         XCTAssert(url?.scheme == HTTPScheme.https.rawValue, "URL scheme should be HTTPS")
         XCTAssert(url?.host() == host, "Host should match input host")
         XCTAssertTrue(url!.pathComponents.isEmpty, "Path components should be empty")
     }
     
+    func testBadURLError() throws {
+        XCTAssertThrowsError(try urlHelper.requestUrl(host: host, path: "uktidalapi"))
+    }
+    
     func testBuildURLWithValidPath() throws {
-        let url = self.urlHelper.requestUrl(host: host, path: "/pathSection")
+        let url = try? self.urlHelper.requestUrl(host: host, path: "/pathSection")
         XCTAssertNotNil(url?.pathComponents, "Path components should not be nil")
         XCTAssertTrue(url?.pathComponents.count == 2, "Path should have 2 components")
         XCTAssertTrue(url?.path() == "/pathSection", "Path should match input")
     }
     
     func testBuildURLWithInvalidPath() throws {
-        let url = self.urlHelper.requestUrl(host: host, path: "pathSection")
+        let url = try? self.urlHelper.requestUrl(host: host, path: "pathSection")
         XCTAssertNil(url, "URL should be nil")
     }
     
@@ -56,7 +60,7 @@ final class TideyAPITests: XCTestCase {
             URLQueryItem(name: "param2", value: "param2Value")
         ]
         
-        let url = self.urlHelper.requestUrl(host: self.host, queryParams: queryParams)
+        let url = try? self.urlHelper.requestUrl(host: self.host, queryParams: queryParams)
         XCTAssertNotNil(url?.query(), "Query should not be nil")
         XCTAssertTrue(url?.query() == "param1=param1Value&param2=param2Value")
     }
@@ -189,6 +193,20 @@ final class TideyAPITests: XCTestCase {
         
     }
     
+    func testSuccessfulGetStationById() async throws {
+        
+        let tideDataLoadable = createMockLoadable(ofType: MockSuccessfulTideStationDetail.self)
+        
+        do {
+            let station = try await tideDataLoadable.getStation(stationId: "0011")
+            XCTAssertNotNil(station, "Station should not be nil")
+        }catch {
+            XCTAssertTrue(((error as? NetworkServiceError) != nil), "Error should be of NetworkServiceError type")
+            XCTAssertTrue((error as? NetworkServiceError) == .parsingError, "Error be Parsing Error")
+        }
+        
+    }
+    
     func testSessionHeaders() async throws {
         
         let tideDataLoadable = UKTidalAPI(apiKey: "APIKEY")
@@ -203,4 +221,17 @@ final class TideyAPITests: XCTestCase {
         XCTAssertTrue(header?.value as! String == "APIKEY")
     
     }
+    
+    func testHTTPMehtodEnum() throws {
+        
+        let post = HTTPMethod.post
+        XCTAssertNotNil(post.stringValue(), "String value should not be nil")
+        XCTAssertEqual(post.stringValue(), "POST", "Value should be post")
+    
+        let get = HTTPMethod.get
+        XCTAssertNotNil(get.stringValue(), "String value should not be nil")
+        XCTAssertEqual(get.stringValue(), "GET", "Value should be post")
+        
+    }
+
 }

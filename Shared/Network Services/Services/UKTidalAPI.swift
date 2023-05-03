@@ -34,12 +34,10 @@ public class UKTidalAPI:TideDataLoadable, Service {
     
     func getStations() async throws -> [TideStation] {
         
-        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations") else {
-            throw NetworkServiceError.badUrl
-        }
-    
         do {
-            let request = URLRequest(url: url)
+            
+            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations")
+            let request = URLRequest(url: url!)
             
             let result = try await self.fetchData(request: request, responseModel: FeatureCollection.self)
             let features = result.features
@@ -56,12 +54,10 @@ public class UKTidalAPI:TideDataLoadable, Service {
     
     func getStation(stationId:String) async throws -> TideStation {
         
-        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)") else {
-            throw NetworkServiceError.badUrl
-        }
-        
         do {
-            let request = URLRequest(url: url)
+            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)")
+            let request = URLRequest(url: url!)
+            
             let result = try await self.fetchData(request: request, responseModel: Feature.self)
             let tideStation = TideStation(feature: result)
             return tideStation
@@ -73,13 +69,10 @@ public class UKTidalAPI:TideDataLoadable, Service {
     
     func getTidalEvents(stationId:String) async throws -> TidalEvents {
                  
-        guard let url = urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents") else {
-            throw NetworkServiceError.badUrl
-        }
-        
         do {
             
-            let request = URLRequest(url: url)
+            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents")
+            let request = URLRequest(url: url!)
             let result = try await self.fetchData(request: request, responseModel: [Event].self)
             var tidalEvents = TidalEvents()
             

@@ -151,3 +151,18 @@ class MockBadDataInTideStationList: MockURLProtocol {
         super.startLoading()
     }
 }
+
+class MockSuccessfulTideStationDetail: MockURLProtocol {
+    override func startLoading() {
+        
+        MockSuccessfulTideStationDetail.requestHandler = { request in
+            
+            let stations = Bundle.main.path(forResource: "UKTideStation", ofType: "json")!
+            let data = try! Data(contentsOf: URL(fileURLWithPath: stations), options: .mappedIfSafe)
+            
+            return self.generateResponse(for: 200, data: data)
+        }
+        
+        super.startLoading()
+    }
+}
