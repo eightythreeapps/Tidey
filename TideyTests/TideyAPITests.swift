@@ -14,6 +14,8 @@ final class TideyAPITests: XCTestCase {
     var tidalDataSource:TideDataLoadable!
     var cancellables = Set<AnyCancellable>()
     
+    let baseURL = "https://admiraltyapi.azure-api.net"
+    
     override func setUpWithError() throws {
         
     }
@@ -23,21 +25,24 @@ final class TideyAPITests: XCTestCase {
         self.tidalDataSource = nil
     }
     
-    func createMockService(ofType type:AnyClass) -> URLSession {
+    func createMockLoadable(ofType type:AnyClass) -> TideDataLoadable {
         URLProtocol.registerClass(type)
         let mockConfig = URLSessionConfiguration.ephemeral
     
         mockConfig.protocolClasses?.insert(type, at: 0)
         let session = URLSession(configuration: mockConfig)
         
-        return session
+        let tideDataLoadable = UKTidalAPI(session: session, baseURL: self.baseURL, urlHelper: URLHelper())
+        XCTAssertNotNil(tideDataLoadable.baseUrl, "BaseURL should not be nil")
+        XCTAssertTrue(tideDataLoadable.baseUrl == self.baseURL, "Base URL should match input base URL")
+
+        
+        return tideDataLoadable
     }
     
     func testTooManyRequests() async throws {
         
-        let session = createMockService(ofType: MockTooManyResponses.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockTooManyResponses.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()
@@ -50,9 +55,7 @@ final class TideyAPITests: XCTestCase {
     
     func testNotFound() async throws {
         
-        let session = createMockService(ofType: MockNotFound.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockNotFound.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()
@@ -64,10 +67,8 @@ final class TideyAPITests: XCTestCase {
     }
     
     func testNotAuthorised() async throws {
-        
-        let session = createMockService(ofType: MockNotAuthorised.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+       
+        let tideDataLoadable = createMockLoadable(ofType: MockNotAuthorised.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()
@@ -80,9 +81,7 @@ final class TideyAPITests: XCTestCase {
     
     func testServerError() async throws {
         
-        let session = createMockService(ofType: MockServerError.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockServerError.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()
@@ -95,9 +94,7 @@ final class TideyAPITests: XCTestCase {
     
     func testForbidden() async throws {
         
-        let session = createMockService(ofType: MockForbidden.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockForbidden.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()
@@ -111,10 +108,7 @@ final class TideyAPITests: XCTestCase {
     func testSuccessfulTideStationResponse() async throws {
         
         let expectation = XCTestExpectation(description: "Tide Station Data should be successfully returned")
-        
-        let session = createMockService(ofType: MockSuccessForTideStations.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockSuccessForTideStations.self)
         
         do {
             let stations = try await tideDataLoadable.getStations()
@@ -128,11 +122,27 @@ final class TideyAPITests: XCTestCase {
         await fulfillment(of: [expectation], timeout: 10.0)
     }
     
+    func testSuccessfulTideStationEventsResponse() async throws {
+        
+        let expectation = XCTestExpectation(description: "Tide Station Data should be successfully returned")
+
+        let tideDataLoadable = createMockLoadable(ofType: MockSuccessForTideStationEvents.self)
+        
+        do {
+            let stations = try await tideDataLoadable.getTidalEvents(stationId: "0011")
+            XCTAssertNotNil(stations, "Stations list should be populated")
+            expectation.fulfill()
+        }catch {
+            XCTFail("API call should succeed")
+            expectation.fulfill()
+        }
+        
+        await fulfillment(of: [expectation], timeout: 10.0)
+    }
+    
     func testBadDataInTideStationResponse() async throws {
         
-        let session = createMockService(ofType: MockBadDataInTideStationList.self)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: "", urlHelper: URLHelper())
+        let tideDataLoadable = createMockLoadable(ofType: MockBadDataInTideStationList.self)
         
         do {
             let _ = try await tideDataLoadable.getStations()

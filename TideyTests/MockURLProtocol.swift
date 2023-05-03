@@ -112,7 +112,22 @@ class MockSuccessForTideStations: MockURLProtocol {
         
         MockSuccessForTideStations.requestHandler = { request in
             
-            let tideEvents = Bundle.main.path(forResource: "UKTideStations", ofType: "json")!
+            let stations = Bundle.main.path(forResource: "UKTideStations", ofType: "json")!
+            let data = try! Data(contentsOf: URL(fileURLWithPath: stations), options: .mappedIfSafe)
+            
+            return self.generateResponse(for: 200, data: data)
+        }
+        
+        super.startLoading()
+    }
+}
+
+class MockSuccessForTideStationEvents: MockURLProtocol {
+    override func startLoading() {
+        
+        MockSuccessForTideStationEvents.requestHandler = { request in
+            
+            let tideEvents = Bundle.main.path(forResource: "TideEvents", ofType: "json")!
             let data = try! Data(contentsOf: URL(fileURLWithPath: tideEvents), options: .mappedIfSafe)
             
             return self.generateResponse(for: 200, data: data)
