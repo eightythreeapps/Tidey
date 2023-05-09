@@ -32,7 +32,7 @@ public class UKTidalAPI:TideDataLoadable, Service {
         
     }
     
-    func getStations() async throws -> [TideStation] {
+    func getStations() async throws -> TideStations {
         
         do {
             

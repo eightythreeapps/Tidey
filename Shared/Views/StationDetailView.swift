@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 import Charts
 
 struct StationDetailView: View {

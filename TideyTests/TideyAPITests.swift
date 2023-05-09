@@ -7,6 +7,7 @@
 
 import XCTest
 import Combine
+import CoreLocation
 @testable import Tidey
 
 final class TideyAPITests: XCTestCase {
@@ -231,6 +232,30 @@ final class TideyAPITests: XCTestCase {
         let get = HTTPMethod.get
         XCTAssertNotNil(get.stringValue(), "String value should not be nil")
         XCTAssertEqual(get.stringValue(), "GET", "Value should be post")
+        
+    }
+    
+    func testGetNearestTideStation() async throws {
+        
+        let expectation = XCTestExpectation(description: "Tide Station Data should be successfully returned")
+        let tideDataLoadable = createMockLoadable(ofType: MockSuccessForTideStations.self)
+        
+        do {
+            
+            let stations = try await tideDataLoadable.getStations()
+            XCTAssertNotNil(stations, "Stations list should be populated")
+            
+            let userLocation = CLLocation(latitude: 50.3377, longitude: -4.77784)
+            let station = stations.getNearestStation(to: userLocation)
+            XCTAssertTrue(station?.getStationName() == "Par")
+            
+            expectation.fulfill()
+        }catch {
+            XCTFail("API call should succeed")
+            expectation.fulfill()
+        }
+        
+        await fulfillment(of: [expectation], timeout: 10.0)
         
     }
 

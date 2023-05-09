@@ -36,7 +36,7 @@ class TideStationListViewModel:ObservableObject {
             self.setViewState(viewState: .error)
         }
     }
-    
+
     func getEventsForStation(stationId:String) async {
         
         self.setViewState(viewState: .loading)

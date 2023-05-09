@@ -24,6 +24,12 @@
 		B52C820229F2BB7500965382 /* MockTideDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820029F2BB7500965382 /* MockTideDataService.swift */; };
 		B52C820429F2C92800965382 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820329F2C92800965382 /* ComplicationController.swift */; };
 		B52C822829F2CD2200965382 /* Tidey_Complication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B52C822329F2CD2000965382 /* Tidey_Complication.intentdefinition */; };
+		B5302A722A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */; };
+		B5302A732A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */; };
+		B5302A742A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */; };
+		B5302A7B2A040BD40022A6BB /* LocatingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */; };
+		B5302A7C2A040BD40022A6BB /* LocatingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */; };
+		B5302A7D2A040BD40022A6BB /* LocatingUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */; };
 		B55F77E62A026D6D00524CF2 /* Tidey_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */; };
 		B55F77EA2A026D6E00524CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77E92A026D6E00524CF2 /* Assets.xcassets */; };
 		B55F77ED2A026D6E00524CF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77EC2A026D6E00524CF2 /* Preview Assets.xcassets */; };
@@ -61,6 +67,15 @@
 		B55F78312A026E1900524CF2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B55F78302A026E1900524CF2 /* SwiftDate */; };
 		B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
 		B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
+		B58D38902A0AAB65009C569F /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */; };
+		B58D38912A0AAB65009C569F /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */; };
+		B58D38922A0AAB65009C569F /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */; };
+		B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
+		B58D38962A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
+		B58D38972A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
+		B58D38992A0AABC4009C569F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38982A0AABC4009C569F /* LocationService.swift */; };
+		B58D389A2A0AABC4009C569F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38982A0AABC4009C569F /* LocationService.swift */; };
+		B58D389B2A0AABC4009C569F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38982A0AABC4009C569F /* LocationService.swift */; };
 		B5A06E0829F9622600E82973 /* TideDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0729F9622600E82973 /* TideDataLoadable.swift */; };
 		B5A06E0929F9622600E82973 /* TideDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0729F9622600E82973 /* TideDataLoadable.swift */; };
 		B5A06E0B29F9654900E82973 /* BundleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0A29F9654900E82973 /* BundleFactory.swift */; };
@@ -232,6 +247,8 @@
 		B52C822329F2CD2000965382 /* Tidey_Complication.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Tidey_Complication.intentdefinition; sourceTree = "<group>"; };
 		B52C822429F2CD2200965382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52C822629F2CD2200965382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideStations+Utils.swift"; sourceTree = "<group>"; };
+		B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatingUserView.swift; sourceTree = "<group>"; };
 		B55F77E32A026D6D00524CF2 /* Tidey TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVApp.swift; sourceTree = "<group>"; };
 		B55F77E92A026D6E00524CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +262,9 @@
 		B55F78072A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B55F78322A0270A700524CF2 /* Tidey-TV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-TV-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationListViewModel.swift; sourceTree = "<group>"; };
+		B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
+		B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorisationState.swift; sourceTree = "<group>"; };
+		B58D38982A0AABC4009C569F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		B5A06E0629F9277E00E82973 /* Tidey-Watch-Watch-AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-Watch-Watch-AppTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5A06E0729F9622600E82973 /* TideDataLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideDataLoadable.swift; sourceTree = "<group>"; };
 		B5A06E0A29F9654900E82973 /* BundleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFactory.swift; sourceTree = "<group>"; };
@@ -388,6 +408,7 @@
 			children = (
 				B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */,
 				B5A06E0D29F9956A00E82973 /* Loadable.swift */,
+				B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -421,6 +442,14 @@
 				B52C822629F2CD2200965382 /* Info.plist */,
 			);
 			path = "Tidey Complication";
+			sourceTree = "<group>";
+		};
+		B5302A752A02AB980022A6BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B55F77E42A026D6D00524CF2 /* Tidey TV */ = {
@@ -459,6 +488,22 @@
 				B55F78072A026D6E00524CF2 /* Tidey_TVUITestsLaunchTests.swift */,
 			);
 			path = "Tidey TVUITests";
+			sourceTree = "<group>";
+		};
+		B58D38932A0AAB8A009C569F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B58D389C2A0AABDF009C569F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B58D38982A0AABC4009C569F /* LocationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B5BCB4DA29F150AA00EAAE05 /* Factories */ = {
@@ -524,12 +569,15 @@
 			isa = PBXGroup;
 			children = (
 				B5BE9FAA29E96CC3004398BE /* ContentView.swift */,
+				B58D38932A0AAB8A009C569F /* Enums */,
 				B52C81FF29F2BB6000965382 /* Mocks */,
 				B50EDA3429F833CC00F10CE6 /* Protocols */,
 				B50EDA2D29F8333300F10CE6 /* Configuration */,
 				B5BCB4DA29F150AA00EAAE05 /* Factories */,
 				B5BE9FA129E96C81004398BE /* Views */,
+				B5302A752A02AB980022A6BB /* Extensions */,
 				B5BE9F6E29E969D2004398BE /* Network Services */,
+				B58D389C2A0AABDF009C569F /* Services */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -540,6 +588,7 @@
 				B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */,
 				B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */,
 				B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */,
+				B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1020,12 +1069,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58D38922A0AAB65009C569F /* LocationDataProvider.swift in Sources */,
 				B55F781B2A026DD000524CF2 /* ConfigurationProvider.swift in Sources */,
 				B55F78162A026DC500524CF2 /* BundleFactory.swift in Sources */,
 				B55F782D2A026DFA00524CF2 /* UKTidalAPI.swift in Sources */,
 				B55F77EF2A026D6E00524CF2 /* Persistence.swift in Sources */,
 				B55F78272A026DEE00524CF2 /* NetworkServiceError.swift in Sources */,
 				B55F78192A026DCC00524CF2 /* Loadable.swift in Sources */,
+				B5302A742A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */,
 				B55F78242A026DEA00524CF2 /* Event.swift in Sources */,
 				B55F78152A026DC300524CF2 /* MockTideDataService.swift in Sources */,
 				B55F77F22A026D6E00524CF2 /* Tidey_TV.xcdatamodeld in Sources */,
@@ -1043,10 +1094,13 @@
 				B55F77E62A026D6D00524CF2 /* Tidey_TVApp.swift in Sources */,
 				B55F78252A026DEE00524CF2 /* HTTPScheme.swift in Sources */,
 				B55F78222A026DE300524CF2 /* TideStationListView.swift in Sources */,
+				B58D389B2A0AABC4009C569F /* LocationService.swift in Sources */,
 				B55F782B2A026DF700524CF2 /* TideDataLoadable.swift in Sources */,
 				B55F78142A026DC000524CF2 /* MockService.swift in Sources */,
 				B55F782C2A026DF700524CF2 /* Stringify.swift in Sources */,
+				B58D38972A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
 				B55F782A2A026DF700524CF2 /* NetworkService.swift in Sources */,
+				B5302A7D2A040BD40022A6BB /* LocatingUserView.swift in Sources */,
 				B55F781E2A026DD800524CF2 /* ViewModelFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1073,6 +1127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE9FDD29E96D11004398BE /* TideStation.swift in Sources */,
+				B5302A732A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */,
 				B5BE9FD429E96CF2004398BE /* TideStationListView.swift in Sources */,
 				B52C822829F2CD2200965382 /* Tidey_Complication.intentdefinition in Sources */,
 				B5BE9FAB29E96CC3004398BE /* ContentView.swift in Sources */,
@@ -1082,12 +1137,14 @@
 				B52C820229F2BB7500965382 /* MockTideDataService.swift in Sources */,
 				B5BE9FD529E96CF6004398BE /* StationDetailView.swift in Sources */,
 				B50EDA3A29F8382C00F10CE6 /* ConfigurationSource.swift in Sources */,
+				B58D38912A0AAB65009C569F /* LocationDataProvider.swift in Sources */,
 				B5BE9FD629E96CFA004398BE /* ViewModelFactory.swift in Sources */,
 				B5BE9FDB29E96D0C004398BE /* NetworkServiceError.swift in Sources */,
 				B5BE9FF729E9B0AB004398BE /* TidalEvent.swift in Sources */,
 				B5BE9FFA29E9B945004398BE /* MockService.swift in Sources */,
 				B5BE9FDA29E96D0C004398BE /* HTTPMethod.swift in Sources */,
 				B5BE9FE129E96D14004398BE /* Stringify.swift in Sources */,
+				B58D38962A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
 				B5BE9FE229E96D18004398BE /* UKTidalAPI.swift in Sources */,
 				B5A06E0C29F9654900E82973 /* BundleFactory.swift in Sources */,
 				B50EDA3B29F8383200F10CE6 /* ConfigurationProvider.swift in Sources */,
@@ -1097,8 +1154,10 @@
 				B578ED3E29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
 				B50EDA3929F8350000F10CE6 /* Bundle+Utils.swift in Sources */,
 				B5BE9FD829E96CFA004398BE /* PreviewFactory.swift in Sources */,
+				B58D389A2A0AABC4009C569F /* LocationService.swift in Sources */,
 				B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */,
 				B5BE9FDE29E96D11004398BE /* Event.swift in Sources */,
+				B5302A7C2A040BD40022A6BB /* LocatingUserView.swift in Sources */,
 				B5A06E0F29F9956A00E82973 /* Loadable.swift in Sources */,
 				B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */,
 				B5A06E0929F9622600E82973 /* TideDataLoadable.swift in Sources */,
@@ -1126,12 +1185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58D38902A0AAB65009C569F /* LocationDataProvider.swift in Sources */,
 				B5BE9F8329E969D2004398BE /* Event.swift in Sources */,
 				B5BE9F7F29E969D2004398BE /* NetworkServiceError.swift in Sources */,
 				B5BE9FF929E9B945004398BE /* MockService.swift in Sources */,
 				B50EDA3829F8350000F10CE6 /* Bundle+Utils.swift in Sources */,
 				B5CA736B29E9692C005C87F1 /* Persistence.swift in Sources */,
 				B5BE9F8F29E969E0004398BE /* PreviewFactory.swift in Sources */,
+				B5302A722A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */,
 				B5BE9F8D29E969E0004398BE /* ViewModelFactory.swift in Sources */,
 				B5BE9FF029E9A216004398BE /* ContentView.swift in Sources */,
 				B52C820129F2BB7500965382 /* MockTideDataService.swift in Sources */,
@@ -1149,10 +1210,13 @@
 				B5BE9F8429E969D2004398BE /* TideStation.swift in Sources */,
 				B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */,
 				B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
+				B58D38992A0AABC4009C569F /* LocationService.swift in Sources */,
 				B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */,
 				B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */,
 				B5A06E0829F9622600E82973 /* TideDataLoadable.swift in Sources */,
+				B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
 				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
+				B5302A7B2A040BD40022A6BB /* LocatingUserView.swift in Sources */,
 				B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1383,6 +1447,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = space.sometinylittle.Tidey;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1418,6 +1486,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = space.sometinylittle.Tidey;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1665,6 +1737,9 @@
 				INFOPLIST_FILE = Tidey/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tidey;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1700,6 +1775,9 @@
 				INFOPLIST_FILE = Tidey/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tidey;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

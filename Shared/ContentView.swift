@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 public class ContentViewModel:ObservableObject {
     
@@ -45,14 +46,28 @@ struct ContentView: View {
             case .loading:
                 ProgressView()
             case .loaded:
-                
+
                 NavigationSplitView {
-                    TideStationListView()
+                    List {
+                        NavigationLink {
+                            LocatingUserView(viewModel: LocatingUserViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
+                        } label: {
+                            Text("Near me")
+                        }
+                        
+                        NavigationLink {
+                            TideStationListView()
+                        } label: {
+                            Text("All tide stations")
+                        }
+                    }
+                    .navigationTitle("Tidey")
+                    
                 } detail: {
                     EmptyView()
                 }
                 .environmentObject(TideStationListViewModel(tideStationAPIService: UKTidalAPI(apiKey: viewModel.tideDataApiKey)))
-                
+
             case .error:
                 Text("There was an error loading the config")
             }
