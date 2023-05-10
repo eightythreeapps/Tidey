@@ -11,11 +11,11 @@ import CoreLocation
 public class LocationService:NSObject, LocationDataProvider {
             
     @Published var state:LocationProviderState = .determiningAuthorisation
-    var locationManager:CLLocationManager
+    public var locationManager:LocationManager
     
     private var locationProviderContinuation:AsyncStream<LocationProviderState>.Continuation?
     
-    init(locationManager:CLLocationManager) {
+    required public init(locationManager:LocationManager) {
         
         self.locationManager = locationManager
         super.init()
@@ -38,6 +38,7 @@ public class LocationService:NSObject, LocationDataProvider {
             @unknown default:
                 //TODO: See if this can be handled without force unwrapping
                 locationProviderContinuation?.yield(.error)
+                continuation.finish()
             }
         }
 

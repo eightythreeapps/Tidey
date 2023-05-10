@@ -1,0 +1,45 @@
+{
+  "configurations" : [
+    {
+      "id" : "F443B1ED-598C-4023-8375-3296CB3335F2",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "enabled" : false,
+        "key" : "OcpApimSubscriptionKey",
+        "value" : "8d9e35c11be24d28b06be4d305d64210"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Tidey.xcodeproj",
+      "identifier" : "B5CA735D29E9692A005C87F1",
+      "name" : "Tidey"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Tidey.xcodeproj",
+        "identifier" : "B5CA737229E9692D005C87F1",
+        "name" : "TideyTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Tidey.xcodeproj",
+        "identifier" : "B5CA737C29E9692D005C87F1",
+        "name" : "TideyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

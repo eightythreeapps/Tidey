@@ -9,5 +9,7 @@ import Foundation
 import CoreLocation
 
 public protocol LocationDataProvider {
+    var locationManager:LocationManager { get }
+    init(locationManager:LocationManager)
     func getState() async -> AsyncStream<LocationProviderState>
 }

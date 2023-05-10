@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-public enum LocationProviderState {
+public enum LocationProviderState: Equatable {
     
     case denied(status:CLAuthorizationStatus)
     case authorised(status:CLAuthorizationStatus)
