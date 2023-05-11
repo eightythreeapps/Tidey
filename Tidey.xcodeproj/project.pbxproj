@@ -259,7 +259,7 @@
 		B52C822629F2CD2200965382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideStations+Utils.swift"; sourceTree = "<group>"; };
 		B5302A7A2A040BD40022A6BB /* LocatingUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatingUserView.swift; sourceTree = "<group>"; };
-		B533E62D2A0BFFC700880597 /* TideyApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = TideyApp.xctestplan; sourceTree = SOURCE_ROOT; };
+		B533E62D2A0BFFC700880597 /* TideyApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TideyApp.xctestplan; sourceTree = SOURCE_ROOT; };
 		B55F77E32A026D6D00524CF2 /* Tidey TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVApp.swift; sourceTree = "<group>"; };
 		B55F77E92A026D6E00524CF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };

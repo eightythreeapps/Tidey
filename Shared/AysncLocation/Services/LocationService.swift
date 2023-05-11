@@ -33,6 +33,7 @@ public class LocationService:NSObject, LocationDataProvider {
                 locationManager.requestWhenInUseAuthorization()
             case .restricted, .denied:
                 locationProviderContinuation?.yield(LocationProviderState.mapAuthorisationStatus(status: locationManager.authorizationStatus))
+                continuation.finish()
             case .authorizedAlways,.authorizedWhenInUse:
                 self.locationManager.startUpdatingLocation()
             @unknown default:
@@ -62,6 +63,7 @@ extension LocationService:CLLocationManagerDelegate {
         
         if let location = locations.first {
             locationProviderContinuation?.yield(.locationUpdated(location: location))
+            locationProviderContinuation?.finish()
         }
     }
     

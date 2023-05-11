@@ -8,9 +8,9 @@
 import Foundation
 import CoreLocation
 
-class MockLocationManager: LocationManager {
+class MockLocationManager: NSObject, LocationManager, CLLocationManagerDelegate {
     
-    var mockLocations:[CLLocation] = [
+    static var mockLocations:[CLLocation] = [
         CLLocation(latitude: 50.3344340, longitude: -4.7712680),
         CLLocation(latitude: 50.3344210, longitude: -4.7712630),
         CLLocation(latitude: 50.3344080, longitude: -4.7712580),
@@ -29,11 +29,31 @@ class MockLocationManager: LocationManager {
     var allowsBackgroundLocationUpdates: Bool = true
     var authorizationStatus: CLAuthorizationStatus = .notDetermined
     
-    func requestWhenInUseAuthorization() {}
+    override init() {
+        super.init()
+        self.delegate = self
+    }
     
-    func startUpdatingLocation() {}
+    func requestWhenInUseAuthorization() {
     
-    func stopUpdatingLocation() {}
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.authorizationStatus = .authorizedAlways
+            self.delegate?.locationManagerDidChangeAuthorization?(CLLocationManager())
+        }
+        
+    }
+    
+    func startUpdatingLocation() {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.delegate?.locationManager?(CLLocationManager(), didUpdateLocations: MockLocationManager.mockLocations)
+        }
+        
+    }
+    
+    func stopUpdatingLocation() {
+        
+    }
     
     func isLocationServicesEnabled() -> Bool {
         return true
@@ -43,6 +63,14 @@ class MockLocationManager: LocationManager {
     convenience init(authorizationStatus:CLAuthorizationStatus) {
         self.init()
         self.authorizationStatus = authorizationStatus
+    }
+    
+    func updateStatus(status:CLAuthorizationStatus) {
+        self.authorizationStatus = status
+    }
+    
+    func updateLocation(location:CLLocation) {
+        self.location = location
     }
     
     convenience init(location:CLLocation) {

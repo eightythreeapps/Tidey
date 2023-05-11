@@ -3,4 +3,116 @@
    uuid = "690DCE23-B62D-4F67-8678-81C0CB497E7B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE757607-E0F2-4A23-AB9A-875F4F2AFCE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/AysncLocation/Enums/LocationAuthorisationState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "mapAuthorisationStatus(status:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAF913B6-AD6D-4E9B-9873-98E4ADDCF0F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Network Services/Protocols/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchData(request:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAF913B6-AD6D-4E9B-9873-98E4ADDCF0F7 - d2d6e84c9e5b9a8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Tidey_Watch_Watch_App.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Tidey Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "EAF913B6-AD6D-4E9B-9873-98E4ADDCF0F7 - fc9159e13d5932b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Tidey_Watch_Watch_App.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Tidey Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "EAF913B6-AD6D-4E9B-9873-98E4ADDCF0F7 - 7f2f2ae59ac91665"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Tidey_Watch_Watch_App.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Tidey Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "EAF913B6-AD6D-4E9B-9873-98E4ADDCF0F7 - d593cbd1e4b7d454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Tidey_Watch_Watch_App.Service.fetchData&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(request: Foundation.URLRequest, responseModel: &#x3c4;_1_0.Type) async throws -&gt; &#x3c4;_1_0"
+                  moduleName = "Tidey Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/benreed/Apps/Tidey/Shared/Network%20Services/Protocols/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9A80129-227F-427C-A4A4-194F09BD1181"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Configuration/LocalConfiguration.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "configValue(forKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

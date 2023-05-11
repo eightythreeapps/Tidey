@@ -68,6 +68,47 @@ final class TideyLocationServiceTests: XCTestCase {
             XCTAssertTrue($0 == LocationProviderState.determiningAuthorisation)
         }
     }
+    
+    func testAuthStatusFlow() async throws {
+        
+        let locationManager = MockLocationManager(authorizationStatus: .notDetermined)
+        let locationProvider = LocationService(locationManager:locationManager)
+        
+        var states = [LocationProviderState]()
+        
+        for await state in await locationProvider.getState() {
+            states.append(state)
+        }
+        
+        XCTAssertTrue(states.count == 2, "States array could contain exactly 2 elements")
+        if states.count == 2 {
+            XCTAssertTrue(states[0] == .authorised(status: .authorizedWhenInUse))
+            XCTAssertTrue(states[1] == .locationUpdated(location: MockLocationManager.mockLocations.first!))
+        }else{
+            XCTFail("States array is incorrect")
+        }
+    
+    }
+    
+    func testExistingAuthStatusFlow() async throws {
+        
+        let locationManager = MockLocationManager(authorizationStatus: .authorizedWhenInUse)
+        let locationProvider = LocationService(locationManager:locationManager)
+        
+        var states = [LocationProviderState]()
+        
+        for await state in await locationProvider.getState() {
+            states.append(state)
+        }
+        
+        XCTAssertTrue(states.count == 1, "States array could contain exactly 1 elements")
+        if states.count == 1 {
+            XCTAssertTrue(states[0] == .locationUpdated(location: MockLocationManager.mockLocations.first!))
+        }else{
+            XCTFail("States array is incorrect")
+        }
+    
+    }
         
     
     func testUpdateLocation() async throws {
