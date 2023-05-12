@@ -44,7 +44,9 @@ struct ContentView: View {
             case .notLoading:
                 Text("Welcome")
             case .loading:
-                ProgressView()
+                ProgressView {
+                    Text("Loading config")
+                }
             case .loaded:
 
                 NavigationSplitView {

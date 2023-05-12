@@ -50,7 +50,7 @@ public class LocationService:NSObject, LocationDataProvider {
 extension LocationService:CLLocationManagerDelegate {
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
-        let mappedStatus = LocationProviderState.mapAuthorisationStatus(status: manager.authorizationStatus)
+        let mappedStatus = LocationProviderState.mapAuthorisationStatus(status: self.locationManager.authorizationStatus)
         locationProviderContinuation?.yield(mappedStatus)
         
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {

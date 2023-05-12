@@ -36,9 +36,11 @@ class MockLocationManager: NSObject, LocationManager, CLLocationManagerDelegate 
     
     func requestWhenInUseAuthorization() {
     
+        self.authorizationStatus = .authorizedWhenInUse
+        self.delegate?.locationManagerDidChangeAuthorization?(CLLocationManager())
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.authorizationStatus = .authorizedAlways
-            self.delegate?.locationManagerDidChangeAuthorization?(CLLocationManager())
+            self.startUpdatingLocation()
         }
         
     }
