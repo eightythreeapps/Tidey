@@ -1500,7 +1500,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
@@ -1539,7 +1539,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Tidey-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Tidey Watch";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Tidey needs access to your location to determine your nearest Tide Station";
