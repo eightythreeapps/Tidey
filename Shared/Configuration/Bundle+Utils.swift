@@ -7,14 +7,9 @@
 
 import Foundation
 
-enum BundleKey:String {
-    case tideGuageBaseUrl = "TideApiBaseURL"
-    case ukTidalApiBaseUrl = "UKTidalAPIBaseURL"
-}
-
 extension Bundle {
     
-    func object(key:BundleKey) -> String {
+    func object(key:ConfigurationKey) -> String {
         
         return self.object(forInfoDictionaryKey: key.rawValue) as! String
         

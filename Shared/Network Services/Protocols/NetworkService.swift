@@ -9,52 +9,40 @@ import Foundation
 import Combine
 
 protocol Service {
-    
     var session:URLSession { get set }
-    var baseUrl:String { get set }
-    var urlHelper:URLHelper { get set }
-    
-    init(session:URLSession, baseURL:String, urlHelper:URLHelper)
-    func fetchData<T:Decodable>(method:HTTPMethod, path: String, queryParams:[URLQueryItem]?, responseModel: T.Type) async -> Result<T, NetworkServiceError>
+    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) async throws -> T
 }
 
 extension Service {
     
-    func fetchData<T:Decodable>(method:HTTPMethod, path: String, queryParams:[URLQueryItem]? = nil, responseModel: T.Type) async -> Result<T, NetworkServiceError> {
+    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) async throws -> T {
         
-        guard let url = urlHelper.requestUrl(host: self.baseUrl, path: path, queryParams: queryParams) else {
-            return .failure(.badUrl)
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkServiceError.noResponse
         }
         
-        var request = URLRequest(url: url, timeoutInterval: 60.0)
-        request.httpMethod = method.stringValue()
-        
-        do {
-            
-            let (data, httpResponse) = try await self.session.data(for: request)
-            guard let response = httpResponse as? HTTPURLResponse else {
-                return .failure(.noResponse)
+        switch httpResponse.statusCode {
+        case 200...299:
+            do {
+                let decodedResponse = try JSONDecoder().decode(responseModel, from: data)
+                return decodedResponse
+            } catch {
+                throw NetworkServiceError.parsingError
             }
-            
-            switch response.statusCode {
-            case 200...299:
-                
-                do {
-                    let decodedResponse = try JSONDecoder().decode(responseModel, from: data)
-                    return .success(decodedResponse)
-                } catch {
-                    print(error)
-                    return .failure(.parsingError)
-                }
-                
-            case 401:
-                return .failure(.unauthorised)
-            default:
-                return .failure(.httpError(code: response.statusCode))
-            }
-            
-        } catch {
-            return .failure(.unknownError(error: error))
+        case 500:
+            throw NetworkServiceError.serverError
+        case 401:
+            throw NetworkServiceError.unauthorised
+        case 403:
+            throw NetworkServiceError.forbidden
+        case 404:
+            throw NetworkServiceError.notFound
+        case 429:
+            throw NetworkServiceError.tooManyRequests
+        default:
+            throw NetworkServiceError.unknownError
         }
         
     }

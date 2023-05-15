@@ -1,0 +1,17 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-4.633333, 50.333333]
+    },
+    "properties": {
+      "Id": "0008",
+      "Name": "FOWEY",
+      "Country": "England",
+      "ContinuousHeightsAvailable": true,
+      "Footnote": null
+    }
+  }]
+}

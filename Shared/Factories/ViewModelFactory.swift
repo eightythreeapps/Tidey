@@ -1,5 +1,5 @@
 //
-//  ViewState.swift
+//  ViewModelFactory.swift
 //  WristTide Watch App
 //
 //  Created by Ben Reed on 12/04/2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ViewState {
-    case loading
-    case loaded
-    case error
+public class ViewModelFactory:ObservableObject {
+    
+    
+    
 }

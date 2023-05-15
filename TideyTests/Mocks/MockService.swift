@@ -19,10 +19,7 @@ public class MockService:Service {
     }
     
     func fetchData<T>(method: HTTPMethod, path: String, queryParams: [URLQueryItem]?, responseModel: T.Type) async -> Result<T, NetworkServiceError> where T : Decodable {
-        
         return .failure(.unauthorised)
-        
     }
-    
     
 }

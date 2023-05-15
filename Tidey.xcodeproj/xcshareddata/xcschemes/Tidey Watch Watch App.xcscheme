@@ -88,7 +88,7 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "Ocp-Apim-Subscription-Key"
+            key = "OcpApimSubscriptionKey"
             value = "8d9e35c11be24d28b06be4d305d64210"
             isEnabled = "YES">
          </EnvironmentVariable>

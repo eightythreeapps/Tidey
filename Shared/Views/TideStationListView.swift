@@ -9,47 +9,6 @@ import SwiftUI
 import GeoJSON
 import SwiftDate
 
-class TideStationListViewModel:ObservableObject {
-    
-    private var tideStationAPIService:UKTidalAPI
-    
-    @Published var stations:[TideStation] = [TideStation]()
-    @Published var viewState:ViewState = .loading
-    @Published var path:[TideStation] = [TideStation]()
-    @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
-    
-    init(tideStationAPIService: UKTidalAPI) {
-        self.tideStationAPIService = tideStationAPIService
-    }
-    
-    func loadData() async {
-        do {
-            self.stations = try await tideStationAPIService.getStations()
-            self.viewState = .loaded
-        } catch {
-            self.viewState = .error
-        }
-    }
-    
-    func getEventsForStation(stationId:String) async {
-        do {
-            let events = try await tideStationAPIService.getTidalEvents(stationId: stationId)
-            self.tidalEvents = events
-        } catch {
-            
-        }
-    }
-    
-    func getStationDetail(stationId:String) async {
-        do {
-            let station = try await tideStationAPIService.getStation(stationId: stationId)
-        } catch {
-            
-        }
-    }
-    
-}
-
 struct TideStationListView: View {
     
     @EnvironmentObject var viewModel:TideStationListViewModel
@@ -57,9 +16,10 @@ struct TideStationListView: View {
     var body: some View {
         
         NavigationStack {
-            if viewModel.viewState == .loading {
-                ProgressView()
-            } else{
+            
+            if viewModel.viewState == .error {
+                Text("Error loading stuff")
+            } else {
                 
                 List(viewModel.stations) { station in
                     NavigationLink {
@@ -70,6 +30,11 @@ struct TideStationListView: View {
                     }
                 }
                 .navigationTitle("Stations")
+                .overlay {
+                    if viewModel.viewState == .loading {
+                        ProgressView()
+                    }
+                }
             }
         }
         .onAppear {
@@ -84,6 +49,6 @@ struct TideStationListView: View {
 
 struct tideStationAPIService_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewFactory.makeTideStationListPreview()
+        PreviewFactory().makeTideStationListPreview()
     }
 }
