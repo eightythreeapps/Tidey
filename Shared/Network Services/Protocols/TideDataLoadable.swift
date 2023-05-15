@@ -15,7 +15,7 @@ protocol TideDataLoadable {
     
     init(session: URLSession, baseURL baseUrl: String, urlHelper: URLHelper)
     
-    func getStations() async throws -> [TideStation]
+    func getStations() async throws -> TideStations
     func getStation(stationId:String) async throws -> TideStation
     func getTidalEvents(stationId:String) async throws -> TidalEvents
 }

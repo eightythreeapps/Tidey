@@ -54,7 +54,7 @@ struct LocatingUserView: View {
             case .determiningUserLocation:
                 Text("Fining your location")
             case .locationUpdated(location: let location):
-                Text("Found you: Lat:\(location.coordinate.latitude) lon:\(location.coordinate.longitude)")
+                StationDetailView(location: location)
             }
             
         }.task {
