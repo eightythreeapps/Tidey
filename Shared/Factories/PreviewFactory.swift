@@ -25,4 +25,10 @@ public class PreviewFactory {
             .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService(session: URLSession.shared, baseURL: "", urlHelper: URLHelper())))
     }
     
+    @MainActor func makeTideStationMapPreview() -> some View {
+        
+        return StationMapView()
+            .environmentObject(TideStationListViewModel(tideStationAPIService: MockTideDataService(session: URLSession.shared, baseURL: "", urlHelper: URLHelper())))
+    }
+    
 }

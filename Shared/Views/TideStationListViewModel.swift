@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 import CoreLocation
 
 @MainActor
@@ -19,6 +20,8 @@ class TideStationListViewModel:ObservableObject {
     @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
     @Published var selectedStation:TideStation?
     @Published var stationName:String = ""
+    
+    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     init(tideStationAPIService: TideDataLoadable) {
         self.tideStationAPIService = tideStationAPIService

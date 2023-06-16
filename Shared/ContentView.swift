@@ -52,7 +52,7 @@ struct ContentView: View {
                 NavigationSplitView {
                     List {
                         NavigationLink {
-                            LocatingUserView(viewModel: LocatingUserViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
+                            StationNearMeView(viewModel: StationNearMeViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
                         } label: {
                             Text("Near me")
                         }

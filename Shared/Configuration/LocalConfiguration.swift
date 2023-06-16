@@ -39,7 +39,7 @@ public class TestConfiguration:ConfigurationSource {
     
     func configValue(forKey key: ConfigurationKey) -> String {
         
-        let bundle = BundleFactory.bundleFor(classType: self)
+        let bundle = Bundle.main
         let value = bundle.object(forInfoDictionaryKey: key.rawValue) as? String
         
         return value ?? ""

@@ -10,7 +10,7 @@ import CoreLocation
 import Combine
 
 @MainActor
-public class LocatingUserViewModel:ObservableObject {
+public class StationNearMeViewModel:ObservableObject {
     
     @Published var locationStatus:LocationProviderState = .determiningAuthorisation
     var locationProvider:LocationDataProvider
@@ -28,9 +28,9 @@ public class LocatingUserViewModel:ObservableObject {
     }
 }
 
-struct LocatingUserView: View {
+struct StationNearMeView: View {
     
-    @StateObject var viewModel:LocatingUserViewModel
+    @StateObject var viewModel:StationNearMeViewModel
     
     var body: some View {
         
@@ -69,6 +69,6 @@ struct LocatingUserView: View {
 
 struct LocatingUserView_Previews: PreviewProvider {
     static var previews: some View {
-        LocatingUserView(viewModel: LocatingUserViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
+        StationNearMeView(viewModel: StationNearMeViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
     }
 }
