@@ -532,6 +532,7 @@
 		B5BE9FA029E96C75004398BE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B5F8A84F2ABDB0430000C18B /* Mock Data */,
 				B5F8A8462ABDA5F90000C18B /* Enums */,
 				B5F8A8412ABD9EC60000C18B /* Lib */,
 				B5CE89ED2ABCDA4500E0D263 /* DataProviders */,
@@ -667,10 +668,6 @@
 		B5CA736729E9692C005C87F1 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				B5F8A83E2ABD99BC0000C18B /* MockDataProvider.swift */,
-				B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */,
-				B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */,
-				B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */,
 				B5B33DD72A02896A00D55F36 /* UKTideStation.json */,
 				B504CD8C29FC095300C1C662 /* UKTideStations.json */,
 				B5B5162C29F6E413005CBEAB /* TideEvents.json */,
@@ -725,6 +722,17 @@
 				B5F8A8492ABDA6670000C18B /* SortOrder.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		B5F8A84F2ABDB0430000C18B /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				B5F8A83E2ABD99BC0000C18B /* MockDataProvider.swift */,
+				B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */,
+				B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */,
+				B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */,
+			);
+			path = "Mock Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
