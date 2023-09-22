@@ -18,8 +18,7 @@ struct StationMapView: View {
     
 }
 
-struct StationMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewFactory().makeTideStationMapPreview()
-    }
+#Preview {
+    StationMapView()
+        .environmentObject(TideStationListViewModel(tideStationDataProvider:MockDataProvider.PreviewProvider.TideDataProvider))
 }

@@ -13,7 +13,7 @@ struct Tidey_TVApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("TV App")
         }
     }
 }

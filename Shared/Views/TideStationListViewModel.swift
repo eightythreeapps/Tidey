@@ -8,27 +8,24 @@
 import Foundation
 import MapKit
 import CoreLocation
+import GeoJSON
 
 @MainActor
 class TideStationListViewModel:ObservableObject {
     
-    private var tideStationAPIService:TideDataLoadable
+    private var tideStationDataProvider:TideDataProvider
     
     @Published var stations:TideStations = [TideStation]()
-    @Published var viewState:LoadingState = .notLoading
+    @Published var selectedStation:TideStation?
+    @Published var viewState:LoadingState = .idle
     @Published var path:[TideStation] = [TideStation]()
     @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
-    @Published var selectedStation:TideStation?
     @Published var stationName:String = ""
     
     @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
-    init(tideStationAPIService: TideDataLoadable) {
-        self.tideStationAPIService = tideStationAPIService
-    }
-    
-    func setViewState(viewState:LoadingState) {
-        self.viewState = viewState
+    init(tideStationDataProvider:TideDataProvider) {
+        self.tideStationDataProvider = tideStationDataProvider
     }
     
     func findStationClosestToLocation(location:CLLocation) async {
@@ -39,8 +36,8 @@ class TideStationListViewModel:ObservableObject {
         self.stationName = selectedStation?.getStationName() ?? ""
         
         if let station = self.selectedStation, let stationId = station.getStationId() {
-            await self.getEventsForStation(stationId:stationId)
-            self.setViewState(viewState: .loaded)
+            await self.getDetailsForStation(stationId:stationId)
+            self.viewState = .loaded
         }
         
     }
@@ -50,24 +47,34 @@ class TideStationListViewModel:ObservableObject {
         self.viewState = .loading
         
         do {
-            self.stations = try await tideStationAPIService.getStations()
+            self.stations = try await tideStationDataProvider.getAllStations()
             self.viewState = .loaded
         } catch {
-            self.setViewState(viewState: .error)
+            self.viewState = .error
         }
+    }
+    
+    func getStation(stationId:String) -> TideStation {
+        
+        let defaultStation = TideStation(feature: Feature(geometry: nil))
+        
+        if let station = self.stations.first(where: { $0.getStationId() == stationId }) {
+            return station
+        }
+            
+        return defaultStation
+        
     }
 
-    func getEventsForStation(stationId:String) async {
-        
-        self.viewState = .loading
+    func getDetailsForStation(stationId:String) async {
         
         do {
-            let events = try await tideStationAPIService.getTidalEvents(stationId: stationId)
-            self.tidalEvents = events
+            self.tidalEvents = try await self.tideStationDataProvider.getTideEvents(for: stationId)
             self.viewState = .loaded
         } catch {
-            self.setViewState(viewState: .error)
+            self.viewState = .error
         }
-    }
         
+    }
+    
 }

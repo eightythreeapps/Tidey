@@ -15,7 +15,7 @@ struct TideStationListView: View {
     
     var body: some View {
         
-        NavigationStack {
+        VStack {
             
             if viewModel.viewState == .error {
                 Text("Error loading stuff")
@@ -29,6 +29,7 @@ struct TideStationListView: View {
                         Text(station.getStationName())
                     }
                 }
+                .listStyle(.insetGrouped)
                 .navigationTitle("Stations")
                 .overlay {
                     if viewModel.viewState == .loading {
@@ -36,8 +37,8 @@ struct TideStationListView: View {
                     }
                 }
             }
-        }
-        .onAppear {
+            
+        }.onAppear {
             Task {
                 await viewModel.loadData()
             }
@@ -47,8 +48,7 @@ struct TideStationListView: View {
 }
 
 
-struct tideStationAPIService_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewFactory().makeTideStationListPreview()
-    }
+#Preview {    
+    TideStationListView()
+        .environmentObject(TideStationListViewModel(tideStationDataProvider: MockDataProvider.PreviewProvider.TideDataProvider))
 }

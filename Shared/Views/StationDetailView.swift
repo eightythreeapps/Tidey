@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreLocation
 import Charts
+import MapKit
 
 struct StationDetailView: View {
     
@@ -24,6 +25,16 @@ struct StationDetailView: View {
             if viewModel.viewState == .loading {
                 ProgressView()
             } else if viewModel.viewState == .loaded {
+                
+                Map(coordinateRegion: $viewModel.mapRegion,
+                    interactionModes: [],
+                    showsUserLocation: false,
+                    userTrackingMode: .none,
+                    annotationItems: [viewModel.getStation(stationId: id ?? "")]
+                )
+                {
+                    MapPin(coordinate: $0.coordinate)
+                }
                 
                 List(viewModel.tidalEvents) { event in
                     
@@ -62,7 +73,7 @@ struct StationDetailView: View {
         .onAppear {
             if let id = id {
                 Task {
-                    await viewModel.getEventsForStation(stationId:id)
+                    await viewModel.getDetailsForStation(stationId:id)
                 }
             }else if let location = location {
                 
@@ -75,8 +86,7 @@ struct StationDetailView: View {
     }
 }
 
-struct StationDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewFactory().makeStationDetailView()
-    }
+#Preview {
+    StationDetailView(location: nil, stationName: "Station Name", id: "0008")
+        .environmentObject(TideStationListViewModel(tideStationDataProvider: MockDataProvider.PreviewProvider.TideDataProvider))
 }

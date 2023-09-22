@@ -5,8 +5,7 @@
 //  Created by Ben Reed on 27/04/2023.
 //
 
-import XCTest
-@testable import Tidey
+import Foundation
 
 class MockURLProtocol: URLProtocol {
     
@@ -22,7 +21,7 @@ class MockURLProtocol: URLProtocol {
     
     override func startLoading() {
         guard let handler = MockURLProtocol.requestHandler else {
-            XCTFail("Received unexpected request with no handler set")
+            print("Failed")
             return
         }
         do {
@@ -111,10 +110,7 @@ class MockSuccessForTideStations: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessForTideStations.requestHandler = { request in
-            
-            let stations = Bundle.main.path(forResource: "UKTideStations", ofType: "json")!
-            let data = try! Data(contentsOf: URL(fileURLWithPath: stations), options: .mappedIfSafe)
-            
+            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tideStations)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -126,10 +122,7 @@ class MockSuccessForTideStationEvents: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessForTideStationEvents.requestHandler = { request in
-            
-            let tideEvents = Bundle.main.path(forResource: "TideEvents", ofType: "json")!
-            let data = try! Data(contentsOf: URL(fileURLWithPath: tideEvents), options: .mappedIfSafe)
-            
+            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tidalEvents)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -141,10 +134,7 @@ class MockBadDataInTideStationList: MockURLProtocol {
     override func startLoading() {
         
         MockBadDataInTideStationList.requestHandler = { request in
-            
-            let tideEvents = Bundle.main.path(forResource: "UKTideStationsBadData", ofType: "json")!
-            let data = try! Data(contentsOf: URL(fileURLWithPath: tideEvents), options: .mappedIfSafe)
-            
+            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tideStationsBad)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -156,10 +146,7 @@ class MockSuccessfulTideStationDetail: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessfulTideStationDetail.requestHandler = { request in
-            
-            let stations = Bundle.main.path(forResource: "UKTideStation", ofType: "json")!
-            let data = try! Data(contentsOf: URL(fileURLWithPath: stations), options: .mappedIfSafe)
-            
+            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .station)
             return self.generateResponse(for: 200, data: data)
         }
         

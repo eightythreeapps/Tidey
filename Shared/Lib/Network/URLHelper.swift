@@ -26,7 +26,7 @@ class URLHelper {
         guard let url = components.url else {
             throw NetworkServiceError.badUrl
         }
-                
+        
         return url
     }
     
