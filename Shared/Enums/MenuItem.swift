@@ -11,7 +11,6 @@ enum MenuItem:String, CaseIterable, Identifiable {
     
     case nearMe = "Near me"
     case allStations = "All Stations"
-    case mapView = "Map"
     
     var id:String {
         return self.rawValue

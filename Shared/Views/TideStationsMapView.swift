@@ -21,7 +21,7 @@ struct TideStationsMapView: View {
             } else if viewModel.viewState == .loaded {
                 
                 Map(coordinateRegion: $viewModel.mapRegion,
-                    interactionModes: [],
+                    interactionModes: [.all],
                     showsUserLocation: false,
                     userTrackingMode: .none,
                     annotationItems: viewModel.stations

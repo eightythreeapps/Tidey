@@ -27,13 +27,13 @@ struct StationDetailView: View {
             } else if viewModel.viewState == .loaded {
                 
                 Map(coordinateRegion: $viewModel.mapRegion,
-                    interactionModes: [],
+                    interactionModes: [.all],
                     showsUserLocation: false,
                     userTrackingMode: .none,
                     annotationItems: [viewModel.getStation(stationId: id ?? "")]
                 )
                 {
-                    MapPin(coordinate: $0.coordinate)
+                    MapMarker(coordinate: $0.coordinate)
                 }
                 
                 List(viewModel.tidalEvents) { event in

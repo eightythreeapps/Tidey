@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct NearMeView: View {
+    
+    @EnvironmentObject var viewModel:TideStationListViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Near me")
+            .onAppear {
+                
+                Task {
+                    
+                }
+                
+            }
     }
 }
 

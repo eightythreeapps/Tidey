@@ -12,68 +12,32 @@ struct AppRootView: View {
     @EnvironmentObject var tideStationListViewModel:TideStationListViewModel
     @State var selectedMenuItem:MenuItem?
     
+    @State var columVisibility:NavigationSplitViewVisibility = .detailOnly
+    
     var body: some View {
         
-        if UIDevice.current.userInterfaceIdiom == .phone {
+        NavigationSplitView(columnVisibility:$columVisibility) {
             
-            TabView {
-                
-                ForEach(MenuItem.allCases) { menuItem in
-                    
-                    switch menuItem {
-                        
-                    case .nearMe:
-                        NearMeView()
-                            .tabItem {
-                                Text(menuItem.rawValue)
-                            }
-                            .tag(menuItem.id)
-                    case .allStations:
-                        
-                        NavigationStack {
-                            TideStationListView()
-                                .environmentObject(tideStationListViewModel)
-                        }
-                        .tabItem {
-                            Text(menuItem.rawValue)
-                        }
-                        .tag(menuItem.id)
-                        
-                    case .mapView:
-                        
-                        TideStationsMapView()
-                            .environmentObject(tideStationListViewModel)
-                            .tabItem {
-                                Text(menuItem.rawValue)
-                            }
-                        
-                    }
-                    
-                }
-            
+            List(MenuItem.allCases) { menuItem in
+                NavigationLink(menuItem.rawValue, value: menuItem)
             }
-            
-        }else{
-            NavigationSplitView {
-                List(MenuItem.allCases, selection: $selectedMenuItem) { menuItem in
-                    NavigationLink(menuItem.rawValue, value: menuItem)
-                }
-            } content: {
-                switch selectedMenuItem {
-                case .nearMe:
-                    Text("Near me")
+            .listStyle(.sidebar)
+            .navigationDestination(for: MenuItem.self) { menuItem in
+                switch menuItem {
                 case .allStations:
-                    TideStationListView()
+                    TideStationsMapView()
                         .environmentObject(tideStationListViewModel)
-                case .none:
-                    Text("Hmmm...")
-                case .some(.mapView):
-                    Text("Maps!")
+                case .nearMe:
+                    NearMeView()
+                        .environmentObject(tideStationListViewModel)
                 }
-            } detail: {
-                Text("Detail view")
             }
+            
+        } detail: {
+            NearMeView()
+                .environmentObject(tideStationListViewModel)
         }
+
 
     }
 }

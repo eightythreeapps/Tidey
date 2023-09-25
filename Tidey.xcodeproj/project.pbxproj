@@ -12,8 +12,6 @@
 		B50EDA3329F833B500F10CE6 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
 		B50EDA3629F833E200F10CE6 /* ConfigurationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */; };
 		B50EDA3829F8350000F10CE6 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
-		B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
-		B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */; };
 		B52C81FD29F2B7F900965382 /* UKTideStationsBadData.json in Resources */ = {isa = PBXBuildFile; fileRef = B52C81FC29F2B7F900965382 /* UKTideStationsBadData.json */; };
 		B52C81FE29F2B7F900965382 /* UKTideStationsBadData.json in Resources */ = {isa = PBXBuildFile; fileRef = B52C81FC29F2B7F900965382 /* UKTideStationsBadData.json */; };
 		B52C820429F2C92800965382 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820329F2C92800965382 /* ComplicationController.swift */; };
@@ -35,7 +33,6 @@
 		B580823E2A0BD882006A8A82 /* MockLocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */; };
 		B580823F2A0BD882006A8A82 /* MockLocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */; };
 		B58082402A0BD882006A8A82 /* MockLocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */; };
-		B58D38902A0AAB65009C569F /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */; };
 		B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
 		B58D38992A0AABC4009C569F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38982A0AABC4009C569F /* LocationService.swift */; };
 		B58D389E2A0B8EBE009C569F /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */; };
@@ -46,6 +43,7 @@
 		B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
 		B5A107732AB9CDB400F87E08 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A107722AB9CDB400F87E08 /* AppRootView.swift */; };
 		B5A107782AB9E82500F87E08 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */; };
+		B5A6A7D62AC21BFE001B5784 /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */; };
 		B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B33DD72A02896A00D55F36 /* UKTideStation.json */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
 		B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
@@ -84,7 +82,6 @@
 		B5CA738429E9692D005C87F1 /* TideyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */; };
 		B5CE89EF2ABCDA9300E0D263 /* TideStationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE89EE2ABCDA9300E0D263 /* TideStationDataProvider.swift */; };
 		B5CE89F12ABCDB0D00E0D263 /* TideDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE89F02ABCDB0D00E0D263 /* TideDataProvider.swift */; };
-		B5CE8BF82A13799000C185AE /* StationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE8BF72A13799000C185AE /* StationMapView.swift */; };
 		B5F8A83F2ABD99BC0000C18B /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A83E2ABD99BC0000C18B /* MockDataProvider.swift */; };
 		B5F8A8432ABD9F660000C18B /* TideyDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8422ABD9F660000C18B /* TideyDataProviderTests.swift */; };
 		B5F8A8452ABD9FC60000C18B /* TideyURLBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8442ABD9FC60000C18B /* TideyURLBuilderTests.swift */; };
@@ -186,7 +183,6 @@
 		B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfiguration.swift; sourceTree = "<group>"; };
 		B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationSource.swift; sourceTree = "<group>"; };
 		B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Utils.swift"; sourceTree = "<group>"; };
-		B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfig.xcconfig; sourceTree = "<group>"; };
 		B52C81FC29F2B7F900965382 /* UKTideStationsBadData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStationsBadData.json; sourceTree = "<group>"; };
 		B52C820329F2C92800965382 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		B52C820B29F2CC2100965382 /* Tidey_Watch_ExtensionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_Watch_ExtensionExtension.swift; sourceTree = "<group>"; };
@@ -216,7 +212,6 @@
 		B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationListViewModel.swift; sourceTree = "<group>"; };
 		B580823B2A0BD7EF006A8A82 /* TideyLocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyLocationServiceTests.swift; sourceTree = "<group>"; };
 		B580823D2A0BD882006A8A82 /* MockLocationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationDataProvider.swift; sourceTree = "<group>"; };
-		B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
 		B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorisationState.swift; sourceTree = "<group>"; };
 		B58D38982A0AABC4009C569F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
@@ -228,6 +223,7 @@
 		B5A06E0D29F9956A00E82973 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		B5A107722AB9CDB400F87E08 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
 		B5B33DD72A02896A00D55F36 /* UKTideStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStation.json; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
@@ -266,7 +262,6 @@
 		B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B5CE89EE2ABCDA9300E0D263 /* TideStationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationDataProvider.swift; sourceTree = "<group>"; };
 		B5CE89F02ABCDB0D00E0D263 /* TideDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideDataProvider.swift; sourceTree = "<group>"; };
-		B5CE8BF72A13799000C185AE /* StationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationMapView.swift; sourceTree = "<group>"; };
 		B5F8A83E2ABD99BC0000C18B /* MockDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		B5F8A8422ABD9F660000C18B /* TideyDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyDataProviderTests.swift; sourceTree = "<group>"; };
 		B5F8A8442ABD9FC60000C18B /* TideyURLBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyURLBuilderTests.swift; sourceTree = "<group>"; };
@@ -457,8 +452,8 @@
 		B580823A2A0BD7A4006A8A82 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */,
 				B58D38A12A0BD487009C569F /* LocationManager.swift */,
-				B58D388F2A0AAB65009C569F /* LocationDataProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -552,7 +547,6 @@
 				B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */,
 				B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */,
 				B5302A7A2A040BD40022A6BB /* StationNearMeView.swift */,
-				B5CE8BF72A13799000C185AE /* StationMapView.swift */,
 				B59AB5242ABC9A00003F0ACF /* NearMeView.swift */,
 				B59AB5262ABC9A1E003F0ACF /* TideStationsMapView.swift */,
 			);
@@ -618,7 +612,6 @@
 			isa = PBXGroup;
 			children = (
 				B50795D22A015C8E00B5A2C9 /* ci_scripts */,
-				B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
 				B5CA737629E9692D005C87F1 /* TideyTests */,
@@ -923,7 +916,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					B55F77E22A026D6D00524CF2 = {
 						CreatedOnToolsVersion = 14.3;
@@ -1019,7 +1012,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */,
-				B52C81FB29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B52C81FE29F2B7F900965382 /* UKTideStationsBadData.json in Resources */,
 				B5BEA08A29EAC035004398BE /* Assets.xcassets in Resources */,
 				B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */,
@@ -1047,7 +1039,6 @@
 				B504CD8D29FC095300C1C662 /* UKTideStations.json in Resources */,
 				B5CA736929E9692C005C87F1 /* Preview Assets.xcassets in Resources */,
 				B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */,
-				B52C81FA29F29ABB00965382 /* BuildConfig.xcconfig in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
 				B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */,
 				B52C81FD29F2B7F900965382 /* UKTideStationsBadData.json in Resources */,
@@ -1133,7 +1124,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58D38902A0AAB65009C569F /* LocationDataProvider.swift in Sources */,
 				B5BE9F8329E969D2004398BE /* Event.swift in Sources */,
 				B5BE9F7F29E969D2004398BE /* NetworkServiceError.swift in Sources */,
 				B50EDA3829F8350000F10CE6 /* Bundle+Utils.swift in Sources */,
@@ -1159,7 +1149,6 @@
 				B5F8A84C2ABDA6E90000C18B /* TestConfigurationProvider.swift in Sources */,
 				B58D38992A0AABC4009C569F /* LocationService.swift in Sources */,
 				B5CE89EF2ABCDA9300E0D263 /* TideStationDataProvider.swift in Sources */,
-				B5CE8BF82A13799000C185AE /* StationMapView.swift in Sources */,
 				B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */,
 				B580823E2A0BD882006A8A82 /* MockLocationDataProvider.swift in Sources */,
 				B5CA736229E9692A005C87F1 /* TideyApp.swift in Sources */,
@@ -1170,6 +1159,7 @@
 				B5A107782AB9E82500F87E08 /* MockURLProtocol.swift in Sources */,
 				B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
 				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
+				B5A6A7D62AC21BFE001B5784 /* LocationDataProvider.swift in Sources */,
 				B59AB5272ABC9A1E003F0ACF /* TideStationsMapView.swift in Sources */,
 				B5302A7B2A040BD40022A6BB /* StationNearMeView.swift in Sources */,
 				B59AB5252ABC9A00003F0ACF /* NearMeView.swift in Sources */,
@@ -1240,7 +1230,6 @@
 /* Begin XCBuildConfiguration section */
 		B55F78092A026D6E00524CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1272,7 +1261,6 @@
 		};
 		B55F780A2A026D6E00524CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1304,7 +1292,6 @@
 		};
 		B55F780B2A026D6E00524CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1326,7 +1313,6 @@
 		};
 		B55F780C2A026D6E00524CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1348,7 +1334,6 @@
 		};
 		B55F780D2A026D6E00524CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1369,7 +1354,6 @@
 		};
 		B55F780E2A026D6E00524CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1390,7 +1374,6 @@
 		};
 		B5BE9FCB29E96CC5004398BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1429,7 +1412,6 @@
 		};
 		B5BE9FCC29E96CC5004398BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1468,7 +1450,6 @@
 		};
 		B5BE9FCF29E96CC5004398BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1492,7 +1473,6 @@
 		};
 		B5BE9FD029E96CC5004398BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1516,7 +1496,6 @@
 		};
 		B5BE9FD229E96CC5004398BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1537,7 +1516,6 @@
 		};
 		B5BE9FD329E96CC5004398BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1558,7 +1536,6 @@
 		};
 		B5CA738529E9692D005C87F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1593,6 +1570,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1622,7 +1600,6 @@
 		};
 		B5CA738629E9692D005C87F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1657,6 +1634,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1680,7 +1658,6 @@
 		};
 		B5CA738829E9692D005C87F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1719,7 +1696,6 @@
 		};
 		B5CA738929E9692D005C87F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1758,7 +1734,6 @@
 		};
 		B5CA738B29E9692D005C87F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1780,7 +1755,6 @@
 		};
 		B5CA738C29E9692D005C87F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1802,7 +1776,6 @@
 		};
 		B5CA738E29E9692D005C87F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1821,7 +1794,6 @@
 		};
 		B5CA738F29E9692D005C87F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B52C81F929F29ABB00965382 /* BuildConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

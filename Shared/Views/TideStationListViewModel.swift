@@ -28,6 +28,10 @@ class TideStationListViewModel:ObservableObject {
         self.tideStationDataProvider = tideStationDataProvider
     }
     
+    func findStationNearestToUser() async {
+        
+    }
+    
     func findStationClosestToLocation(location:CLLocation) async {
         
         self.viewState = .loading
@@ -65,7 +69,7 @@ class TideStationListViewModel:ObservableObject {
         return defaultStation
         
     }
-
+    
     func getDetailsForStation(stationId:String) async {
         
         do {
