@@ -7,6 +7,7 @@
 
 import Foundation
 import GeoJSON
+import MapKit
 import CoreLocation
 
 typealias TideStations = [TideStation]
@@ -15,6 +16,11 @@ struct TideStation:Identifiable {
         
     var id:UUID = UUID()
     var feature:Feature
+    var coordinate:CLLocationCoordinate2D {
+        get {
+            getLocation()?.coordinate ?? CLLocationCoordinate2D()
+        }
+    }
     
     public func getStationId() -> String? {
         
@@ -34,6 +40,20 @@ struct TideStation:Identifiable {
         
         return "Unknown"
         
+    }
+    
+    public func getCoordinateRegion() -> MKCoordinateRegion {
+        
+        if let location = getLocation() {
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                                                     longitude: location.coordinate.longitude),
+                                      span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        }else{
+            return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0.0,
+                                                              longitude: 0.0),
+                                      span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        }
+                
     }
     
     public func getLocation() -> CLLocation? {

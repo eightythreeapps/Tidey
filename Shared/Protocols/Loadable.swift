@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum ApplicationState {
+    case notConfigured
+    case configured(apiKey:String)
+}
+
 enum LoadingState {
-    case notLoading
+    case idle
     case loading
     case loaded
     case error

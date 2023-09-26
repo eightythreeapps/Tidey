@@ -8,15 +8,15 @@
 import Foundation
 import GeoJSON
 
-public class UKTidalAPI:TideDataLoadable, Service {
+public class TideDataAPI: Service {
     
     var session: URLSession
-    var baseUrl: String
+    var host: String
     var urlHelper: URLHelper
     
-    required init(session: URLSession, baseURL baseUrl: String, urlHelper: URLHelper) {
+    required init(session: URLSession, host: String, urlHelper: URLHelper) {
         self.session = session
-        self.baseUrl = baseUrl
+        self.host = host
         self.urlHelper = urlHelper
     }
         
@@ -26,9 +26,9 @@ public class UKTidalAPI:TideDataLoadable, Service {
         config.httpAdditionalHeaders = ["Ocp-Apim-Subscription-Key":apiKey]
             
         let session = URLSession(configuration: config)
-        let baseURL = Bundle.main.object(key: .tidalApiBaseUrl)
+        let host = Bundle.main.object(key: .tidalApiBaseUrl)
         
-        self.init(session: session, baseURL: baseURL, urlHelper: URLHelper())
+        self.init(session: session, host: host, urlHelper: URLHelper())
         
     }
     
@@ -36,7 +36,7 @@ public class UKTidalAPI:TideDataLoadable, Service {
         
         do {
             
-            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations")
+            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations")
             let request = URLRequest(url: url!)
             
             let result = try await self.fetchData(request: request, responseModel: FeatureCollection.self)
@@ -55,7 +55,7 @@ public class UKTidalAPI:TideDataLoadable, Service {
     func getStation(stationId:String) async throws -> TideStation {
         
         do {
-            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)")
+            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)")
             let request = URLRequest(url: url!)
             
             let result = try await self.fetchData(request: request, responseModel: Feature.self)
@@ -71,7 +71,7 @@ public class UKTidalAPI:TideDataLoadable, Service {
                  
         do {
             
-            let url = try urlHelper.requestUrl(host: baseUrl, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents")
+            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents")
             let request = URLRequest(url: url!)
             let result = try await self.fetchData(request: request, responseModel: [Event].self)
             var tidalEvents = TidalEvents()
@@ -87,3 +87,5 @@ public class UKTidalAPI:TideDataLoadable, Service {
         }
     }
 }
+
+

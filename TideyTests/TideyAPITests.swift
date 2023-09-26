@@ -12,11 +12,8 @@ import CoreLocation
 
 final class TideyAPITests: XCTestCase {
 
-    var tidalDataSource:TideDataLoadable!
-    var cancellables = Set<AnyCancellable>()
     var urlHelper:URLHelper!
     
-    let baseURL = "https://admiraltyapi.azure-api.net"
     let host = "admiraltyapi.azure-api.net"
     
     override func setUpWithError() throws {
@@ -26,59 +23,7 @@ final class TideyAPITests: XCTestCase {
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        self.tidalDataSource = nil
-    }
-    
-    func testBuildBasicURL() throws {
-        
-        let url = try? self.urlHelper.requestUrl(host: host)
-        
-        XCTAssert(url?.scheme == HTTPScheme.https.rawValue, "URL scheme should be HTTPS")
-        XCTAssert(url?.host() == host, "Host should match input host")
-        XCTAssertTrue(url!.pathComponents.isEmpty, "Path components should be empty")
-    }
-    
-    func testBadURLError() throws {
-        XCTAssertThrowsError(try urlHelper.requestUrl(host: host, path: "uktidalapi"))
-    }
-    
-    func testBuildURLWithValidPath() throws {
-        let url = try? self.urlHelper.requestUrl(host: host, path: "/pathSection")
-        XCTAssertNotNil(url?.pathComponents, "Path components should not be nil")
-        XCTAssertTrue(url?.pathComponents.count == 2, "Path should have 2 components")
-        XCTAssertTrue(url?.path() == "/pathSection", "Path should match input")
-    }
-    
-    func testBuildURLWithInvalidPath() throws {
-        let url = try? self.urlHelper.requestUrl(host: host, path: "pathSection")
-        XCTAssertNil(url, "URL should be nil")
-    }
-    
-    func testBuildURLWithParameters() throws {
-        
-        let queryParams = [
-            URLQueryItem(name: "param1", value: "param1Value"),
-            URLQueryItem(name: "param2", value: "param2Value")
-        ]
-        
-        let url = try? self.urlHelper.requestUrl(host: self.host, queryParams: queryParams)
-        XCTAssertNotNil(url?.query(), "Query should not be nil")
-        XCTAssertTrue(url?.query() == "param1=param1Value&param2=param2Value")
-    }
-    
-    func createMockLoadable(ofType type:AnyClass) -> TideDataLoadable {
-        URLProtocol.registerClass(type)
-        let mockConfig = URLSessionConfiguration.ephemeral
-    
-        mockConfig.protocolClasses?.insert(type, at: 0)
-        let session = URLSession(configuration: mockConfig)
-        
-        let tideDataLoadable = UKTidalAPI(session: session, baseURL: self.baseURL, urlHelper: URLHelper())
-        XCTAssertNotNil(tideDataLoadable.baseUrl, "BaseURL should not be nil")
-        XCTAssertTrue(tideDataLoadable.baseUrl == self.baseURL, "Base URL should match input base URL")
-
-        
-        return tideDataLoadable
+        self.urlHelper = nil
     }
     
     func testTooManyRequests() async throws {
@@ -210,7 +155,7 @@ final class TideyAPITests: XCTestCase {
     
     func testSessionHeaders() async throws {
         
-        let tideDataLoadable = UKTidalAPI(apiKey: "APIKEY")
+        let tideDataLoadable = TideDataAPI(apiKey: "APIKEY")
         
         let headers = tideDataLoadable.session.configuration.httpAdditionalHeaders
         XCTAssertNotNil(headers, "Additional HTTP headers should not be nil")
@@ -259,4 +204,21 @@ final class TideyAPITests: XCTestCase {
         
     }
 
+}
+
+private extension TideyAPITests {
+    func createMockLoadable(ofType type:AnyClass) -> TideDataAPI {
+        
+        URLProtocol.registerClass(type)
+        let mockConfig = URLSessionConfiguration.ephemeral
+    
+        mockConfig.protocolClasses?.insert(type, at: 0)
+        let session = URLSession(configuration: mockConfig)
+        
+        let tideDataLoadable = TideDataAPI(session: session, host: self.host, urlHelper: URLHelper())
+        XCTAssertNotNil(tideDataLoadable.host, "BaseURL should not be nil")
+        XCTAssertTrue(tideDataLoadable.host == self.host, "Base URL should match input base URL")
+
+        return tideDataLoadable
+    }
 }

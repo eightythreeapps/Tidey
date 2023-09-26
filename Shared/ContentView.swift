@@ -7,81 +7,22 @@
 
 import SwiftUI
 import CoreLocation
+import Combine
 
-public class ContentViewModel:ObservableObject {
-    
-    @Published var state:LoadingState = .notLoading
-    @Published var tideDataApiKey:String!
-    
-    var configurationProvider:ConfigurationProvider = ConfigurationProvider(configurationSource: LocalConfiguration())
-    
-    init(state: LoadingState = .notLoading) {
-        self.state = state
-    }
-    
-    func fetchConfig() async {
-        
-        let _ = await self.configurationProvider.fetchConfig()
-        do {
-            self.tideDataApiKey = try self.configurationProvider.configValue(forKey: .tidalApiSubscriptionKey)
-            self.state = .loaded
-        } catch {
-            self.state = .error
-        }
-        
-    }
-    
-}
+@MainActor
 
 struct ContentView: View {
-    
-    @StateObject var viewModel = ContentViewModel(state: .loading)
+  
+    @State var selectedSection:AppSection?
+    @State var selectedTideStation:TideStation?
+    @State var tideListStationViewModel:TideStationListViewModel?
     
     var body: some View {
-        
-        VStack {
-            switch viewModel.state {
-            case .notLoading:
-                Text("Welcome")
-            case .loading:
-                ProgressView {
-                    Text("Loading config")
-                }
-            case .loaded:
-
-                NavigationSplitView {
-                    List {
-                        NavigationLink {
-                            LocatingUserView(viewModel: LocatingUserViewModel(locationProvider: LocationService(locationManager: CLLocationManager())))
-                        } label: {
-                            Text("Near me")
-                        }
-                        
-                        NavigationLink {
-                            TideStationListView()
-                        } label: {
-                            Text("All tide stations")
-                        }
-                    }
-                    .navigationTitle("Tidey")
-                    
-                } detail: {
-                    EmptyView()
-                }
-                .environmentObject(TideStationListViewModel(tideStationAPIService: UKTidalAPI(apiKey: viewModel.tideDataApiKey)))
-
-            case .error:
-                Text("There was an error loading the config")
-            }
-        }
-        .task(priority: .high) {
-            await viewModel.fetchConfig()
-        }
+        Text("Hello")
     }
+
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewFactory().makeContentView()
-    }
+#Preview {
+    ContentView(selectedSection: nil, selectedTideStation: nil)
 }

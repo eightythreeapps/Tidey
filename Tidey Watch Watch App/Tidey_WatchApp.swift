@@ -11,7 +11,7 @@ import SwiftUI
 struct Tidey_Watch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("Watch App")
         }
     }
 }

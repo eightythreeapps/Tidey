@@ -21,7 +21,6 @@ enum ConfigurationKey: String {
 }
 
 protocol ConfigurationSource {
-    var configurationState:LoadingState { get set }
-    func configValue(forKey key:ConfigurationKey) throws -> String
+    func configValue(forKey key:ConfigurationKey) -> Future<String, ConfigurationError>
     func fetchConfigurationData() -> Future<LoadingState, ConfigurationError>
 }

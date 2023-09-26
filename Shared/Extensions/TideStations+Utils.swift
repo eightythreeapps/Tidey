@@ -15,11 +15,6 @@ struct StationDistance {
     var stationID:UUID
 }
 
-enum SortOrder {
-    case ascending
-    case descending
-}
-
 extension TideStations {
 
     func getNearestStation(to userLocation:CLLocation) -> TideStation? {
