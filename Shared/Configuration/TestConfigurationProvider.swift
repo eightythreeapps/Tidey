@@ -10,10 +10,10 @@ import Combine
 
 public class TestConfiguration:ConfigurationSource {
     
-    func fetchConfigurationData() -> Future<LoadingState , ConfigurationError> {
+    func fetchConfigurationData() -> Future<ApplicationState, ConfigurationError> {
         
         Future { promise in
-            promise(.success(.loaded))
+            promise(.success(.configLoaded))
         }
     }
     

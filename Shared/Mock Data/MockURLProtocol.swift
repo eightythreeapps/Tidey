@@ -21,7 +21,6 @@ class MockURLProtocol: URLProtocol {
     
     override func startLoading() {
         guard let handler = MockURLProtocol.requestHandler else {
-            print("Failed")
             return
         }
         do {

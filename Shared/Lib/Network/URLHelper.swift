@@ -6,28 +6,36 @@
 //
 
 import Foundation
+import Combine
 
 class URLHelper {
     
-    public func requestUrl(scheme:HTTPScheme = HTTPScheme.https, host:String, path:String? = nil, queryParams:[URLQueryItem]? = nil) throws -> URL? {
+    public func requestUrl(scheme:HTTPScheme = HTTPScheme.https, host:String, path:String? = nil, queryParams:[URLQueryItem]? = nil) -> AnyPublisher<URLRequest,Error> {
         
-        var components = URLComponents()
-        components.scheme = scheme.rawValue
-        components.host = host
+        return Future() { promise in
+            
+            var components = URLComponents()
+            components.scheme = scheme.rawValue
+            components.host = host
+            
+            if let path = path {
+                components.path = path
+            }
+            
+            if let queryParams = queryParams  {
+                components.queryItems = queryParams
+            }
+            
+            guard let url = components.url else {
+                return promise(.failure(NetworkServiceError.badUrl))
+            }
+            
+            let urlRequest = URLRequest(url: url)
+            
+            return promise(.success(urlRequest))
+            
+        }.eraseToAnyPublisher()
         
-        if let path = path {
-            components.path = path
-        }
-        
-        if let queryParams = queryParams  {
-            components.queryItems = queryParams
-        }
-        
-        guard let url = components.url else {
-            throw NetworkServiceError.badUrl
-        }
-        
-        return url
     }
     
 }

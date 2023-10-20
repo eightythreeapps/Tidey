@@ -7,6 +7,7 @@
 
 import Foundation
 import GeoJSON
+import Combine
 
 public class TideDataAPI: Service {
     
@@ -32,59 +33,69 @@ public class TideDataAPI: Service {
         
     }
     
-    func getStations() async throws -> TideStations {
-        
-        do {
-            
-            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations")
-            let request = URLRequest(url: url!)
-            
-            let result = try await self.fetchData(request: request, responseModel: FeatureCollection.self)
-            let features = result.features
-            var stations = TideStations()
-            for feature in features {
-                let tideStation = TideStation(feature: feature)
-                stations.append(tideStation)
+    func getStations() -> AnyPublisher<TideStations, Error> {
+    
+        urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations")
+            .map {
+                self.fetchData(request: $0, responseModel: FeatureCollection.self)
             }
-            return stations
-        } catch {
-            throw error
-        }
+            .flatMap {
+                Publishers.MergeMany(
+                    $0.map {
+                        let features = $0.features
+                        var stations = TideStations()
+                        for feature in features {
+                            let tideStation = TideStation(feature: feature)
+                            stations.append(tideStation)
+                        }
+                        return stations
+                    }
+                )
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getStation(stationId:String) async throws -> TideStation {
-        
-        do {
-            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)")
-            let request = URLRequest(url: url!)
-            
-            let result = try await self.fetchData(request: request, responseModel: Feature.self)
-            let tideStation = TideStation(feature: result)
-            return tideStation
-        } catch {
-            throw error
-        }
+    func getStation(stationId:String) -> AnyPublisher<TideStation, Error> {
+    
+        urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)")
+            .map {
+                self.fetchData(request: $0, responseModel: Feature.self)
+            }
+            .flatMap {
+                Publishers.MergeMany(
+                    $0.map {
+                        TideStation(feature: $0)
+                    }
+                )
+            }
+            .eraseToAnyPublisher()
     
     }
     
-    func getTidalEvents(stationId:String) async throws -> TidalEvents {
+    func getTidalEvents(stationId:String) -> AnyPublisher<TidalEvents, Error> {
                  
-        do {
-            
-            let url = try urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents")
-            let request = URLRequest(url: url!)
-            let result = try await self.fetchData(request: request, responseModel: [Event].self)
-            var tidalEvents = TidalEvents()
-            
-            for event in result {
-                let tidalEvent = TidalEvent(event: event)
-                tidalEvents.append(tidalEvent)
+        urlHelper.requestUrl(host: host, path: "/uktidalapi/api/V1/Stations/\(stationId)/TidalEvents")
+            .map {
+                self.fetchData(request: $0, responseModel: [Event].self)
             }
-            
-            return tidalEvents
-        } catch {
-            throw error
-        }
+            .flatMap {
+                Publishers.MergeMany(
+                    
+                    $0.map {
+                        var tidalEvents = TidalEvents()
+                        
+                        for event in $0 {
+                            let tidalEvent = TidalEvent(event: event)
+                            tidalEvents.append(tidalEvent)
+                        }
+                        
+                        return tidalEvents
+                    }
+                    
+                )
+            }
+            .eraseToAnyPublisher()
+        
     }
 }
 

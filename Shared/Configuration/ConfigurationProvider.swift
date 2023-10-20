@@ -16,7 +16,7 @@ public class ConfigurationProvider:ObservableObject {
         self.configurationSource = configurationSource
     }
         
-    func fetchConfig() -> Future<LoadingState, ConfigurationError> {
+    func fetchConfig() -> Future<ApplicationState, ConfigurationError> {
         return self.configurationSource.fetchConfigurationData()
     }
     

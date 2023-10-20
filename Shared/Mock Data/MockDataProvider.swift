@@ -7,6 +7,8 @@
 
 import Foundation
 import GeoJSON
+import Combine
+import CoreLocation
 
 enum PreviewFile:String {
     case tideStations = "UKTideStations"
@@ -58,6 +60,7 @@ class MockDataProvider {
 }
 
 class MockEmptyTideDataProvider:TideDataProvider {
+
     
     var apiClient: TideDataAPI
     var stations: TideStations?
@@ -66,16 +69,36 @@ class MockEmptyTideDataProvider:TideDataProvider {
         self.apiClient = apiClient
     }
     
-    func getAllStations() async -> TideStations {
-        return TideStations()
+    func getAllStations() -> AnyPublisher<TideStations, Error> {
+        
+        return apiClient.getStations()
+            .map { _ in
+             return TideStations()
+            }
+            .eraseToAnyPublisher()
+        
     }
     
-    func getStation(by id: String) async -> TideStation {
-        return TideStation(feature: Feature(geometry: nil))
+    func getStation(by id: String) -> AnyPublisher<TideStation, Error> {
+        return apiClient.getStations()
+            .map { _ in
+                return TideStation(feature: Feature(geometry: nil))
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getTideEvents(for stationId: String) async throws -> TidalEvents {
-        return TidalEvents()
+    func getTideEvents(for stationId: String) -> AnyPublisher<TidalEvents, Error> {
+        return apiClient.getStations()
+            .map { _ in
+                return TidalEvents()
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func getTideStation(for location: CLLocation) -> AnyPublisher<TideStation?, Error> {
+        return apiClient.getStation(stationId: "")
+            .map { _ in return nil }
+            .eraseToAnyPublisher()
     }
     
     
@@ -91,21 +114,40 @@ class PreviewTideDataProvider:TideDataProvider {
         self.apiClient = apiClient
     }
     
-    func getAllStations() async throws -> TideStations {
+    func getAllStations() -> AnyPublisher<TideStations, Error> {
         let apiClient = MockDataProvider.mockTideAPI(ofType: MockSuccessForTideStations.self)
-        let stations = try! await apiClient.getStations()
-        return stations
+        
+        return apiClient.getStations()
+            .eraseToAnyPublisher()
     }
     
-    func getStation(by id: String) async throws -> TideStation {
+    func getStation(by id: String) -> AnyPublisher<TideStation, Error> {
         let apiClient = MockDataProvider.mockTideAPI(ofType: MockSuccessForTideStations.self)
-        let stations = try! await apiClient.getStations()
-        return stations.first(where: { $0.getStationId() == id })!
+        
+        return apiClient.getStations()
+            .map { $0.first(where: {$0.getStationId() == id})! }
+            .eraseToAnyPublisher()
+        
     }
     
-    func getTideEvents(for stationId: String) async throws -> TidalEvents {
+    func getTideEvents(for stationId: String) -> AnyPublisher<TidalEvents, Error> {
         let apiClient = MockDataProvider.mockTideAPI(ofType: MockSuccessForTideStationEvents.self)
-        return try! await apiClient.getTidalEvents(stationId: stationId)
+        
+        return apiClient.getTidalEvents(stationId: stationId)
+            .eraseToAnyPublisher()
+        
     }
+    
+    func getTideStation(for location:CLLocation) -> AnyPublisher<TideStation?, Error> {
+        let apiClient = MockDataProvider.mockTideAPI(ofType: MockSuccessForTideStationEvents.self)
+        
+        return apiClient.getStations()
+            .map {
+                $0.getNearestStation(to: location)
+            }
+            .replaceEmpty(with: nil)
+            .eraseToAnyPublisher()
+    }
+    
     
 }

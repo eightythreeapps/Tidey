@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import CoreLocation
 
 class ApplicationModel:ObservableObject {
     
@@ -23,15 +24,12 @@ class ApplicationModel:ObservableObject {
                 return self.configurationProvider.configValue(forKey: .tidalApiSubscriptionKey)
             }
             .sink { completion in
-                print(completion)
+                print("Fetch config completed: \(completion)")
             } receiveValue: { apiKey in
                 self.state = .configured(apiKey: apiKey)
             }
             .store(in: &configCancellable)
     }
-    
-    
-    
 }
 
 @main
@@ -46,12 +44,19 @@ struct TideyApp: App {
             case .notConfigured:
                 Text("Setting things up for you")
             case .configured(let apiKey):
-                AppRootView()
-                    .environmentObject(
-                        TideStationListViewModel(tideStationDataProvider: TideStationDataProvider(apiClient: TideDataAPI(apiKey: apiKey)))
-                    )
+                NearMeView()
+                    .environmentObject(NearMeViewModel(
+                        tideStationDataProvider: TideStationDataProvider(apiClient: TideDataAPI(apiKey: apiKey)),
+                        locationService: LocationService(locationManager: CLLocationManager())))
+            case .loadingConfig:
+                Text("Setting things up for you")
+            case .configLoaded:
+                Text("Config loaded")
             }
             
         }
     }
 }
+
+
+

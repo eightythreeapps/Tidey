@@ -6,20 +6,17 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum ApplicationState {
+    case loadingConfig
+    case configLoaded
     case notConfigured
     case configured(apiKey:String)
 }
 
-enum LoadingState {
-    case idle
-    case loading
-    case loaded
-    case error
-}
-
-protocol Loadable {
-    var state:LoadingState { get set }
-    func loadData()
+enum ApplicationError:LocalizedError {
+    case dataLoadingError
+    case locationError
+    case unknown
 }

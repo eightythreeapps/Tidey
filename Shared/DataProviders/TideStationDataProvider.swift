@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Combine
+import CoreLocation
 
 class TideStationDataProvider:TideDataProvider {
     
@@ -15,47 +17,34 @@ class TideStationDataProvider:TideDataProvider {
     required init(apiClient: TideDataAPI) {
         self.apiClient = apiClient
     }
-
-    func getAllStations() async throws -> TideStations {
-
-        if let loadedStations = self.stations {
-            return loadedStations
-        }
-        
-        do {
-            let stations = try await self.apiClient.getStations()
-            self.stations = stations
-            return stations
-        } catch {
-            throw error
-        }
-        
+    
+    func getAllStations() -> AnyPublisher<TideStations, Error> {
+    
+        apiClient.getStations()
+            .eraseToAnyPublisher()
+    
     }
     
-    func getStation(by id: String) throws -> TideStation {
+    func getStation(by id: String) -> AnyPublisher<TideStation, Error> {
+        apiClient.getStation(stationId: id)
+            .eraseToAnyPublisher()
+    }
+    
+    func getTideEvents(for stationId: String) -> AnyPublisher<TidalEvents, Error> {
+        apiClient.getTidalEvents(stationId: stationId)
+            .eraseToAnyPublisher()
+    }
+    
+    func getTideStation(for location:CLLocation) -> AnyPublisher<TideStation?, Error> {
         
-        if let loadedStations = self.stations {
-            if let station = loadedStations.first(where: { $0.getStationId() == id }) {
-                return station
-            }else{
-                throw NetworkServiceError.notFound
+        apiClient.getStations()
+            .map { 
+                $0.getNearestStation(to: location)
             }
-        }else{
-            //TODO: Replace with Data Provider level error
-            throw NetworkServiceError.notFound
-        }
-        
-        
+            .replaceEmpty(with: nil)
+            .eraseToAnyPublisher()
+                
     }
     
-    func getTideEvents(for stationId: String) async throws -> TidalEvents {
-        
-        do {
-            return try await apiClient.getTidalEvents(stationId: stationId)
-        } catch {
-            throw error
-        }
-        
-    }
     
 }

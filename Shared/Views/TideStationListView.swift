@@ -8,40 +8,16 @@
 import SwiftUI
 import GeoJSON
 import SwiftDate
+import CoreLocation
 
 struct TideStationListView: View {
     
-    @EnvironmentObject var viewModel:TideStationListViewModel
+    @EnvironmentObject var viewModel:NearMeViewModel
     
     var body: some View {
         
         VStack {
-            
-            if viewModel.viewState == .error {
-                Text("Error loading stuff")
-            } else {
-                
-                List(viewModel.stations) { station in
-                    NavigationLink {
-                        StationDetailView(stationName: station.getStationName(),
-                                          id: station.getStationId())
-                    } label: {
-                        Text(station.getStationName())
-                    }
-                }
-                .listStyle(.insetGrouped)
-                .navigationTitle("Stations")
-                .overlay {
-                    if viewModel.viewState == .loading {
-                        ProgressView()
-                    }
-                }
-            }
-            
-        }.onAppear {
-            Task {
-                await viewModel.loadData()
-            }
+            Text("List view")
         }
         
     }
@@ -50,5 +26,8 @@ struct TideStationListView: View {
 
 #Preview {    
     TideStationListView()
-        .environmentObject(TideStationListViewModel(tideStationDataProvider: MockDataProvider.PreviewProvider.TideDataProvider))
+        .environmentObject(
+            NearMeViewModel(tideStationDataProvider: MockDataProvider.PreviewProvider.TideDataProvider,
+                                     locationService: LocationService(locationManager: MockLocationManager(authorizationStatus: .authorizedAlways)))
+        )
 }

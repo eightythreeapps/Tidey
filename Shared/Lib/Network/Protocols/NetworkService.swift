@@ -10,41 +10,39 @@ import Combine
 
 protocol Service {
     var session:URLSession { get set }
-    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) async throws -> T
+    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) -> AnyPublisher<T,Error>
 }
 
 extension Service {
     
-    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) async throws -> T {
+    func fetchData<T:Decodable>(request:URLRequest, responseModel: T.Type) -> AnyPublisher<T,Error> {
         
-        let (data, response) = try await session.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw NetworkServiceError.noResponse
-        }
-        
-        switch httpResponse.statusCode {
-        case 200...299:
-            do {
-                let decodedResponse = try JSONDecoder().decode(responseModel, from: data)
-                return decodedResponse
-            } catch {
-                throw NetworkServiceError.parsingError
+        session.dataTaskPublisher(for: request)
+            .tryMap() { element -> Data in
+                guard let httpResponse = element.response as? HTTPURLResponse else {
+                    throw NetworkServiceError.badUrl
+                }
+                
+                switch httpResponse.statusCode {
+                case 200...299:
+                    return element.data
+                case 500:
+                    throw NetworkServiceError.serverError
+                case 401:
+                    throw NetworkServiceError.unauthorised
+                case 403:
+                    throw NetworkServiceError.forbidden
+                case 404:
+                    throw NetworkServiceError.notFound
+                case 429:
+                    throw NetworkServiceError.tooManyRequests
+                default:
+                    throw NetworkServiceError.unknownError
+                }
+                
             }
-        case 500:
-            throw NetworkServiceError.serverError
-        case 401:
-            throw NetworkServiceError.unauthorised
-        case 403:
-            throw NetworkServiceError.forbidden
-        case 404:
-            throw NetworkServiceError.notFound
-        case 429:
-            throw NetworkServiceError.tooManyRequests
-        default:
-            throw NetworkServiceError.unknownError
-        }
-        
+            .decode(type: T.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
     
 }

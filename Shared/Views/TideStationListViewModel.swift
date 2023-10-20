@@ -9,54 +9,81 @@ import Foundation
 import MapKit
 import CoreLocation
 import GeoJSON
+import Combine
 
 @MainActor
-class TideStationListViewModel:ObservableObject {
+class NearMeViewModel:ObservableObject {
     
     private var tideStationDataProvider:TideDataProvider
+    private var cancellables:Set<AnyCancellable> = Set<AnyCancellable>()
+    private var locationService:LocationService
     
     @Published var stations:TideStations = [TideStation]()
-    @Published var selectedStation:TideStation?
-    @Published var viewState:LoadingState = .idle
     @Published var path:[TideStation] = [TideStation]()
     @Published var tidalEvents:[TidalEvent] = [TidalEvent]()
-    @Published var stationName:String = ""
+    @Published var stationName:String = "Unknown"
+    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), 
+                                                  span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
-    @Published var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @Published var locationState:LocationProviderState = .determiningAuthorisation
+    @Published var userLocation:CLLocation? = nil
+    @Published var selectedStation:TideStation?
     
-    init(tideStationDataProvider:TideDataProvider) {
+    @Published var statusMessage = ""
+   
+    init(tideStationDataProvider:TideDataProvider, locationService:LocationService) {
         self.tideStationDataProvider = tideStationDataProvider
-    }
-    
-    func findStationNearestToUser() async {
+        self.locationService = locationService
+        
+        self.setupAuthStatusSubscriber()
+        self.setUpLocationSubscriber()
         
     }
     
-    func findStationClosestToLocation(location:CLLocation) async {
+    func findStationClosestToUser() {
+        self.locationService.requestAuthorization()
+    }
+    
+    func setUpLocationSubscriber() {
         
-        self.viewState = .loading
-        await self.loadData()
-        self.selectedStation = self.stations.getNearestStation(to: location)
-        self.stationName = selectedStation?.getStationName() ?? ""
-        
-        if let station = self.selectedStation, let stationId = station.getStationId() {
-            await self.getDetailsForStation(stationId:stationId)
-            self.viewState = .loaded
-        }
+        self.locationService.$currentLocation
+            .flatMap { location in
+                self.tideStationDataProvider.getTideStation(for: location)
+            }
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                print(completion)
+            } receiveValue: { tideStation in
+                self.selectedStation = tideStation
+            }
+            .store(in: &cancellables)
         
     }
     
-    func loadData() async {
-        
-        self.viewState = .loading
-        
-        do {
-            self.stations = try await tideStationDataProvider.getAllStations()
-            self.viewState = .loaded
-        } catch {
-            self.viewState = .error
-        }
+    func setupAuthStatusSubscriber() {
+        self.locationService.$authorisationState
+            .sink { state in
+                
+                switch state {
+                
+                case .denied(status: _):
+                    self.statusMessage = "Access to your location has not been authorized"
+                case .authorised(status: _):
+                    self.statusMessage = "Locating user"
+                case .determiningAuthorisation:
+                    self.statusMessage = "Figuring out location access"
+                case .determiningUserLocation:
+                    self.statusMessage = "Locating you"
+                case .locationUpdated(location: _):
+                    self.statusMessage = "Found you"
+                case .error:
+                    self.statusMessage = "Something is broken"
+                }
+                
+            }
+            .store(in: &cancellables)
     }
+  
     
     func getStation(stationId:String) -> TideStation {
         
@@ -72,12 +99,14 @@ class TideStationListViewModel:ObservableObject {
     
     func getDetailsForStation(stationId:String) async {
         
-        do {
-            self.tidalEvents = try await self.tideStationDataProvider.getTideEvents(for: stationId)
-            self.viewState = .loaded
-        } catch {
-            self.viewState = .error
-        }
+        tideStationDataProvider.getTideEvents(for: stationId)
+            .sink { completion in
+                
+            } receiveValue: { events in
+                self.tidalEvents = events
+            }
+            .store(in: &cancellables)
+
         
     }
     

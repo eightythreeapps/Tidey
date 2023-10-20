@@ -7,13 +7,17 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
-public class LocationService:NSObject, LocationDataProvider {
+public class LocationService:NSObject {
             
-    @Published var state:LocationProviderState = .determiningAuthorisation
-    public var locationManager:LocationManager
+    @Published var authorisationState:LocationProviderState = .determiningAuthorisation
     
-    private var locationProviderContinuation:AsyncStream<LocationProviderState>.Continuation?
+    @Published var currentLocation:CLLocation = CLLocation(latitude: 0.0, longitude: 0.0)
+    @Published var currentHeading:CLHeading?
+    @Published var error:Error?
+    
+    private var locationManager:LocationManager
     
     required public init(locationManager:LocationManager) {
         
@@ -24,50 +28,38 @@ public class LocationService:NSObject, LocationDataProvider {
         
     }
         
-    public func getState() async -> AsyncStream<LocationProviderState> {
-        
-        return AsyncStream { continuation in
-            locationProviderContinuation = continuation
-            switch locationManager.authorizationStatus {
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .restricted, .denied:
-                locationProviderContinuation?.yield(LocationProviderState.mapAuthorisationStatus(status: locationManager.authorizationStatus))
-                continuation.finish()
-            case .authorizedAlways,.authorizedWhenInUse:
-                self.locationManager.startUpdatingLocation()
-            @unknown default:
-                //TODO: See if this can be handled without force unwrapping
-                locationProviderContinuation?.yield(.error)
-                continuation.finish()
-            }
-        }
-
+    func requestAuthorization() {
+        locationManager.requestWhenInUseAuthorization()
     }
     
+    func startMonitoringLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopMonitoringLocation() {
+        locationManager.stopUpdatingLocation()
+    }
+
 }
 
 extension LocationService:CLLocationManagerDelegate {
+    
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        
-        let mappedStatus = LocationProviderState.mapAuthorisationStatus(status: self.locationManager.authorizationStatus)
-        locationProviderContinuation?.yield(mappedStatus)
-        
-        if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-        }
-        
+        self.authorisationState = LocationProviderState.mapAuthorisationStatus(status: self.locationManager.authorizationStatus)
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        if let location = locations.first {
-            locationProviderContinuation?.yield(.locationUpdated(location: location))
-            locationProviderContinuation?.finish()
+        guard let location = locations.last else {
+            return
         }
+        
+        self.currentLocation = location
+
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationProviderContinuation?.yield(.error)
+        //TODO: Implement logic to clear old errors
+        self.error = error
     }
 }

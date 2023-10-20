@@ -17,7 +17,6 @@
 		B52C820429F2C92800965382 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C820329F2C92800965382 /* ComplicationController.swift */; };
 		B52C822829F2CD2200965382 /* Tidey_Complication.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B52C822329F2CD2000965382 /* Tidey_Complication.intentdefinition */; };
 		B5302A722A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */; };
-		B5302A7B2A040BD40022A6BB /* StationNearMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A7A2A040BD40022A6BB /* StationNearMeView.swift */; };
 		B55F77E62A026D6D00524CF2 /* Tidey_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */; };
 		B55F77EA2A026D6E00524CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77E92A026D6E00524CF2 /* Assets.xcassets */; };
 		B55F77ED2A026D6E00524CF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F77EC2A026D6E00524CF2 /* Preview Assets.xcassets */; };
@@ -38,14 +37,15 @@
 		B58D389E2A0B8EBE009C569F /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */; };
 		B58D38A22A0BD487009C569F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38A12A0BD487009C569F /* LocationManager.swift */; };
 		B59AB5252ABC9A00003F0ACF /* NearMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59AB5242ABC9A00003F0ACF /* NearMeView.swift */; };
-		B59AB5272ABC9A1E003F0ACF /* TideStationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59AB5262ABC9A1E003F0ACF /* TideStationsMapView.swift */; };
 		B5A06E0829F9622600E82973 /* TideDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0729F9622600E82973 /* TideDataLoadable.swift */; };
 		B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E0D29F9956A00E82973 /* Loadable.swift */; };
-		B5A107732AB9CDB400F87E08 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A107722AB9CDB400F87E08 /* AppRootView.swift */; };
 		B5A107782AB9E82500F87E08 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */; };
-		B5A6A7D62AC21BFE001B5784 /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */; };
+		B5A6A7D82AC21FED001B5784 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B5A6A7D72AC21FED001B5784 /* Config.xcconfig */; };
 		B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B33DD72A02896A00D55F36 /* UKTideStation.json */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
+		B5BABFB22AE01B4E00A1616E /* TideTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB12AE01B4E00A1616E /* TideTime.swift */; };
+		B5BABFB42AE01B5F00A1616E /* TideLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB32AE01B5F00A1616E /* TideLevel.swift */; };
+		B5BABFB72AE01B8F00A1616E /* RecentTideTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB62AE01B8F00A1616E /* RecentTideTimeView.swift */; };
 		B5BCB4DB29F1835400EAAE05 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736A29E9692C005C87F1 /* Persistence.swift */; };
 		B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */; };
 		B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F6F29E969D2004398BE /* URLHelper.swift */; };
@@ -58,7 +58,6 @@
 		B5BE9F8629E969D2004398BE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7B29E969D2004398BE /* NetworkService.swift */; };
 		B5BE9F8729E969D2004398BE /* UKTidalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7D29E969D2004398BE /* UKTidalAPI.swift */; };
 		B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */; };
-		B5BE9F9E29E96AA5004398BE /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */; };
 		B5BE9FA929E96CC3004398BE /* Tidey_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FA829E96CC3004398BE /* Tidey_WatchApp.swift */; };
 		B5BE9FAD29E96CC5004398BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE9FAC29E96CC5004398BE /* Assets.xcassets */; };
 		B5BE9FB029E96CC5004398BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE9FAF29E96CC5004398BE /* Preview Assets.xcassets */; };
@@ -195,7 +194,6 @@
 		B52C822429F2CD2200965382 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52C822629F2CD2200965382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TideStations+Utils.swift"; sourceTree = "<group>"; };
-		B5302A7A2A040BD40022A6BB /* StationNearMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNearMeView.swift; sourceTree = "<group>"; };
 		B533E62D2A0BFFC700880597 /* TideyApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TideyApp.xctestplan; sourceTree = SOURCE_ROOT; };
 		B55F77E32A026D6D00524CF2 /* Tidey TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55F77E52A026D6D00524CF2 /* Tidey_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_TVApp.swift; sourceTree = "<group>"; };
@@ -217,15 +215,16 @@
 		B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
 		B58D38A12A0BD487009C569F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B59AB5242ABC9A00003F0ACF /* NearMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeView.swift; sourceTree = "<group>"; };
-		B59AB5262ABC9A1E003F0ACF /* TideStationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationsMapView.swift; sourceTree = "<group>"; };
 		B5A06E0629F9277E00E82973 /* Tidey-Watch-Watch-AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tidey-Watch-Watch-AppTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B5A06E0729F9622600E82973 /* TideDataLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideDataLoadable.swift; sourceTree = "<group>"; };
 		B5A06E0D29F9956A00E82973 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		B5A107722AB9CDB400F87E08 /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
-		B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
+		B5A6A7D72AC21FED001B5784 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B5B33DD72A02896A00D55F36 /* UKTideStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStation.json; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
+		B5BABFB12AE01B4E00A1616E /* TideTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideTime.swift; sourceTree = "<group>"; };
+		B5BABFB32AE01B5F00A1616E /* TideLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideLevel.swift; sourceTree = "<group>"; };
+		B5BABFB62AE01B8F00A1616E /* RecentTideTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTideTimeView.swift; sourceTree = "<group>"; };
 		B5BE9F6F29E969D2004398BE /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		B5BE9F7229E969D2004398BE /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -236,7 +235,6 @@
 		B5BE9F7B29E969D2004398BE /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B5BE9F7D29E969D2004398BE /* UKTidalAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UKTidalAPI.swift; sourceTree = "<group>"; };
 		B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TideStationListView.swift; sourceTree = "<group>"; };
-		B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
 		B5BE9F9F29E96C34004398BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5BE9FA629E96CC3004398BE /* Tidey Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BE9FA829E96CC3004398BE /* Tidey_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_WatchApp.swift; sourceTree = "<group>"; };
@@ -452,7 +450,6 @@
 		B580823A2A0BD7A4006A8A82 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B5A6A7D52AC21BFE001B5784 /* LocationDataProvider.swift */,
 				B58D38A12A0BD487009C569F /* LocationManager.swift */,
 			);
 			path = Protocols;
@@ -472,6 +469,14 @@
 				B58D38982A0AABC4009C569F /* LocationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B5BABFB52AE01B7600A1616E /* Component Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5BABFB62AE01B8F00A1616E /* RecentTideTimeView.swift */,
+			);
+			path = "Component Views";
 			sourceTree = "<group>";
 		};
 		B5BE9F6E29E969D2004398BE /* Network */ = {
@@ -542,13 +547,10 @@
 		B5BE9FA129E96C81004398BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5A107722AB9CDB400F87E08 /* AppRootView.swift */,
+				B5BABFB52AE01B7600A1616E /* Component Views */,
 				B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */,
-				B5BE9F9C29E96AA5004398BE /* StationDetailView.swift */,
 				B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */,
-				B5302A7A2A040BD40022A6BB /* StationNearMeView.swift */,
 				B59AB5242ABC9A00003F0ACF /* NearMeView.swift */,
-				B59AB5262ABC9A1E003F0ACF /* TideStationsMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -611,6 +613,7 @@
 		B5CA735529E9692A005C87F1 = {
 			isa = PBXGroup;
 			children = (
+				B5A6A7D72AC21FED001B5784 /* Config.xcconfig */,
 				B50795D22A015C8E00B5A2C9 /* ci_scripts */,
 				B5BE9FA029E96C75004398BE /* Shared */,
 				B5CA736029E9692A005C87F1 /* Tidey */,
@@ -713,6 +716,8 @@
 			children = (
 				B5F8A8472ABDA6060000C18B /* MenuItem.swift */,
 				B5F8A8492ABDA6670000C18B /* SortOrder.swift */,
+				B5BABFB12AE01B4E00A1616E /* TideTime.swift */,
+				B5BABFB32AE01B5F00A1616E /* TideLevel.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1041,6 +1046,7 @@
 				B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */,
 				B5CA736629E9692C005C87F1 /* Assets.xcassets in Resources */,
 				B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */,
+				B5A6A7D82AC21FED001B5784 /* Config.xcconfig in Resources */,
 				B52C81FD29F2B7F900965382 /* UKTideStationsBadData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1130,12 +1136,11 @@
 				B5CA736B29E9692C005C87F1 /* Persistence.swift in Sources */,
 				B5302A722A02AB8B0022A6BB /* TideStations+Utils.swift in Sources */,
 				B58D389E2A0B8EBE009C569F /* MockLocationManager.swift in Sources */,
+				B5BABFB72AE01B8F00A1616E /* RecentTideTimeView.swift in Sources */,
 				B50EDA3329F833B500F10CE6 /* LocalConfiguration.swift in Sources */,
 				B5BE9F8029E969D2004398BE /* HTTPMethod.swift in Sources */,
 				B5BE9F8129E969D2004398BE /* HTTPScheme.swift in Sources */,
 				B5BE9F8529E969D2004398BE /* Stringify.swift in Sources */,
-				B5BE9F9E29E96AA5004398BE /* StationDetailView.swift in Sources */,
-				B5A107732AB9CDB400F87E08 /* AppRootView.swift in Sources */,
 				B58D38A22A0BD487009C569F /* LocationManager.swift in Sources */,
 				B5BE9F8729E969D2004398BE /* UKTidalAPI.swift in Sources */,
 				B5BE9F7E29E969D2004398BE /* URLHelper.swift in Sources */,
@@ -1146,6 +1151,7 @@
 				B5BE9F8429E969D2004398BE /* TideStation.swift in Sources */,
 				B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */,
 				B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
+				B5BABFB42AE01B5F00A1616E /* TideLevel.swift in Sources */,
 				B5F8A84C2ABDA6E90000C18B /* TestConfigurationProvider.swift in Sources */,
 				B58D38992A0AABC4009C569F /* LocationService.swift in Sources */,
 				B5CE89EF2ABCDA9300E0D263 /* TideStationDataProvider.swift in Sources */,
@@ -1159,10 +1165,8 @@
 				B5A107782AB9E82500F87E08 /* MockURLProtocol.swift in Sources */,
 				B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
 				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
-				B5A6A7D62AC21BFE001B5784 /* LocationDataProvider.swift in Sources */,
-				B59AB5272ABC9A1E003F0ACF /* TideStationsMapView.swift in Sources */,
-				B5302A7B2A040BD40022A6BB /* StationNearMeView.swift in Sources */,
 				B59AB5252ABC9A00003F0ACF /* NearMeView.swift in Sources */,
+				B5BABFB22AE01B4E00A1616E /* TideTime.swift in Sources */,
 				B5A06E0E29F9956A00E82973 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1536,6 +1540,7 @@
 		};
 		B5CA738529E9692D005C87F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5A6A7D72AC21FED001B5784 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1585,7 +1590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1600,6 +1605,7 @@
 		};
 		B5CA738629E9692D005C87F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5A6A7D72AC21FED001B5784 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1643,7 +1649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1679,7 +1685,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1717,7 +1723,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
