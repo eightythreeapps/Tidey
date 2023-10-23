@@ -52,6 +52,9 @@ public class TideDataAPI: Service {
                     }
                 )
             }
+            .mapError { error in
+                return NetworkServiceError.parsingError
+            }
             .eraseToAnyPublisher()
     }
     

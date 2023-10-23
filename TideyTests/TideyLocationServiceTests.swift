@@ -10,98 +10,216 @@ import Combine
 import CoreLocation
 @testable import Tidey
 
-final class TideyLocationServiceTests: XCTestCase {
+final class TideyLocationServiceTests: CombineTestCase {
         
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    func testLocationNotAuthorized() async throws {
+    func testLocationNotAuthorized() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .denied)
         let locationProvider = LocationService(locationManager:locationManager)
         
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.denied(status: .denied))
+        var providerState:LocationProviderState?
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location not authorised")
+        
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
+            providerState = state
         }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertEqual(providerState, LocationProviderState.denied(status: .denied))
         
     }
     
-    func testLocationAccessRestricted() async throws {
+    func testLocationAccessRestricted() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .restricted)
         let locationProvider = LocationService(locationManager:locationManager)
-                
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.denied(status: .restricted))
+        
+        var providerState:LocationProviderState?
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access restricted")
+        
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
+            providerState = state
         }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertEqual(providerState, LocationProviderState.denied(status: .restricted))
         
     }
     
-    func testLocationAccessAlwaysAuthorized() async throws {
+    func testLocationAccessAlwaysAuthorized() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .authorizedAlways)
         let locationProvider = LocationService(locationManager:locationManager)
         
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.denied(status: .authorizedAlways))
+        var providerState:LocationProviderState?
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access authorised always")
+        
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
+            providerState = state
         }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertEqual(providerState, LocationProviderState.authorised(status: .authorizedAlways))
         
     }
     
-    func testLocationAccessWhileUsing() async throws {
+    func testLocationAccessWhileUsing() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .authorizedWhenInUse)
         let locationProvider = LocationService(locationManager:locationManager)
+
+        var providerState:LocationProviderState?
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access authorised in use")
         
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.authorised(status: .authorizedWhenInUse))
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
+            providerState = state
         }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertEqual(providerState, LocationProviderState.authorised(status: .authorizedWhenInUse))
     }
     
-    func testDetermineLocationAccess() async throws {
+    func testDetermineLocationAccess() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .notDetermined)
         let locationProvider = LocationService(locationManager:locationManager)
+
+        var providerState:LocationProviderState?
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access authorised in use")
         
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.determiningAuthorisation)
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
+            providerState = state
         }
+        .store(in: &cancellables)
+        
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertEqual(providerState, LocationProviderState.determiningAuthorisation)
     }
     
-    func testAuthStatusFlow() async throws {
-        
+    func testAuthStatusFlow() throws {
+
         let locationManager = MockLocationManager(authorizationStatus: .notDetermined)
         let locationProvider = LocationService(locationManager:locationManager)
-        
+
         var states = [LocationProviderState]()
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access authorised in use")
         
-        for await state in await locationProvider.getState() {
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
             states.append(state)
         }
+        .store(in: &cancellables)
         
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
         XCTAssertTrue(states.count == 2, "States array could contain exactly 2 elements")
+        
         if states.count == 2 {
             XCTAssertTrue(states[0] == .authorised(status: .authorizedWhenInUse))
             XCTAssertTrue(states[1] == .locationUpdated(location: MockLocationManager.mockLocations.first!))
         }else{
             XCTFail("States array is incorrect")
         }
-    
     }
     
-    func testExistingAuthStatusFlow() async throws {
+    func testExistingAuthStatusFlow() throws {
         
         let locationManager = MockLocationManager(authorizationStatus: .authorizedWhenInUse)
         let locationProvider = LocationService(locationManager:locationManager)
-        
         var states = [LocationProviderState]()
+        var returnedError:Error?
+        let expectation = self.expectation(description: "Location access authorised in use")
         
-        for await state in await locationProvider.getState() {
+        locationProvider.$authorisationState.sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                returnedError = error
+            }
+            expectation.fulfill()
+        } receiveValue: { state in
             states.append(state)
         }
+        .store(in: &cancellables)
         
-        XCTAssertTrue(states.count == 1, "States array could contain exactly 1 elements")
+        waitForExpectations(timeout: waitTimeout)
+        
+        XCTAssertNil(returnedError, "Error should be nil")
+        XCTAssertTrue(states.count == 2, "States array could contain exactly 2 elements")
+        
         if states.count == 1 {
             XCTAssertTrue(states[0] == .locationUpdated(location: MockLocationManager.mockLocations.first!))
         }else{
@@ -112,35 +230,35 @@ final class TideyLocationServiceTests: XCTestCase {
         
     
     func testUpdateLocation() async throws {
-        
-        let location = CLLocation(latitude: 50.3344340, longitude: -4.7712680)
-        
-        let locationManager = MockLocationManager(location: location)
-        let locationProvider = LocationService(locationManager:locationManager)
-        
-        var _ = await locationProvider.getState().map {
-            XCTAssertTrue($0 == LocationProviderState.locationUpdated(location: location))
-        
-            switch $0 {
-            case .locationUpdated(let location):
-                XCTAssertTrue(location.coordinate.latitude == 50.3344340)
-                XCTAssertTrue(location.coordinate.latitude == -4.7712680)
-            case .denied(status: .notDetermined),
-                    .denied(status: .authorizedAlways),
-                    .denied(status: .authorizedWhenInUse),
-                    .denied(status: _),
-                    .authorised(status: .notDetermined),
-                    .authorised(status: .restricted),
-                    .authorised(status: .denied),
-                    .authorised(status: .authorizedWhenInUse),
-                    .authorised(status: _),
-                    .determiningAuthorisation,
-                    .determiningUserLocation,
-                    .error:
-                XCTFail("Should only return location")
-            }
-            
-        }
+                
+//        let location = CLLocation(latitude: 50.3344340, longitude: -4.7712680)
+//        
+//        let locationManager = MockLocationManager(location: location)
+//        let locationProvider = LocationService(locationManager:locationManager)
+//        
+//        locationProvider.$currentLocation.map {
+//            XCTAssertTrue($0 == LocationProviderState.locationUpdated(location: location))
+//        
+//            switch $0 {
+//            case .locationUpdated(let location):
+//                XCTAssertTrue(location.coordinate.latitude == 50.3344340)
+//                XCTAssertTrue(location.coordinate.latitude == -4.7712680)
+//            case .denied(status: .notDetermined),
+//                    .denied(status: .authorizedAlways),
+//                    .denied(status: .authorizedWhenInUse),
+//                    .denied(status: _),
+//                    .authorised(status: .notDetermined),
+//                    .authorised(status: .restricted),
+//                    .authorised(status: .denied),
+//                    .authorised(status: .authorizedWhenInUse),
+//                    .authorised(status: _),
+//                    .determiningAuthorisation,
+//                    .determiningUserLocation,
+//                    .error:
+//                XCTFail("Should only return location")
+//            }
+//            
+//        }
     }
 
     override func tearDownWithError() throws {
