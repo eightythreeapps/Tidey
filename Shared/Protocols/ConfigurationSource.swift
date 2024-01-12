@@ -20,7 +20,7 @@ enum ConfigurationKey: String {
     case tidalApiBaseUrl = "UKTidalAPIBaseURL"
 }
 
-protocol ConfigurationSource {
+protocol ConfigurationProvider {
     func configValue(forKey key:ConfigurationKey) -> Future<String, ConfigurationError>
     func fetchConfigurationData() -> Future<ApplicationState, ConfigurationError>
 }
