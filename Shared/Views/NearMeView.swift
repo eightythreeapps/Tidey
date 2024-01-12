@@ -18,7 +18,7 @@ struct NearMeView: View {
         
         VStack {
             
-            Text("Blah")
+           Text("Test")
             
         }
         

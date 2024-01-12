@@ -46,6 +46,7 @@
 		B5A6AF9A2B51651C00C4F60C /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF992B51651C00C4F60C /* ViewState.swift */; };
 		B5A6AF9C2B5167F100C4F60C /* ViewStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9B2B5167F100C4F60C /* ViewStateView.swift */; };
 		B5A6AF9E2B51833500C4F60C /* TideStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9D2B51833500C4F60C /* TideStationDetailView.swift */; };
+		B5A6AFA02B51C08C00C4F60C /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9F2B51C08C00C4F60C /* Double+Rounding.swift */; };
 		B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B33DD72A02896A00D55F36 /* UKTideStation.json */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
 		B5BABFB22AE01B4E00A1616E /* TideTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB12AE01B4E00A1616E /* TideTime.swift */; };
@@ -222,6 +223,7 @@
 		B5A6AF992B51651C00C4F60C /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		B5A6AF9B2B5167F100C4F60C /* ViewStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateView.swift; sourceTree = "<group>"; };
 		B5A6AF9D2B51833500C4F60C /* TideStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationDetailView.swift; sourceTree = "<group>"; };
+		B5A6AF9F2B51C08C00C4F60C /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		B5B33DD72A02896A00D55F36 /* UKTideStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStation.json; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
 		B5BABFB12AE01B4E00A1616E /* TideTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideTime.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */,
 				B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */,
+				B5A6AF9F2B51C08C00C4F60C /* Double+Rounding.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				B5BE9F9D29E96AA5004398BE /* TideStationListView.swift in Sources */,
 				B578ED3D29F27C6700CC9AA3 /* TideStationListViewModel.swift in Sources */,
 				B5BABFB42AE01B5F00A1616E /* TideLevel.swift in Sources */,
+				B5A6AFA02B51C08C00C4F60C /* Double+Rounding.swift in Sources */,
 				B5F8A84C2ABDA6E90000C18B /* TestConfigurationProvider.swift in Sources */,
 				B58D38992A0AABC4009C569F /* LocationService.swift in Sources */,
 				B5A6AF9E2B51833500C4F60C /* TideStationDetailView.swift in Sources */,

@@ -83,16 +83,8 @@ struct TidalEvent:Identifiable, Codable {
         
     }
     
-    public func getEventHeight() -> Double {
-        
-        if event.eventType == "HighWater" {
-            return 1.0
-        } else if event.eventType == "LowWater" {
-            return 0.0
-        } else {
-            return 0.0
-        }
-        
+    public func getEventHeight() -> String {
+        return String(format: "%.2f", event.height)
     }
  
 }
