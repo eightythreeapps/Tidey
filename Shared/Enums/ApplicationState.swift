@@ -1,18 +1,17 @@
 //
-//  Loadable.swift
+//  ApplicationState.swift
 //  Tidey
 //
-//  Created by Ben Reed on 26/04/2023.
+//  Created by Ben Reed on 11/01/2024.
 //
 
 import Foundation
-import CoreLocation
 
 enum ApplicationState {
     case loadingConfig
     case configLoaded
     case notConfigured
-    case configured(apiKey:String)
+    case configured(apiKey:String, baseUrl:String)
 }
 
 enum ApplicationError:LocalizedError {

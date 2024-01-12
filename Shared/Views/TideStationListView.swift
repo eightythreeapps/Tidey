@@ -10,14 +10,44 @@ import GeoJSON
 import SwiftDate
 import CoreLocation
 
-struct TideStationListView: View {
+protocol TideDataConsuming {
+    var tideDataProvider:TideDataProvider { get set }
+}
+
+protocol StateRepresentableView {
+    var state:ViewState { get set }
+}
+
+struct TideStationListView: View, StateRepresentableView, TideDataConsuming {
     
-    @EnvironmentObject var viewModel:NearMeViewModel
+    var tideDataProvider:TideDataProvider
+    
+    @State var tideStations:TideStations = []
+    @State var state:ViewState = .loadingData
     
     var body: some View {
         
-        VStack {
-            Text("List view")
+        List(tideStations) { station in
+            
+            NavigationLink {
+                TideStationDetailView(tideDataProvider: tideDataProvider, station: station)
+            } label: {
+                Text(station.getStationName())
+            }
+
+        }
+        .navigationTitle("Tide Stations")
+        .overlay {
+            ViewStateView(state: $state)
+        }
+        .task {
+            self.state = .loadingData
+            do {
+                tideStations = try await tideDataProvider.getStations()
+                self.state = .loaded
+            } catch {
+                self.state = .error
+            }
         }
         
     }
@@ -25,9 +55,7 @@ struct TideStationListView: View {
 
 
 #Preview {    
-    TideStationListView()
-        .environmentObject(
-            NearMeViewModel(tideStationDataProvider: MockDataProvider.PreviewProvider.TideDataProvider,
-                                     locationService: LocationService(locationManager: MockLocationManager(authorizationStatus: .authorizedAlways)))
-        )
+    NavigationView {
+        TideStationListView(tideDataProvider: MockTideDataProvider())
+    }
 }

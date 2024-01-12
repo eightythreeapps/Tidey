@@ -16,6 +16,19 @@ enum TideEventType {
     case highWater
     case lowWater
     case unknown
+    
+    func iconName() -> String {
+        switch self {
+        case .highWater:
+            return "arrow.up.circle.fill"
+        case .lowWater:
+            return "arrow.down.circle.fill"
+        case .unknown:
+            return "questionmark.circle.fill"
+        }
+        
+    }
+    
 }
 
 enum EventDateType {
@@ -28,11 +41,11 @@ struct TidalEvent:Identifiable, Codable {
     var id:UUID = UUID()
     var event:Event
         
-    public func getFormattedEventDate() -> String {
+    public func getFormattedEventDate(format:String = "HH:MM dd MMM YYYY") -> String {
     
         let date = self.event.dateTime.toDate(style: .iso(.init(strict: true)), region: .local)
         
-        if let formattedDate = date?.toFormat("hh:MM dd MMM YYYY") {
+        if let formattedDate = date?.toFormat(format) {
             return formattedDate
         }
         

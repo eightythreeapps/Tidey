@@ -10,44 +10,36 @@ import Combine
 import CoreLocation
 @testable import Tidey
 
-final class TideyAPITests: CombineTestCase {
-
-    var urlHelper:URLHelper!
+final class TideyAPITests: XCTestCase {
     
     let host = "admiraltyapi.azure-api.net"
+    var cancellables:Set<AnyCancellable> = Set<AnyCancellable>()
+    let waitTimeout = 10.0
     
     override func setUpWithError() throws {
-        self.urlHelper = URLHelper()
-        XCTAssertNotNil(self.urlHelper, "URL Helper should not be nil")
+       
     }
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        self.urlHelper = nil
     }
     
-    func testTooManyRequests() throws {
+    func testTooManyRequests() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockTooManyResponses.self)
+        let tideDataApi = createMockAPI(ofType: MockTooManyResponses.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Too Many Requests")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataApi.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
+        expectation.fulfill()
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
@@ -55,28 +47,22 @@ final class TideyAPITests: CombineTestCase {
         
     }
     
-    func testNotFound() throws {
+    func testNotFound() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockNotFound.self)
+        let tideDataAPI = createMockAPI(ofType: MockNotFound.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Not Found Test")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            let response = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
+        expectation.fulfill()
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
@@ -84,28 +70,21 @@ final class TideyAPITests: CombineTestCase {
         
     }
     
-    func testNotAuthorised() throws {
+    func testNotAuthorised() async throws {
 
-        let tideDataLoadable = createMockLoadable(ofType: MockNotAuthorised.self)
+        let tideDataAPI = createMockAPI(ofType: MockNotAuthorised.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Not Authorised Test")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
-        
-        waitForExpectations(timeout: waitTimeout)
+            
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
@@ -113,28 +92,21 @@ final class TideyAPITests: CombineTestCase {
         
     }
     
-    func testServerError() throws {
+    func testServerError() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockServerError.self)
+        let tideDataAPI = createMockAPI(ofType: MockServerError.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Server Error Test")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
@@ -142,112 +114,84 @@ final class TideyAPITests: CombineTestCase {
         
     }
     
-    func testForbidden() throws {
+    func testForbidden() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockForbidden.self)
+        let tideDataAPI = createMockAPI(ofType: MockForbidden.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Forbidden Test")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
-
+        await fulfillment(of: [expectation], timeout: waitTimeout)
+    
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
         XCTAssertTrue(returnedError == .forbidden, "Error shoud be Forbidden")
     }
     
-    func testSuccessfulTideStationResponse() throws {
+    func testSuccessfulTideStationResponse() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockSuccessForTideStations.self)
+        let tideDataAPI = createMockAPI(ofType: MockSuccessForTideStations.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Test successful tide stations response")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: 10)
-
+        await fulfillment(of: [expectation], timeout: waitTimeout)
+        
         XCTAssertNotNil(result, "Result should not be nil")
         XCTAssertNil(returnedError, "Error should be nil")
 
     }
     
-    func testSuccessfulTideStationEventsResponse() throws {
+    func testSuccessfulTideStationEventsResponse() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockSuccessForTideStations.self)
+        let tideDataAPI = createMockAPI(ofType: MockSuccessForTideStations.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Test successful tide stations response")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNotNil(result, "Result should not be nil")
         XCTAssertNil(returnedError, "Error should be nil")
         
     }
     
-    func testBadDataInTideStationResponse() throws {
+    func testBadDataInTideStationResponse() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockBadDataInTideStationList.self)
+        let tideDataAPI = createMockAPI(ofType: MockBadDataInTideStationList.self)
         var result:[TideStation]?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Test successful tide stations response")
         
-        tideDataLoadable.getStations().sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStations in
-            result = tideStations
+        do {
+            result = try await tideDataAPI.getStations()
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
-        
-        waitForExpectations(timeout: waitTimeout)
+                
+        await fulfillment(of: [expectation], timeout: waitTimeout)
 
         XCTAssertNil(result, "Result should be nil")
         XCTAssertNotNil(returnedError, "Error should be of NetworkServiceError type")
@@ -256,29 +200,22 @@ final class TideyAPITests: CombineTestCase {
 
     }
     
-    func testSuccessfulGetStationById() throws {
+    func testSuccessfulGetStationById() async throws {
         
-        let tideDataLoadable = createMockLoadable(ofType: MockSuccessfulTideStationDetail.self)
+        let tideDataAPI = createMockAPI(ofType: MockSuccessfulTideStationDetail.self)
         var result:TideStation?
         var returnedError:NetworkServiceError?
         
         let expectation = self.expectation(description: "Test successful tide stations response")
         
-        tideDataLoadable.getStation(stationId: "0011").sink { completion in
-            switch completion {
-            case .finished:
-                break
-            case .failure(let error):
-                returnedError = error as? NetworkServiceError
-            }
-            expectation.fulfill()
-        } receiveValue: { tideStation in
-            result = tideStation
+        do {
+            result = try await tideDataAPI.getStation(stationId: "0011")
+        } catch {
+            returnedError = error as? NetworkServiceError
         }
-        .store(in: &cancellables)
         
-        waitForExpectations(timeout: waitTimeout)
-
+        await fulfillment(of: [expectation], timeout: waitTimeout)
+    
         XCTAssertNotNil(result, "Result should not be nil")
         XCTAssertNil(returnedError, "Error should be nil")
        
@@ -286,35 +223,23 @@ final class TideyAPITests: CombineTestCase {
     
     func testSessionHeaders() async throws {
         
-        let tideDataLoadable = TideDataAPI(apiKey: "APIKEY")
+        let tideDataApi = TideDataAPI(host: self.host, dataParser: TideDataGeoJSONParser(), apiKey: "APIKEY")
         
-        let headers = tideDataLoadable.session.configuration.httpAdditionalHeaders
+        let headers = tideDataApi.defaultHeaders
         XCTAssertNotNil(headers, "Additional HTTP headers should not be nil")
         
-        XCTAssertTrue(headers?.count == 1, "Additional headers shold only contain a single value")
+        XCTAssertTrue(headers.count == 1, "Additional headers shold only contain a single value")
         
-        let header = tideDataLoadable.session.configuration.httpAdditionalHeaders?.first(where: { $0.key as! String == "Ocp-Apim-Subscription-Key" })
+        let header = tideDataApi.defaultHeaders.first(where: { $0.name == "Ocp-Apim-Subscription-Key" })
         XCTAssertNotNil(header, "Subscription Key header should not be nil")
-        XCTAssertTrue(header?.value as! String == "APIKEY")
+        XCTAssertTrue(header?.value == "APIKEY")
     
-    }
-    
-    func testHTTPMehtodEnum() throws {
-        
-        let post = HTTPMethod.post
-        XCTAssertNotNil(post.stringValue(), "String value should not be nil")
-        XCTAssertEqual(post.stringValue(), "POST", "Value should be post")
-    
-        let get = HTTPMethod.get
-        XCTAssertNotNil(get.stringValue(), "String value should not be nil")
-        XCTAssertEqual(get.stringValue(), "GET", "Value should be post")
-        
     }
 
 }
 
 private extension TideyAPITests {
-    func createMockLoadable(ofType type:AnyClass) -> TideDataAPI {
+    func createMockAPI(ofType type:AnyClass) -> TideDataAPI {
         
         URLProtocol.registerClass(type)
         let mockConfig = URLSessionConfiguration.ephemeral
@@ -322,10 +247,11 @@ private extension TideyAPITests {
         mockConfig.protocolClasses?.insert(type, at: 0)
         let session = URLSession(configuration: mockConfig)
         
-        let tideDataLoadable = TideDataAPI(session: session, host: self.host, urlHelper: URLHelper())
-        XCTAssertNotNil(tideDataLoadable.host, "BaseURL should not be nil")
-        XCTAssertTrue(tideDataLoadable.host == self.host, "Base URL should match input base URL")
+        let tideDataAPI = TideDataAPI(host: self.host, dataParser: TideDataGeoJSONParser(), apiKey: "")
+        
+        XCTAssertNotNil(tideDataAPI.host, "BaseURL should not be nil")
+        XCTAssertTrue(tideDataAPI.host == self.host, "Base URL should match input base URL")
 
-        return tideDataLoadable
+        return tideDataAPI
     }
 }

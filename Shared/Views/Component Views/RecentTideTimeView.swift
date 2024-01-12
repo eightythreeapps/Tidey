@@ -10,12 +10,12 @@ import SwiftUI
 struct RecentTideTimeView: View {
     
     var tideTime:TideTime
-    var tideLevel:TideLevel
+    var tideType:TideEventType
     var dateTime:String
     
     var body: some View {
         HStack {
-            Image(systemName: tideLevel.iconName())
+            Image(systemName: tideType.iconName())
             VStack(alignment: .leading) {
                 Text(tideTime.displayText())
                                     .font(.system(size: 14.0, weight: .bold))

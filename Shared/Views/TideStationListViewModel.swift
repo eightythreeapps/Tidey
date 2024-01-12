@@ -14,9 +14,9 @@ import Combine
 @MainActor
 class NearMeViewModel:ObservableObject {
     
-    private var tideStationDataProvider:TideDataProvider
     private var cancellables:Set<AnyCancellable> = Set<AnyCancellable>()
     private var locationService:LocationService
+    private var tideDataProvider:TideDataProvider
     
     @Published var stations:TideStations = [TideStation]()
     @Published var path:[TideStation] = [TideStation]()
@@ -32,7 +32,7 @@ class NearMeViewModel:ObservableObject {
     @Published var statusMessage = ""
    
     init(tideStationDataProvider:TideDataProvider, locationService:LocationService) {
-        self.tideStationDataProvider = tideStationDataProvider
+        self.tideDataProvider = tideStationDataProvider
         self.locationService = locationService
         
         self.setupAuthStatusSubscriber()
@@ -46,17 +46,17 @@ class NearMeViewModel:ObservableObject {
     
     func setUpLocationSubscriber() {
         
-        self.locationService.$currentLocation
-            .flatMap { location in
-                self.tideStationDataProvider.getTideStation(for: location)
-            }
-            .receive(on: RunLoop.main)
-            .sink { completion in
-                print(completion)
-            } receiveValue: { tideStation in
-                self.selectedStation = tideStation
-            }
-            .store(in: &cancellables)
+//        self.locationService.$currentLocation
+//            .flatMap { location in
+//                self.tideDataProvider.getTideStation(for: location)
+//            }
+//            .receive(on: RunLoop.main)
+//            .sink { completion in
+//                print(completion)
+//            } receiveValue: { tideStation in
+//                self.selectedStation = tideStation
+//            }
+//            .store(in: &cancellables)
         
     }
     
@@ -99,13 +99,13 @@ class NearMeViewModel:ObservableObject {
     
     func getDetailsForStation(stationId:String) async {
         
-        tideStationDataProvider.getTideEvents(for: stationId)
-            .sink { completion in
-                
-            } receiveValue: { events in
-                self.tidalEvents = events
-            }
-            .store(in: &cancellables)
+//        tideStationDataProvider.getTideEvents(for: stationId)
+//            .sink { completion in
+//                
+//            } receiveValue: { events in
+//                self.tidalEvents = events
+//            }
+//            .store(in: &cancellables)
 
         
     }

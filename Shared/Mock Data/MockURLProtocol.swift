@@ -109,7 +109,7 @@ class MockSuccessForTideStations: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessForTideStations.requestHandler = { request in
-            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tideStations)
+            let data = FileHelper.loadLocalJSON(fileType: .tideStations)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -121,7 +121,7 @@ class MockSuccessForTideStationEvents: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessForTideStationEvents.requestHandler = { request in
-            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tidalEvents)
+            let data = FileHelper.loadLocalJSON(fileType: .tidalEvents)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -133,7 +133,7 @@ class MockBadDataInTideStationList: MockURLProtocol {
     override func startLoading() {
         
         MockBadDataInTideStationList.requestHandler = { request in
-            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .tideStationsBad)
+            let data = FileHelper.loadLocalJSON(fileType: .tideStationsBad)
             return self.generateResponse(for: 200, data: data)
         }
         
@@ -145,7 +145,7 @@ class MockSuccessfulTideStationDetail: MockURLProtocol {
     override func startLoading() {
         
         MockSuccessfulTideStationDetail.requestHandler = { request in
-            let data = MockDataProvider.FileHelper.loadLocalJSON(fileType: .station)
+            let data = FileHelper.loadLocalJSON(fileType: .station)
             return self.generateResponse(for: 200, data: data)
         }
         

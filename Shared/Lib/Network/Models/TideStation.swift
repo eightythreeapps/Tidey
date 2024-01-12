@@ -12,10 +12,12 @@ import CoreLocation
 
 typealias TideStations = [TideStation]
 
-struct TideStation:Identifiable {
+struct TideStation:Identifiable, Codable {
         
     var id:UUID = UUID()
     var feature:Feature
+    var events:TidalEvents = []
+    
     var coordinate:CLLocationCoordinate2D {
         get {
             getLocation()?.coordinate ?? CLLocationCoordinate2D()
@@ -70,6 +72,11 @@ struct TideStation:Identifiable {
         
         return nil
         
+    }
+    
+    mutating func setTidalEvents(tidalEvents:TidalEvents) {
+        self.events.removeAll()
+        self.events = tidalEvents
     }
  
 }

@@ -26,7 +26,8 @@ class ApplicationModel:ObservableObject {
             .sink { completion in
                 print("Fetch config completed: \(completion)")
             } receiveValue: { apiKey in
-                self.state = .configured(apiKey: apiKey)
+                //TODO: See if there is a more async way to get this config data
+                self.state = .configured(apiKey: apiKey, baseUrl: Bundle.main.object(key: .tidalApiBaseUrl))
             }
             .store(in: &configCancellable)
     }
@@ -43,11 +44,10 @@ struct TideyApp: App {
             switch applicationModel.state {
             case .notConfigured:
                 Text("Setting things up for you")
-            case .configured(let apiKey):
-                NearMeView()
-                    .environmentObject(NearMeViewModel(
-                        tideStationDataProvider: TideStationDataProvider(apiClient: TideDataAPI(apiKey: apiKey)),
-                        locationService: LocationService(locationManager: CLLocationManager())))
+            case .configured(let apiKey, let baseUrl):
+                NavigationView {
+                    TideStationListView(tideDataProvider: TideDataAPI(host: baseUrl, dataParser: TideDataGeoJSONParser(), apiKey: apiKey))
+                }
             case .loadingConfig:
                 Text("Setting things up for you")
             case .configLoaded:

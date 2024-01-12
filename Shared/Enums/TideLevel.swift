@@ -7,16 +7,4 @@
 
 import Foundation
 
-enum TideLevel {
-    case high
-    case low
-    
-    func iconName() -> String {
-        switch self {
-        case .high:
-            return "arrow.up.circle.fill"
-        case .low:
-            return "arrow.down.circle.fill"
-        }
-    }
-}
+
