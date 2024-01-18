@@ -36,7 +36,11 @@ class MockLocationManager: NSObject, LocationManager, CLLocationManagerDelegate 
     
     func requestWhenInUseAuthorization() {
     
+#if os(iOS) || os(watchOS)
         self.authorizationStatus = .authorizedWhenInUse
+#elseif os(macOS)
+        self.authorizationStatus = .authorized
+#endif
         self.delegate?.locationManagerDidChangeAuthorization?(CLLocationManager())
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

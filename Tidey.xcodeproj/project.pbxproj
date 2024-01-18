@@ -148,6 +148,51 @@
 		B5D2EF6C2B59356200683169 /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
 		B5D2EF7B2B59380B00683169 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B5D2EF7A2B59380B00683169 /* Alamofire */; };
 		B5D2EF7D2B59381000683169 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B5D2EF7C2B59381000683169 /* Alamofire */; };
+		B5D2EF852B594F8100683169 /* Tidey_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2EF842B594F8100683169 /* Tidey_MacApp.swift */; };
+		B5D2EF892B594F8300683169 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D2EF882B594F8300683169 /* Assets.xcassets */; };
+		B5D2EF8C2B594F8300683169 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D2EF8B2B594F8300683169 /* Preview Assets.xcassets */; };
+		B5D2EF972B594F8400683169 /* Tidey_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2EF962B594F8400683169 /* Tidey_MacTests.swift */; };
+		B5D2EFA12B594F8400683169 /* Tidey_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2EFA02B594F8400683169 /* Tidey_MacUITests.swift */; };
+		B5D2EFA32B594F8400683169 /* Tidey_MacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2EFA22B594F8400683169 /* Tidey_MacUITestsLaunchTests.swift */; };
+		B5D2EFAD2B594FC000683169 /* TideyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736129E9692A005C87F1 /* TideyApp.swift */; };
+		B5D2EFAE2B594FD300683169 /* MockTideDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55947502B51529F00D2D885 /* MockTideDataProvider.swift */; };
+		B5D2EFAF2B594FD300683169 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A06E1029FAC19300E82973 /* MockURLProtocol.swift */; };
+		B5D2EFB02B594FD300683169 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D389D2A0B8EBE009C569F /* MockLocationManager.swift */; };
+		B5D2EFB12B594FD300683169 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559474E2B5088C000D2D885 /* FileHelper.swift */; };
+		B5D2EFB22B594FD900683169 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF992B51651C00C4F60C /* ViewState.swift */; };
+		B5D2EFB32B594FD900683169 /* TideLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB32AE01B5F00A1616E /* TideLevel.swift */; };
+		B5D2EFB42B594FD900683169 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55947442B50836E00D2D885 /* ApplicationState.swift */; };
+		B5D2EFB52B594FD900683169 /* TideTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB12AE01B4E00A1616E /* TideTime.swift */; };
+		B5D2EFB62B594FD900683169 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8472ABDA6060000C18B /* MenuItem.swift */; };
+		B5D2EFB72B594FD900683169 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8492ABDA6670000C18B /* SortOrder.swift */; };
+		B5D2EFB82B594FE300683169 /* TideStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7829E969D2004398BE /* TideStation.swift */; };
+		B5D2EFB92B594FE300683169 /* UKTidalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7D29E969D2004398BE /* UKTidalAPI.swift */; };
+		B5D2EFBA2B594FE300683169 /* TideDataGeoJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559474A2B50865900D2D885 /* TideDataGeoJSONParser.swift */; };
+		B5D2EFBB2B594FE300683169 /* TidalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9FF529E9B0AB004398BE /* TidalEvent.swift */; };
+		B5D2EFBC2B594FE300683169 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7B29E969D2004398BE /* NetworkService.swift */; };
+		B5D2EFBD2B594FE300683169 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7129E969D2004398BE /* NetworkServiceError.swift */; };
+		B5D2EFBE2B594FE300683169 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F7729E969D2004398BE /* Event.swift */; };
+		B5D2EFBF2B594FFA00683169 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38A12A0BD487009C569F /* LocationManager.swift */; };
+		B5D2EFC02B594FFA00683169 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38982A0AABC4009C569F /* LocationService.swift */; };
+		B5D2EFC12B594FFA00683169 /* LocationAuthorisationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58D38942A0AAB94009C569F /* LocationAuthorisationState.swift */; };
+		B5D2EFC22B594FFF00683169 /* TideDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55947472B50846400D2D885 /* TideDataProvider.swift */; };
+		B5D2EFC32B594FFF00683169 /* TIdeDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559474C2B5086C000D2D885 /* TIdeDataParser.swift */; };
+		B5D2EFC42B594FFF00683169 /* ConfigurationSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3529F833E200F10CE6 /* ConfigurationSource.swift */; };
+		B5D2EFC52B59500500683169 /* TestConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A84B2ABDA6E90000C18B /* TestConfigurationProvider.swift */; };
+		B5D2EFC62B59500500683169 /* ConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA2E29F8334C00F10CE6 /* ConfigurationProvider.swift */; };
+		B5D2EFC72B59500500683169 /* LocalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3229F833B500F10CE6 /* LocalConfiguration.swift */; };
+		B5D2EFC82B59500E00683169 /* Bundle+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EDA3729F8350000F10CE6 /* Bundle+Utils.swift */; };
+		B5D2EFC92B59500E00683169 /* TideStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B578ED3C29F27C6700CC9AA3 /* TideStationListViewModel.swift */; };
+		B5D2EFCA2B59500E00683169 /* RecentTideTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB62AE01B8F00A1616E /* RecentTideTimeView.swift */; };
+		B5D2EFCB2B59500E00683169 /* TideStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE9F9B29E96AA5004398BE /* TideStationListView.swift */; };
+		B5D2EFCC2B59500E00683169 /* NearMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59AB5242ABC9A00003F0ACF /* NearMeView.swift */; };
+		B5D2EFCD2B59500E00683169 /* Double+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9F2B51C08C00C4F60C /* Double+Rounding.swift */; };
+		B5D2EFCE2B59500E00683169 /* ViewStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9B2B5167F100C4F60C /* ViewStateView.swift */; };
+		B5D2EFCF2B59500E00683169 /* TideStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6AF9D2B51833500C4F60C /* TideStationDetailView.swift */; };
+		B5D2EFD02B59500E00683169 /* TideStations+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5302A712A02AB8B0022A6BB /* TideStations+Utils.swift */; };
+		B5D2EFD22B59503900683169 /* GeoJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B5D2EFD12B59503900683169 /* GeoJSON */; };
+		B5D2EFD42B59503900683169 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = B5D2EFD32B59503900683169 /* SwiftDate */; };
+		B5D2EFD62B59503900683169 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B5D2EFD52B59503900683169 /* Alamofire */; };
 		B5F8A8482ABDA6060000C18B /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8472ABDA6060000C18B /* MenuItem.swift */; };
 		B5F8A84A2ABDA6670000C18B /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A8492ABDA6670000C18B /* SortOrder.swift */; };
 		B5F8A84C2ABDA6E90000C18B /* TestConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F8A84B2ABDA6E90000C18B /* TestConfigurationProvider.swift */; };
@@ -202,6 +247,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = B5CA735D29E9692A005C87F1;
 			remoteInfo = Tidey;
+		};
+		B5D2EF932B594F8400683169 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5D2EF812B594F8000683169;
+			remoteInfo = "Tidey Mac";
+		};
+		B5D2EF9D2B594F8400683169 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5CA735629E9692A005C87F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5D2EF812B594F8000683169;
+			remoteInfo = "Tidey Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -325,6 +384,17 @@
 		B5CA737D29E9692D005C87F1 /* TideyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CA738129E9692D005C87F1 /* TideyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyUITests.swift; sourceTree = "<group>"; };
 		B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5D2EF822B594F8100683169 /* Tidey Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tidey Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D2EF842B594F8100683169 /* Tidey_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_MacApp.swift; sourceTree = "<group>"; };
+		B5D2EF882B594F8300683169 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5D2EF8B2B594F8300683169 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B5D2EF8D2B594F8300683169 /* Tidey_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tidey_Mac.entitlements; sourceTree = "<group>"; };
+		B5D2EF922B594F8300683169 /* Tidey MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D2EF962B594F8400683169 /* Tidey_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_MacTests.swift; sourceTree = "<group>"; };
+		B5D2EF9C2B594F8400683169 /* Tidey MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tidey MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D2EFA02B594F8400683169 /* Tidey_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_MacUITests.swift; sourceTree = "<group>"; };
+		B5D2EFA22B594F8400683169 /* Tidey_MacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tidey_MacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5D2EFD72B5970C500683169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5F8A8472ABDA6060000C18B /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		B5F8A8492ABDA6670000C18B /* SortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrder.swift; sourceTree = "<group>"; };
 		B5F8A84B2ABDA6E90000C18B /* TestConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigurationProvider.swift; sourceTree = "<group>"; };
@@ -397,6 +467,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B5CA737A29E9692D005C87F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF7F2B594F8000683169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D2EFD62B59503900683169 /* Alamofire in Frameworks */,
+				B5D2EFD42B59503900683169 /* SwiftDate in Frameworks */,
+				B5D2EFD22B59503900683169 /* GeoJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF8F2B594F8300683169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF992B594F8400683169 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -697,6 +791,9 @@
 				B55F77E42A026D6D00524CF2 /* Tidey TV */,
 				B55F77FA2A026D6E00524CF2 /* Tidey TVTests */,
 				B55F78042A026D6E00524CF2 /* Tidey TVUITests */,
+				B5D2EF832B594F8100683169 /* Tidey Mac */,
+				B5D2EF952B594F8400683169 /* Tidey MacTests */,
+				B5D2EF9F2B594F8400683169 /* Tidey MacUITests */,
 				B5CA735F29E9692A005C87F1 /* Products */,
 				B5BE9FE929E96E5A004398BE /* Frameworks */,
 			);
@@ -714,6 +811,9 @@
 				B55F77E32A026D6D00524CF2 /* Tidey TV.app */,
 				B55F77F72A026D6E00524CF2 /* Tidey TVTests.xctest */,
 				B55F78012A026D6E00524CF2 /* Tidey TVUITests.xctest */,
+				B5D2EF822B594F8100683169 /* Tidey Mac.app */,
+				B5D2EF922B594F8300683169 /* Tidey MacTests.xctest */,
+				B5D2EF9C2B594F8400683169 /* Tidey MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -760,6 +860,43 @@
 				B5CA738329E9692D005C87F1 /* TideyUITestsLaunchTests.swift */,
 			);
 			path = TideyUITests;
+			sourceTree = "<group>";
+		};
+		B5D2EF832B594F8100683169 /* Tidey Mac */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2EF842B594F8100683169 /* Tidey_MacApp.swift */,
+				B5D2EFD72B5970C500683169 /* Info.plist */,
+				B5D2EF882B594F8300683169 /* Assets.xcassets */,
+				B5D2EF8D2B594F8300683169 /* Tidey_Mac.entitlements */,
+				B5D2EF8A2B594F8300683169 /* Preview Content */,
+			);
+			path = "Tidey Mac";
+			sourceTree = "<group>";
+		};
+		B5D2EF8A2B594F8300683169 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2EF8B2B594F8300683169 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B5D2EF952B594F8400683169 /* Tidey MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2EF962B594F8400683169 /* Tidey_MacTests.swift */,
+			);
+			path = "Tidey MacTests";
+			sourceTree = "<group>";
+		};
+		B5D2EF9F2B594F8400683169 /* Tidey MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5D2EFA02B594F8400683169 /* Tidey_MacUITests.swift */,
+				B5D2EFA22B594F8400683169 /* Tidey_MacUITestsLaunchTests.swift */,
+			);
+			path = "Tidey MacUITests";
 			sourceTree = "<group>";
 		};
 		B5F8A8412ABD9EC60000C18B /* Lib */ = {
@@ -985,6 +1122,64 @@
 			productReference = B5CA737D29E9692D005C87F1 /* TideyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B5D2EF812B594F8000683169 /* Tidey Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D2EFA42B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey Mac" */;
+			buildPhases = (
+				B5D2EF7E2B594F8000683169 /* Sources */,
+				B5D2EF7F2B594F8000683169 /* Frameworks */,
+				B5D2EF802B594F8000683169 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tidey Mac";
+			packageProductDependencies = (
+				B5D2EFD12B59503900683169 /* GeoJSON */,
+				B5D2EFD32B59503900683169 /* SwiftDate */,
+				B5D2EFD52B59503900683169 /* Alamofire */,
+			);
+			productName = "Tidey Mac";
+			productReference = B5D2EF822B594F8100683169 /* Tidey Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5D2EF912B594F8300683169 /* Tidey MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D2EFA72B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey MacTests" */;
+			buildPhases = (
+				B5D2EF8E2B594F8300683169 /* Sources */,
+				B5D2EF8F2B594F8300683169 /* Frameworks */,
+				B5D2EF902B594F8300683169 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5D2EF942B594F8400683169 /* PBXTargetDependency */,
+			);
+			name = "Tidey MacTests";
+			productName = "Tidey MacTests";
+			productReference = B5D2EF922B594F8300683169 /* Tidey MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5D2EF9B2B594F8400683169 /* Tidey MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5D2EFAA2B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey MacUITests" */;
+			buildPhases = (
+				B5D2EF982B594F8400683169 /* Sources */,
+				B5D2EF992B594F8400683169 /* Frameworks */,
+				B5D2EF9A2B594F8400683169 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5D2EF9E2B594F8400683169 /* PBXTargetDependency */,
+			);
+			name = "Tidey MacUITests";
+			productName = "Tidey MacUITests";
+			productReference = B5D2EF9C2B594F8400683169 /* Tidey MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -992,7 +1187,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					B55F77E22A026D6D00524CF2 = {
@@ -1028,6 +1223,17 @@
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = B5CA735D29E9692A005C87F1;
 					};
+					B5D2EF812B594F8000683169 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					B5D2EF912B594F8300683169 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = B5D2EF812B594F8000683169;
+					};
+					B5D2EF9B2B594F8400683169 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = B5D2EF812B594F8000683169;
+					};
 				};
 			};
 			buildConfigurationList = B5CA735929E9692A005C87F1 /* Build configuration list for PBXProject "Tidey" */;
@@ -1057,6 +1263,9 @@
 				B55F77E22A026D6D00524CF2 /* Tidey TV */,
 				B55F77F62A026D6E00524CF2 /* Tidey TVTests */,
 				B55F78002A026D6E00524CF2 /* Tidey TVUITests */,
+				B5D2EF812B594F8000683169 /* Tidey Mac */,
+				B5D2EF912B594F8300683169 /* Tidey MacTests */,
+				B5D2EF9B2B594F8400683169 /* Tidey MacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1131,6 +1340,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B5CA737B29E9692D005C87F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF802B594F8000683169 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D2EF8C2B594F8300683169 /* Preview Assets.xcassets in Resources */,
+				B5D2EF892B594F8300683169 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF902B594F8300683169 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF9A2B594F8400683169 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1325,6 +1557,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5D2EF7E2B594F8000683169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D2EFCB2B59500E00683169 /* TideStationListView.swift in Sources */,
+				B5D2EF852B594F8100683169 /* Tidey_MacApp.swift in Sources */,
+				B5D2EFB42B594FD900683169 /* ApplicationState.swift in Sources */,
+				B5D2EFC52B59500500683169 /* TestConfigurationProvider.swift in Sources */,
+				B5D2EFCA2B59500E00683169 /* RecentTideTimeView.swift in Sources */,
+				B5D2EFB02B594FD300683169 /* MockLocationManager.swift in Sources */,
+				B5D2EFC22B594FFF00683169 /* TideDataProvider.swift in Sources */,
+				B5D2EFD02B59500E00683169 /* TideStations+Utils.swift in Sources */,
+				B5D2EFBE2B594FE300683169 /* Event.swift in Sources */,
+				B5D2EFCE2B59500E00683169 /* ViewStateView.swift in Sources */,
+				B5D2EFC72B59500500683169 /* LocalConfiguration.swift in Sources */,
+				B5D2EFBC2B594FE300683169 /* NetworkService.swift in Sources */,
+				B5D2EFC02B594FFA00683169 /* LocationService.swift in Sources */,
+				B5D2EFCC2B59500E00683169 /* NearMeView.swift in Sources */,
+				B5D2EFC62B59500500683169 /* ConfigurationProvider.swift in Sources */,
+				B5D2EFB72B594FD900683169 /* SortOrder.swift in Sources */,
+				B5D2EFC42B594FFF00683169 /* ConfigurationSource.swift in Sources */,
+				B5D2EFAF2B594FD300683169 /* MockURLProtocol.swift in Sources */,
+				B5D2EFCD2B59500E00683169 /* Double+Rounding.swift in Sources */,
+				B5D2EFB82B594FE300683169 /* TideStation.swift in Sources */,
+				B5D2EFC82B59500E00683169 /* Bundle+Utils.swift in Sources */,
+				B5D2EFAE2B594FD300683169 /* MockTideDataProvider.swift in Sources */,
+				B5D2EFCF2B59500E00683169 /* TideStationDetailView.swift in Sources */,
+				B5D2EFBA2B594FE300683169 /* TideDataGeoJSONParser.swift in Sources */,
+				B5D2EFB52B594FD900683169 /* TideTime.swift in Sources */,
+				B5D2EFB12B594FD300683169 /* FileHelper.swift in Sources */,
+				B5D2EFBB2B594FE300683169 /* TidalEvent.swift in Sources */,
+				B5D2EFB22B594FD900683169 /* ViewState.swift in Sources */,
+				B5D2EFB62B594FD900683169 /* MenuItem.swift in Sources */,
+				B5D2EFB32B594FD900683169 /* TideLevel.swift in Sources */,
+				B5D2EFC12B594FFA00683169 /* LocationAuthorisationState.swift in Sources */,
+				B5D2EFBF2B594FFA00683169 /* LocationManager.swift in Sources */,
+				B5D2EFC92B59500E00683169 /* TideStationListViewModel.swift in Sources */,
+				B5D2EFB92B594FE300683169 /* UKTidalAPI.swift in Sources */,
+				B5D2EFC32B594FFF00683169 /* TIdeDataParser.swift in Sources */,
+				B5D2EFBD2B594FE300683169 /* NetworkServiceError.swift in Sources */,
+				B5D2EFAD2B594FC000683169 /* TideyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF8E2B594F8300683169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D2EF972B594F8400683169 /* Tidey_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5D2EF982B594F8400683169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D2EFA32B594F8400683169 /* Tidey_MacUITestsLaunchTests.swift in Sources */,
+				B5D2EFA12B594F8400683169 /* Tidey_MacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1386,6 +1679,16 @@
 		B5D2EF792B5935B900683169 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = B5D2EF782B5935B900683169 /* SwiftDate */;
+		};
+		B5D2EF942B594F8400683169 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5D2EF812B594F8000683169 /* Tidey Mac */;
+			targetProxy = B5D2EF932B594F8400683169 /* PBXContainerItemProxy */;
+		};
+		B5D2EF9E2B594F8400683169 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5D2EF812B594F8000683169 /* Tidey Mac */;
+			targetProxy = B5D2EF9D2B594F8400683169 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1975,6 +2278,166 @@
 			};
 			name = Release;
 		};
+		B5D2EFA52B594F8400683169 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tidey Mac/Tidey_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey Mac/Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B5D2EFA62B594F8400683169 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tidey Mac/Tidey_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Tidey Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tidey Mac/Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				UK_TIDAL_API_BASE_URL = "";
+			};
+			name = Release;
+		};
+		B5D2EFA82B594F8400683169 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey Mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey Mac";
+			};
+			name = Debug;
+		};
+		B5D2EFA92B594F8400683169 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tidey Mac.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tidey Mac";
+			};
+			name = Release;
+		};
+		B5D2EFAB2B594F8400683169 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Tidey Mac";
+			};
+			name = Debug;
+		};
+		B5D2EFAC2B594F8400683169 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARU7K8KJKJ;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "space.sometinylittle.Tidey-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Tidey Mac";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2064,6 +2527,33 @@
 			buildConfigurations = (
 				B5CA738E29E9692D005C87F1 /* Debug */,
 				B5CA738F29E9692D005C87F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D2EFA42B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D2EFA52B594F8400683169 /* Debug */,
+				B5D2EFA62B594F8400683169 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D2EFA72B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D2EFA82B594F8400683169 /* Debug */,
+				B5D2EFA92B594F8400683169 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5D2EFAA2B594F8400683169 /* Build configuration list for PBXNativeTarget "Tidey MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5D2EFAB2B594F8400683169 /* Debug */,
+				B5D2EFAC2B594F8400683169 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2169,6 +2659,21 @@
 			productName = Alamofire;
 		};
 		B5D2EF7C2B59381000683169 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B55947412B50312300D2D885 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B5D2EFD12B59503900683169 /* GeoJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE329E96DDB004398BE /* XCRemoteSwiftPackageReference "GeoJSON" */;
+			productName = GeoJSON;
+		};
+		B5D2EFD32B59503900683169 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5BE9FE629E96DE9004398BE /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		B5D2EFD52B59503900683169 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B55947412B50312300D2D885 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;

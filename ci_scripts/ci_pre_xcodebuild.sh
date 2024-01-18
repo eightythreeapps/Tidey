@@ -7,3 +7,4 @@
 #
 echo "Updating Tidal API Key from environment"
 plutil -replace TidalDiscoveryAPISubscriptionKeyPrimary -string "$OCP_APIM_SUBSCRIPTION_KEY" Info.plist
+plutil -replace TidalDiscoveryAPIBaseURL -string "$UK_TIDAL_API_BASE_URL" Info.plist

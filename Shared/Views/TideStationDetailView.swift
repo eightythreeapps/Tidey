@@ -23,25 +23,23 @@ struct TideStationDetailView: View, TideDataConsuming, StateRepresentableView {
         
         VStack {
             
-            Text(station.getStationName())
-                .font(.title)
-            
-            HStack {
-                
-                RecentTideTimeView(tideTime: .last, tideType: .highWater, dateTime: "04:37")
-                
-                Divider()
-                    .frame(height: 85)
-                
-                RecentTideTimeView(tideTime: .next, tideType: .lowWater, dateTime: "09:27")
-                
-            }
-            .background(.yellow)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .padding()
-            
             List {
-                
+                Section {
+        
+                    HStack {
+                        
+                        RecentTideTimeView(tideTime: .last, tideType: .highWater, dateTime: "04:37")
+                        
+                        Divider()
+                            .frame(height: 85)
+                        
+                        RecentTideTimeView(tideTime: .next, tideType: .lowWater, dateTime: "09:27")
+                        
+                    }
+                    .background(.yellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding()
+                }
                 ForEach(events.keys.sorted(), id: \.self) { group in
                     Section {
                         
@@ -64,6 +62,7 @@ struct TideStationDetailView: View, TideDataConsuming, StateRepresentableView {
             }
             
         }
+        .navigationTitle(station.getStationName())
         .task {
             
             do {

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
-struct Tidey_MacApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
+//@main
+//struct Tidey_MacApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}
