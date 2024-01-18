@@ -7,11 +7,10 @@
 
 import Foundation
 
-enum ApplicationState {
+enum ConfigurationState {
     case loadingConfig
-    case configLoaded
-    case notConfigured
-    case configured(apiKey:String, baseUrl:String)
+    case configured(config:ApplicationConfiguration)
+    case error(error:ConfigurationError)
 }
 
 enum ApplicationError:LocalizedError {

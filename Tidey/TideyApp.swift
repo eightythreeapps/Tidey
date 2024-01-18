@@ -6,54 +6,40 @@
 //
 
 import SwiftUI
-import Combine
 import CoreLocation
-
-class ApplicationModel:ObservableObject {
-    
-    var configurationProvider:ConfigurationProvider
-    var configCancellable = Set<AnyCancellable>()
-    
-    @Published var state:ApplicationState = .notConfigured
-    
-    init(configurationProvider:ConfigurationProvider) {
-        self.configurationProvider = configurationProvider
-        
-        self.configurationProvider.fetchConfig()
-            .flatMap { state in
-                return self.configurationProvider.configValue(forKey: .tidalApiSubscriptionKey)
-            }
-            .sink { completion in
-                print("Fetch config completed: \(completion)")
-            } receiveValue: { apiKey in
-                //TODO: See if there is a more async way to get this config data
-                self.state = .configured(apiKey: apiKey, baseUrl: Bundle.main.object(key: .tidalApiBaseUrl))
-            }
-            .store(in: &configCancellable)
-    }
-}
 
 @main
 struct TideyApp: App {
     
-    @State var applicationModel:ApplicationModel = ApplicationModel(configurationProvider: ConfigurationProvider(configurationSource: LocalConfiguration()))
+    @StateObject var configurationProvider = ConfigurationProvider(configurationSource: LocalConfiguration())
     
     var body: some Scene {
         WindowGroup {
             
-            switch applicationModel.state {
-            case .notConfigured:
-                Text("Setting things up for you")
-            case .configured(let apiKey, let baseUrl):
-                NavigationView {
-                    TideStationListView(tideDataProvider: TideDataAPI(host: baseUrl, dataParser: TideDataGeoJSONParser(), apiKey: apiKey))
+            VStack {
+                
+                switch configurationProvider.state {
+                case .configured(let config):
+                    
+                    NavigationStack {
+                        TideStationListView(tideDataProvider: TideDataAPI(host: config.baseURL,
+                                                                          dataParser: TideDataGeoJSONParser(),
+                                                                          apiKey: config.apiKey))
+                    }
+                    
+                case .loadingConfig:
+                    
+                    ProgressView {
+                        Text("Loading config")
+                    }
+                    
+                case .error(let configError):
+                    Text(configError.localizedDescription)
                 }
-            case .loadingConfig:
-                Text("Setting things up for you")
-            case .configLoaded:
-                Text("Config loaded")
+                
+            }.task {
+                await configurationProvider.fetchConfig()
             }
-            
         }
     }
 }

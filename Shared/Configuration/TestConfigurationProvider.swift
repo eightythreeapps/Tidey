@@ -10,26 +10,17 @@ import Combine
 
 public class TestConfiguration:ConfigurationSource {
     
-    func fetchConfigurationData() -> Future<ApplicationState, ConfigurationError> {
-        
-        Future { promise in
-            promise(.success(.configLoaded))
-        }
+    func fetchConfigurationData() async throws -> ConfigurationState {
+        return ConfigurationState.loadingConfig
     }
     
-    func configValue(forKey key: ConfigurationKey) -> Future<String, ConfigurationError> {
+    func configValue(forKey key: ConfigurationKey) async throws -> String {
         
-        return Future { promise in
-            
-            let bundle = Bundle.main
-            let value = bundle.object(forInfoDictionaryKey: key.rawValue) as? String
-            
-            if let value = value {
-                promise(.success(value))
-            }else{
-                promise(.failure(.noData))
-            }
-                    
+        if let value = Bundle.main.object(forInfoDictionaryKey: key.rawValue) as? String {
+            return value
+        }else{
+            throw ConfigurationError.noData
         }
+        
     }
 }

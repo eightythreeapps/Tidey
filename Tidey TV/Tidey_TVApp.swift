@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-@main
-struct Tidey_TVApp: App {
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            Text("TV App")
-        }
-    }
-}
+//@main
+//struct Tidey_TVApp: App {
+//    let persistenceController = PersistenceController.shared
+//
+//    var body: some Scene {
+//        WindowGroup {
+//            Text("TV App")
+//        }
+//    }
+//}

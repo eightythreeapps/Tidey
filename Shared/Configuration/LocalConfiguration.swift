@@ -10,24 +10,24 @@ import Combine
 
 public class LocalConfiguration:ConfigurationSource {
     
-    func fetchConfigurationData() -> Future<ApplicationState, ConfigurationError> {
+    func fetchConfigurationData() async throws -> ConfigurationState {
         
-        Future { promise in
-            promise(.success(.configLoaded))
-        }
+        let bundle = Bundle.main
+        guard let apiKey = bundle.object(forInfoDictionaryKey: ConfigurationKey.tidalApiSubscriptionKey.rawValue) as? String,
+              let baseURL = bundle.object(forInfoDictionaryKey: ConfigurationKey.tidalApiBaseUrl.rawValue) as? String else {
+            return ConfigurationState.error(error: .noData)
+              }
+        
+        return .configured(config: ApplicationConfiguration(apiKey: apiKey, baseURL: baseURL))
         
     }
     
-    func configValue(forKey key: ConfigurationKey) -> Future<String, ConfigurationError> {
+    func configValue(forKey key: ConfigurationKey) async throws -> String {
         
-        return Future { promise in
-                
-            if let value = Bundle.main.object(forInfoDictionaryKey: key.rawValue) as? String {
-                promise(.success(value))
-            }else{
-                promise(.failure(.noData))
-            }
-            
+        if let value = Bundle.main.object(forInfoDictionaryKey: key.rawValue) as? String {
+            return value
+        }else{
+            throw ConfigurationError.noData
         }
         
     }

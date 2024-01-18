@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
-struct Tidey_Watch_Watch_AppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            Text("Watch App")
-        }
-    }
-}
+//@main
+//struct Tidey_Watch_Watch_AppApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            Text("Watch App")
+//        }
+//    }
+//}
