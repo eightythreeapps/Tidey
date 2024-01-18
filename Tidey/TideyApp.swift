@@ -20,15 +20,7 @@ struct TideyApp: App {
                 
                 switch configurationProvider.state {
                 case .configured(let config):
-                    
-                    NavigationSplitView {
-                        TideStationListView(tideDataProvider: TideDataAPI(host: config.baseURL,
-                                                                          dataParser: TideDataGeoJSONParser(),
-                                                                          apiKey: config.apiKey))
-                    } detail: {
-                        EmptyView()
-                    }
-            
+                    RootView(config: config)
                 case .loadingConfig:
                     
                     ProgressView {

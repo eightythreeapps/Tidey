@@ -49,6 +49,14 @@
 		B5A6AFF52B59342E00C4F60C /* TideyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736129E9692A005C87F1 /* TideyApp.swift */; };
 		B5A6AFF62B59343000C4F60C /* TideyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA736129E9692A005C87F1 /* TideyApp.swift */; };
 		B5B33DD82A02896A00D55F36 /* UKTideStation.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B33DD72A02896A00D55F36 /* UKTideStation.json */; };
+		B5B347172B59912300765B50 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B347162B59912300765B50 /* RootView.swift */; };
+		B5B347182B59912300765B50 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B347162B59912300765B50 /* RootView.swift */; };
+		B5B347192B59912300765B50 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B347162B59912300765B50 /* RootView.swift */; };
+		B5B3471A2B59912300765B50 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B347162B59912300765B50 /* RootView.swift */; };
+		B5B3471C2B59939700765B50 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3471B2B59939600765B50 /* WaveView.swift */; };
+		B5B3471D2B59939700765B50 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3471B2B59939600765B50 /* WaveView.swift */; };
+		B5B3471E2B59939700765B50 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3471B2B59939600765B50 /* WaveView.swift */; };
+		B5B3471F2B59939700765B50 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3471B2B59939600765B50 /* WaveView.swift */; };
 		B5B5162D29F6E413005CBEAB /* TideEvents.json in Resources */ = {isa = PBXBuildFile; fileRef = B5B5162C29F6E413005CBEAB /* TideEvents.json */; };
 		B5BABFB22AE01B4E00A1616E /* TideTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB12AE01B4E00A1616E /* TideTime.swift */; };
 		B5BABFB42AE01B5F00A1616E /* TideLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BABFB32AE01B5F00A1616E /* TideLevel.swift */; };
@@ -351,6 +359,8 @@
 		B5A6AF9D2B51833500C4F60C /* TideStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideStationDetailView.swift; sourceTree = "<group>"; };
 		B5A6AF9F2B51C08C00C4F60C /* Double+Rounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounding.swift"; sourceTree = "<group>"; };
 		B5B33DD72A02896A00D55F36 /* UKTideStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UKTideStation.json; sourceTree = "<group>"; };
+		B5B347162B59912300765B50 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B5B3471B2B59939600765B50 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B5B5162C29F6E413005CBEAB /* TideEvents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TideEvents.json; sourceTree = "<group>"; };
 		B5BABFB12AE01B4E00A1616E /* TideTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideTime.swift; sourceTree = "<group>"; };
 		B5BABFB32AE01B5F00A1616E /* TideLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TideLevel.swift; sourceTree = "<group>"; };
@@ -827,6 +837,8 @@
 				B5CA736A29E9692C005C87F1 /* Persistence.swift */,
 				B5CA736C29E9692C005C87F1 /* Tidey.xcdatamodeld */,
 				B5CA736729E9692C005C87F1 /* Preview Content */,
+				B5B347162B59912300765B50 /* RootView.swift */,
+				B5B3471B2B59939600765B50 /* WaveView.swift */,
 			);
 			path = Tidey;
 			sourceTree = "<group>";
@@ -1392,10 +1404,12 @@
 				B55F77EF2A026D6E00524CF2 /* Persistence.swift in Sources */,
 				B5D2EF272B5934F100683169 /* MockURLProtocol.swift in Sources */,
 				B5D2EF1F2B5934E200683169 /* LocalConfiguration.swift in Sources */,
+				B5B3471E2B59939700765B50 /* WaveView.swift in Sources */,
 				B5D2EF542B59351100683169 /* Event.swift in Sources */,
 				B5D2EF262B5934F100683169 /* FileHelper.swift in Sources */,
 				B5A6AFF52B59342E00C4F60C /* TideyApp.swift in Sources */,
 				B5D2EF342B5934F900683169 /* MenuItem.swift in Sources */,
+				B5B347192B59912300765B50 /* RootView.swift in Sources */,
 				B5D2EF512B59351100683169 /* TideStation.swift in Sources */,
 				B5D2EF4F2B59351100683169 /* NetworkService.swift in Sources */,
 				B55F77F22A026D6E00524CF2 /* Tidey_TV.xcdatamodeld in Sources */,
@@ -1443,6 +1457,7 @@
 				B5D2EF602B59352800683169 /* RecentTideTimeView.swift in Sources */,
 				B5D2EF302B5934F800683169 /* TideTime.swift in Sources */,
 				B5D2EF1B2B5934E100683169 /* ConfigurationProvider.swift in Sources */,
+				B5B3471D2B59939700765B50 /* WaveView.swift in Sources */,
 				B5D2EF2D2B5934F200683169 /* MockLocationManager.swift in Sources */,
 				B5D2EF2F2B5934F800683169 /* SortOrder.swift in Sources */,
 				B5D2EF462B59351000683169 /* TideDataGeoJSONParser.swift in Sources */,
@@ -1465,6 +1480,7 @@
 				B5D2EF1A2B5934E100683169 /* TestConfigurationProvider.swift in Sources */,
 				B5D2EF5A2B59352200683169 /* TideStationDetailView.swift in Sources */,
 				B5D2EF432B59351000683169 /* UKTidalAPI.swift in Sources */,
+				B5B347182B59912300765B50 /* RootView.swift in Sources */,
 				B5D2EF6C2B59356200683169 /* LocationAuthorisationState.swift in Sources */,
 				B5D2EF212B5934E800683169 /* ConfigurationSource.swift in Sources */,
 				B5BCB4DC29F1837300EAAE05 /* Tidey.xcdatamodeld in Sources */,
@@ -1529,10 +1545,12 @@
 				B5F8A8482ABDA6060000C18B /* MenuItem.swift in Sources */,
 				B5A107782AB9E82500F87E08 /* MockURLProtocol.swift in Sources */,
 				B58D38952A0AAB94009C569F /* LocationAuthorisationState.swift in Sources */,
+				B5B3471C2B59939700765B50 /* WaveView.swift in Sources */,
 				B559474F2B5088C000D2D885 /* FileHelper.swift in Sources */,
 				B55947482B50846400D2D885 /* TideDataProvider.swift in Sources */,
 				B5BE9FF629E9B0AB004398BE /* TidalEvent.swift in Sources */,
 				B559474D2B5086C000D2D885 /* TIdeDataParser.swift in Sources */,
+				B5B347172B59912300765B50 /* RootView.swift in Sources */,
 				B59AB5252ABC9A00003F0ACF /* NearMeView.swift in Sources */,
 				B5BABFB22AE01B4E00A1616E /* TideTime.swift in Sources */,
 				B559474B2B50865900D2D885 /* TideDataGeoJSONParser.swift in Sources */,
@@ -1567,6 +1585,7 @@
 				B5D2EFC52B59500500683169 /* TestConfigurationProvider.swift in Sources */,
 				B5D2EFCA2B59500E00683169 /* RecentTideTimeView.swift in Sources */,
 				B5D2EFB02B594FD300683169 /* MockLocationManager.swift in Sources */,
+				B5B3471A2B59912300765B50 /* RootView.swift in Sources */,
 				B5D2EFC22B594FFF00683169 /* TideDataProvider.swift in Sources */,
 				B5D2EFD02B59500E00683169 /* TideStations+Utils.swift in Sources */,
 				B5D2EFBE2B594FE300683169 /* Event.swift in Sources */,
@@ -1591,6 +1610,7 @@
 				B5D2EFB22B594FD900683169 /* ViewState.swift in Sources */,
 				B5D2EFB62B594FD900683169 /* MenuItem.swift in Sources */,
 				B5D2EFB32B594FD900683169 /* TideLevel.swift in Sources */,
+				B5B3471F2B59939700765B50 /* WaveView.swift in Sources */,
 				B5D2EFC12B594FFA00683169 /* LocationAuthorisationState.swift in Sources */,
 				B5D2EFBF2B594FFA00683169 /* LocationManager.swift in Sources */,
 				B5D2EFC92B59500E00683169 /* TideStationListViewModel.swift in Sources */,

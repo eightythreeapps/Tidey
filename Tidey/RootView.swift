@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    var config:ApplicationConfiguration
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationSplitView {
+            TideStationListView(tideDataProvider: TideDataAPI(host: config.baseURL,
+                                                              dataParser: TideDataGeoJSONParser(),
+                                                              apiKey: config.apiKey))
+        } detail: {
+            EmptyView()
+        }
+        
     }
 }
 
+
+
 #Preview {
-    RootView()
+    RootView(config: ApplicationConfiguration(apiKey: "", baseURL: ""))
 }
