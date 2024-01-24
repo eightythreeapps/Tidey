@@ -20,7 +20,12 @@ struct TideyApp: App {
                 
                 switch configurationProvider.state {
                 case .configured(let config):
-                    RootView(config: config)
+                    
+                    RootView()
+                        .environmentObject(ApplicationDataModel(config: config,
+                                                                tideDataProvider: TideDataAPI(host: config.baseURL,
+                                                                                              dataParser: TideDataGeoJSONParser(),
+                                                                                              apiKey: config.apiKey)))
                 case .loadingConfig:
                     
                     ProgressView {

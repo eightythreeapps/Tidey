@@ -9,23 +9,33 @@ import SwiftUI
 
 struct RootView: View {
     
-    var config:ApplicationConfiguration
+    @EnvironmentObject var applicationDataModel:ApplicationDataModel
     
     var body: some View {
         
         NavigationSplitView {
-            TideStationListView(tideDataProvider: TideDataAPI(host: config.baseURL,
-                                                              dataParser: TideDataGeoJSONParser(),
-                                                              apiKey: config.apiKey))
+            
+            List(selection: $applicationDataModel.selectedStation) {
+                ForEach(applicationDataModel.searchResults) { station in
+                    NavigationLink(value: station) {
+                        Text(station.getStationName())
+                    }
+                }
+            }
+            .navigationTitle("Tide Stations")
+            .task {
+                await applicationDataModel.allTideStations()
+            }
+            
         } detail: {
-            EmptyView()
+            TideStationDetailView(station: $applicationDataModel.selectedStation)
         }
+        .searchable(text: $applicationDataModel.searchText)
         
     }
 }
 
-
-
 #Preview {
-    RootView(config: ApplicationConfiguration(apiKey: "", baseURL: ""))
+    RootView()
+        .environmentObject(ApplicationDataModel.PreviewApplicationModel())
 }

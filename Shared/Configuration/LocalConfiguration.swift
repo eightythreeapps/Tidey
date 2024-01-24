@@ -15,8 +15,10 @@ public class LocalConfiguration:ConfigurationSource {
         let bundle = Bundle.main
         guard let apiKey = bundle.object(forInfoDictionaryKey: ConfigurationKey.tidalApiSubscriptionKey.rawValue) as? String,
               let baseURL = bundle.object(forInfoDictionaryKey: ConfigurationKey.tidalApiBaseUrl.rawValue) as? String else {
+            
             return ConfigurationState.error(error: .noData)
-              }
+            
+        }
         
         return .configured(config: ApplicationConfiguration(apiKey: apiKey, baseURL: baseURL))
         

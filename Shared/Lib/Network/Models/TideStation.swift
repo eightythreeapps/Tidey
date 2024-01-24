@@ -12,7 +12,7 @@ import CoreLocation
 
 typealias TideStations = [TideStation]
 
-struct TideStation:Identifiable, Codable {
+struct TideStation:Identifiable, Codable, Hashable {
         
     var id:UUID = UUID()
     var feature:Feature
@@ -22,6 +22,14 @@ struct TideStation:Identifiable, Codable {
         get {
             getLocation()?.coordinate ?? CLLocationCoordinate2D()
         }
+    }
+    
+    static func == (lhs: TideStation, rhs: TideStation) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
     
     public func getStationId() -> String? {

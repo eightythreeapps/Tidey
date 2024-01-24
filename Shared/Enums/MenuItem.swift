@@ -10,7 +10,7 @@ import Foundation
 enum MenuItem:String, CaseIterable, Identifiable {
     
     case nearMe = "Near me"
-    case allStations = "All Stations"
+    case allStations = "Search"
     
     var id:String {
         return self.rawValue
